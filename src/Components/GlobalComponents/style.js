@@ -56,9 +56,12 @@ export const HeaderNav = styled.nav`
                 background: #404040;
                 width:100%;
                 a{
-                    color:#fff;
                     text-align:center; 
                     border:none;  
+                    text-decoration: none;
+                    font-size: 13px;
+                    color: #9c9c9c;
+                    font-weight: 100;
                       
                 }
                 a:hover{
