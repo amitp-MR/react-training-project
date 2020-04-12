@@ -39,5 +39,37 @@ export const HeaderNav = styled.nav`
             border-bottom:3px solid#8dc63f;
             transition: .4s;
         }
+
+        ul{
+            width: 160px;
+            position: absolute;
+            top: 71px;
+            padding:0px;
+            transition:.3s;
+            height:0px;
+            overflow:hidden;
+            border-top:3px solid transparent;
+            li{
+                text-align:center;
+                border-bottom:.5px solid #c1c1c1;
+                height: 40px;
+                background: #404040;
+                width:100%;
+                a{
+                    color:#fff;
+                    text-align:center; 
+                    border:none;  
+                      
+                }
+                a:hover{
+                    border:none;    
+                }
+            }
+        }
+    }
+    .navlist:hover .dp{
+                border-top:3px solid #8dc63f;
+                height:150px;
+                transition: .3s;
     }
 `

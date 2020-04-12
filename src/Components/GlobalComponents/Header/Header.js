@@ -9,19 +9,20 @@ import {
 
 var list = [
     {
-        "text": "Home"
+        "text": "Home",
+        "submenu": []
     },
     {
         "text": "Demos",
         "submenu": [
             {
-                "text": "Grid Homepage"
+                "subtext": "Grid Homepage"
             },
             {
-                "text": "List HomePage"
+                "subtext": "List HomePage"
             },
             {
-                "text": "Boxed Version"
+                "subtext": "Boxed Version"
             }
         ]
     },
@@ -65,7 +66,8 @@ var list = [
         ]
     },
     {
-        "text": "Submit Recipe"
+        "text": "Submit Recipe",
+        "submenu": []
     }
 ]
 
@@ -79,8 +81,12 @@ function Header() {
                         <ul>
                             {
                                 list.map((items, idx) => {
-                                    return <li key={idx}><a value={items.text + '_' + idx}>{items.text}<i className="fa fa-caret-down"></i></a>
-                                    
+                                    return <li className="navlist" key={idx}><a value={items.text + '_' + idx}>{items.text}<i className="fa fa-caret-down"></i></a>
+                                        <ul className="dp">
+                                            { items.submenu.map((sub)=>{
+                                                    return <li className=""><a>{sub?sub.subtext:null}</a></li>
+                                            })}
+                                        </ul>
                                     </li>
                                 })
                             }

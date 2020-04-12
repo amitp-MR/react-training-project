@@ -81,7 +81,11 @@ class Banner extends Component {
                         <CaptionBann>
                             <li>BAKING</li>
                             <h1><a href=""> Mexican Grilled <br/> Corn Recipe</a></h1>
-                            <p><span><i class="fa fa-cutlery" aria-hidden="true"></i> 4 SERVspanNGS</span><span><i class="fa fa-clock-o" aria-hidden="true"></i> 30 MspanN</span><span><i class="fa fa-user" aria-hidden="true"></i> BY SANDRA FORTspanN</span></p>
+                            <p>
+                                <span><i class="fa fa-cutlery" aria-hidden="true"></i> 4 SERVspanNGS</span>
+                                <span><i class="fa fa-clock-o" aria-hidden="true"></i> 30 MspanN</span>
+                                <span><i class="fa fa-user" aria-hidden="true"></i> BY SANDRA FORTspanN</span>
+                            </p>
                             <span>VIEW RECIPE</span>
                         </CaptionBann>
                     </BackDrop>
@@ -90,7 +94,7 @@ class Banner extends Component {
                     <nav>
                         <ul>
                             {listLinkBtn.map((items, i) => {
-                                return <li key={i} id={"linkBtn_"+i}><span>{items.text1}<br/>{items.text2}</span></li>
+                                return <ul><li key={i} id={"linkBtn_"+i}><span>{items.text1}<br/>{items.text2}</span></li></ul>
                             })}
                         </ul>
                     </nav>
