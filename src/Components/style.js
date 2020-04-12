@@ -41,8 +41,15 @@ export const CaptionBann = styled.div`
         }
     }
     p{
-        a{
+        span{
             color:#fff;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 13px;
+            margin: 0 15px 0 0;
+            border: none;
+            background-color:transparent;
+            display: inline;
         }
     }
     span{

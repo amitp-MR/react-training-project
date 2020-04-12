@@ -37,39 +37,39 @@ var captionData = [{
 },
 {
     "id":"linkBtn_1",
-    "badge":"",
-    "heading":"",
-    "serve":"",
-    "time":"",
-    "cheff":"",
-    "view":""
+    "badge":"CURRY",
+    "heading":"Roast Chicken With Lemon Gravy",
+    "serve":"4 Servings",
+    "time":"1 HR 20 MIN",
+    "cheff":"BY SANDRA FORTIN",
+    "view":"View Recipe"
 },
 {
     "id":"linkBtn_2",
     "badge":"",
     "heading":"",
-    "serve":"",
-    "time":"",
-    "cheff":"",
-    "view":""
+    "serve":"4 Servings",
+    "time":"1 HR 20 MIN",
+    "cheff":"BY SANDRA FORTIN",
+    "view":"View Recipe"
 },
 {
     "id":"linkBtn_3",
     "badge":"",
     "heading":"",
-    "serve":"",
-    "time":"",
-    "cheff":"",
-    "view":""
+    "serve":"4 Servings",
+    "time":"1 HR 20 MIN",
+    "cheff":"BY SANDRA FORTIN",
+    "view":"View Recipe"
 },
 {
     "id":"linkBtn_4",
     "badge":"",
     "heading":"",
-    "serve":"",
-    "time":"",
-    "cheff":"",
-    "view":""
+    "serve":"4 Servings",
+    "time":"1 HR 20 MIN",
+    "cheff":"BY SANDRA FORTIN",
+    "view":"View Recipe"
 }
 ]
 class Banner extends Component {
@@ -81,7 +81,7 @@ class Banner extends Component {
                         <CaptionBann>
                             <li>BAKING</li>
                             <h1><a href=""> Mexican Grilled <br/> Corn Recipe</a></h1>
-                            <p><i>4 SERVINGS</i><i>30 MIN</i><i>BY SANDRA FORTIN</i></p>
+                            <p><span><i class="fa fa-cutlery" aria-hidden="true"></i> 4 SERVspanNGS</span><span><i class="fa fa-clock-o" aria-hidden="true"></i> 30 MspanN</span><span><i class="fa fa-user" aria-hidden="true"></i> BY SANDRA FORTspanN</span></p>
                             <span>VIEW RECIPE</span>
                         </CaptionBann>
                     </BackDrop>
