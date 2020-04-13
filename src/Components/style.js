@@ -5,14 +5,6 @@ import linkBtn_2 from './Assets/images/sliderA_03.jpg';
 import linkBtn_3 from './Assets/images/sliderA_04.jpg';
 import linkBtn_4 from './Assets/images/sliderA_04.jpg';
 
-export const bgImage = [
-    { "id":"linkBtn_0","link": linkBtn_0 }, 
-    { "id":"linkBtn_1","link": linkBtn_1 }, 
-    { "id":"linkBtn_2","link": linkBtn_2 }, 
-    { "id":"linkBtn_3","link": linkBtn_3 }, 
-    { "id":"linkBtn_4","link": linkBtn_4 }
-]
-
 export const Bann = styled.div`
     height:490px;
     background-color:fff;
@@ -22,9 +14,11 @@ export const BannInnerWrap = styled.div`
     height:415px;
     width:100%;
     background-color:#404040;
+    background: url(${props => props.bgImage});
+    transition:.6s;
 `
 export const BackDrop = styled.div`
-    background-color:rgba(0,0,0,0.3);
+    background-color:rgba(0,0,0,0.4);
     width:100%;
     height:100%;
 `
@@ -91,7 +85,9 @@ export const CaptionBann = styled.div`
 export const BannBtn = styled.div`
     .active{
         background-color:#8dc63f;
-        color:#fff;
+        span{
+            color:#fff;
+        }
     }
     nav{
         margin:0 auto;

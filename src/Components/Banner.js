@@ -32,7 +32,7 @@ var captionData = [{
     "serve":"4 Servings",
     "time":"30 MIN",
     "cheff":"By Sandra Fortin",
-    "view":"View Recipe"
+    "img": require('./Assets/images/sliderA_01.jpg')
 },
 {
     "id":"linkBtn_1",
@@ -41,7 +41,8 @@ var captionData = [{
     "serve":"4 Servings",
     "time":"1 HR 20 MIN",
     "cheff":"BY SANDRA FORTIN",
-    "view":"View Recipe"
+    "img": require('./Assets/images/sliderA_02.jpg')
+
 },
 {
     "id":"linkBtn_2",
@@ -50,7 +51,8 @@ var captionData = [{
     "serve":"1 SERVINGS",
     "time":"15 MIN",
     "cheff":"BY SANDRA FORTIN",
-    "view":"View Recipe"
+    "img": require('./Assets/images/sliderA_03.jpg')
+
 },
 {
     "id":"linkBtn_3",
@@ -59,7 +61,8 @@ var captionData = [{
     "serve":"4 Servings",
     "time":"1 HR 20 MIN",
     "cheff":"BY SANDRA FORTIN",
-    "view":"View Recipe"
+    "img": require('./Assets/images/sliderA_04.jpg')
+
 },
 {
     "id":"linkBtn_4",
@@ -68,12 +71,10 @@ var captionData = [{
     "serve":"4 Servings",
     "time":"1 HR 30 MIN",
     "cheff":"BY SANDRA FORTIN",
-    "view":"View Recipe"
+    "img": require('./Assets/images/sliderA_04.jpg')
+
 }
 ]
- var dvStyle={
-        
-      };
 class Banner extends Component {
     constructor(props){  
         super(props);  
@@ -83,8 +84,7 @@ class Banner extends Component {
             serve:"4 Servings",
             time:"30 MIN",
             cheff:"By Sandra Fortin",
-            view:"View Recipe",
-            img:'',
+            img: require('./Assets/images/sliderA_01.jpg')
         }
       } 
     switchContent=(idx)=>{
@@ -97,7 +97,7 @@ class Banner extends Component {
                          serve:captionData[i].serve,
                          time:captionData[i].time,
                          cheff:captionData[i].cheff,
-                         img:'backgroundImage:url(' + linkBtn_0 + ')'
+                         img: captionData[i].img
                      })
             }
         }
@@ -106,7 +106,7 @@ class Banner extends Component {
     render() {
         return (
             <Bann>
-                <BannInnerWrap style={{}}>
+                <BannInnerWrap bgImage={this.state.img}>
                     <BackDrop id="back off">
                         <CaptionBann>
                             <li>{this.state.badge}</li>

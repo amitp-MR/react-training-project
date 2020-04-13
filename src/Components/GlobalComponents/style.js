@@ -34,6 +34,9 @@ export const HeaderNav = styled.nav`
             border-bottom: 3px solid transparent;
             transition: .4s;
             color: #505050;
+            i{
+                margin-left:5px;
+            }
         }
         a:hover{
             border-bottom:3px solid#8dc63f;
@@ -62,7 +65,6 @@ export const HeaderNav = styled.nav`
                     font-size: 13px;
                     color: #9c9c9c;
                     font-weight: 100;
-                      
                 }
                 a:hover{
                     border:none;    
