@@ -1,3 +1,67 @@
+export const list = [
+    {
+        "text": "Home",
+        "submenu": []
+    },
+    {
+        "text": "Demos",
+        "submenu": [
+            {
+                "subtext": "Grid Homepage"
+            },
+            {
+                "subtext": "List HomePage"
+            },
+            {
+                "subtext": "Boxed Version"
+            }
+        ]
+    },
+    {
+        "text": "Recipes",
+        "submenu": [
+            {
+                "subtext": "Browse Recipes"
+            },
+            {
+                "subtext": "Recipe Page #1"
+            },
+            {
+                "subtext": "Recipe Page #2"
+            }
+        ]
+    },
+    {
+        "text": "Pages",
+        "submenu": [
+            {
+                "subtext": "Shortcodes"
+            },
+            {
+                "subtext": "Typography"
+            },
+            {
+                "subtext": "Contact"
+            }
+        ]
+    },
+    {
+        "text": "Shop",
+        "submenu": [
+            {
+                "subtext": "Shop"
+            },
+            {
+                "subtext": "Product Pages"
+            }
+        ]
+    },
+    {
+        "text": "Submit Recipe",
+        "submenu": []
+    }
+]
+
 export const listLinkBtn = [
     {
         "text1": "Mexican Grilled",
