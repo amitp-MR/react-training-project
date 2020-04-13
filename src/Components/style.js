@@ -1,4 +1,17 @@
 import styled from 'styled-components';
+import linkBtn_0 from './Assets/images/sliderA_01.jpg';
+import linkBtn_1 from './Assets/images/sliderA_02.jpg';
+import linkBtn_2 from './Assets/images/sliderA_03.jpg';
+import linkBtn_3 from './Assets/images/sliderA_04.jpg';
+import linkBtn_4 from './Assets/images/sliderA_04.jpg';
+
+export const bgImage = [
+    { "id":"linkBtn_0","link": linkBtn_0 }, 
+    { "id":"linkBtn_1","link": linkBtn_1 }, 
+    { "id":"linkBtn_2","link": linkBtn_2 }, 
+    { "id":"linkBtn_3","link": linkBtn_3 }, 
+    { "id":"linkBtn_4","link": linkBtn_4 }
+]
 
 export const Bann = styled.div`
     height:490px;
@@ -35,6 +48,8 @@ export const CaptionBann = styled.div`
         line-height: 50px;
         font-family: arvo;
         font-weight:100;
+        width: 415px;
+        margin:10px 0px;
         a{
             text-decoration:none;
             color:#fff;
@@ -74,6 +89,10 @@ export const CaptionBann = styled.div`
 `
 
 export const BannBtn = styled.div`
+    .active{
+        background-color:#8dc63f;
+        color:#fff;
+    }
     nav{
         margin:0 auto;
         width:70%;

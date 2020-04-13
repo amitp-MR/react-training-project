@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Bann, BannInnerWrap, BannBtn, CaptionBann,BackDrop } from './style';
-import url from './Assets/images/sliderA_01.jpg'
-
+import { Bann, BannInnerWrap, BannBtn, CaptionBann,BackDrop, bgImage } from './style';
+import linkBtn_0 from './Assets/images/sliderA_01.jpg';
 
 var listLinkBtn = [
     {
@@ -46,17 +45,17 @@ var captionData = [{
 },
 {
     "id":"linkBtn_2",
-    "badge":"",
-    "heading":"",
-    "serve":"4 Servings",
-    "time":"1 HR 20 MIN",
+    "badge":"SALADS",
+    "heading":"Avocado Melon Salad With Lime Vinaigrette",
+    "serve":"1 SERVINGS",
+    "time":"15 MIN",
     "cheff":"BY SANDRA FORTIN",
     "view":"View Recipe"
 },
 {
     "id":"linkBtn_3",
-    "badge":"",
-    "heading":"",
+    "badge":"BEEF",
+    "heading":"Chunky Beef Stew",
     "serve":"4 Servings",
     "time":"1 HR 20 MIN",
     "cheff":"BY SANDRA FORTIN",
@@ -64,27 +63,58 @@ var captionData = [{
 },
 {
     "id":"linkBtn_4",
-    "badge":"",
-    "heading":"",
+    "badge":"SOUPS",
+    "heading":"Farmhouse Vegetable And Barley Soup",
     "serve":"4 Servings",
-    "time":"1 HR 20 MIN",
+    "time":"1 HR 30 MIN",
     "cheff":"BY SANDRA FORTIN",
     "view":"View Recipe"
 }
 ]
+ var dvStyle={
+        
+      };
 class Banner extends Component {
+    constructor(props){  
+        super(props);  
+        this.state={
+            badge:"Baking",
+            heading:"Mexican Grilled Corn Recipe",
+            serve:"4 Servings",
+            time:"30 MIN",
+            cheff:"By Sandra Fortin",
+            view:"View Recipe",
+            img:'',
+        }
+      } 
+    switchContent=(idx)=>{
+        for (var i = 0; i < captionData.length; i++) {
+            if (captionData[i].id === idx) {
+                    
+                     this.setState({
+                         badge:captionData[i].badge,
+                         heading:captionData[i].heading,
+                         serve:captionData[i].serve,
+                         time:captionData[i].time,
+                         cheff:captionData[i].cheff,
+                         img:'backgroundImage:url(' + linkBtn_0 + ')'
+                     })
+            }
+        }
+    }
+   
     render() {
         return (
             <Bann>
-                <BannInnerWrap style={{'backgroundImage':'url('+url+')'}}>
+                <BannInnerWrap style={{}}>
                     <BackDrop id="back off">
                         <CaptionBann>
-                            <li>BAKING</li>
-                            <h1><a href=""> Mexican Grilled <br/> Corn Recipe</a></h1>
+                            <li>{this.state.badge}</li>
+                                    <h1><a href=""> {this.state.heading}</a></h1>
                             <p>
-                                <span><i class="fa fa-cutlery" aria-hidden="true"></i> 4 SERVspanNGS</span>
-                                <span><i class="fa fa-clock-o" aria-hidden="true"></i> 30 MspanN</span>
-                                <span><i class="fa fa-user" aria-hidden="true"></i> BY SANDRA FORTspanN</span>
+                                <span><i className="fa fa-cutlery" aria-hidden="true"></i> {this.state.serve}</span>
+                                <span><i className="fa fa-clock-o" aria-hidden="true"></i> {this.state.time}</span>
+                                <span><i className="fa fa-user" aria-hidden="true"></i> {this.state.cheff}</span>
                             </p>
                             <span>VIEW RECIPE</span>
                         </CaptionBann>
@@ -92,9 +122,9 @@ class Banner extends Component {
                 </BannInnerWrap>
                 <BannBtn>
                     <nav>
-                        <ul>
+                        <ul className="btnWrap">
                             {listLinkBtn.map((items, i) => {
-                                return <ul><li key={i} id={"linkBtn_"+i}><span>{items.text1}<br/>{items.text2}</span></li></ul>
+                                return <li onClick={()=>this.switchContent("linkBtn_"+i)} key={i} id={"linkBtn_"+i}><span>{items.text1}<br/>{items.text2}</span></li>
                             })}
                         </ul>
                     </nav>
