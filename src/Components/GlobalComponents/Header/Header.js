@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Logo from '../../Assets/images/logo.jpg';
 import { list } from '../../Data';
 import {
@@ -20,8 +20,7 @@ function Header() {
                                 list.map((items, idx) => {
                                     return <li className="navlist" key={idx}><a value={items.text + '_' + idx}>{items.text}<i className="fa fa-caret-down"></i></a>
                                         <ul className="dp">
-                                            {items.submenu.map((sub) => {
-                                                return <li className=""><a>{sub ? sub.subtext : null}</a></li>
+                                            {items.submenu.map((sub, subIdx) => {
                                             })}
                                         </ul>
                                     </li>

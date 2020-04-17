@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Bann, BannInnerWrap, BannBtn, CaptionBann, BackDrop, bgImage } from './style';
+import { Bann, BannInnerWrap, BannBtn, CaptionBann, BackDrop } from './style';
 import { listLinkBtn, captionData } from '../Components/Data';
 
 class Banner extends Component {
@@ -37,7 +37,7 @@ class Banner extends Component {
                     <BackDrop id="back off">
                         <CaptionBann>
                             <li>{this.state.badge}</li>
-                            <h1><a href=""> {this.state.heading}</a></h1>
+                            <h1><a href="#"> {this.state.heading}</a></h1>
                             <p>
                                 <span><i className="fa fa-cutlery" aria-hidden="true"></i> {this.state.serve}</span>
                                 <span><i className="fa fa-clock-o" aria-hidden="true"></i> {this.state.time}</span>
@@ -51,7 +51,7 @@ class Banner extends Component {
                     <nav>
                         <ul className="btnWrap">
                             {listLinkBtn.map((items, i) => {
-                                return <li onClick={() => this.switchContent("linkBtn_" + i)} key={i} id={"linkBtn_" + i}><span>{items.text1}<br />{items.text2}</span></li>
+                                return <li onClick={() => this.switchContent("linkBtn_" + i)} key={i} className={this.state.active === i ? 'active' : ''}><span>{items.text1}<br />{items.text2}</span></li>
                             })}
                         </ul>
                     </nav>

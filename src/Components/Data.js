@@ -136,3 +136,60 @@ export const captionData = [{
 
 }
 ]
+export const cardgallery_data = [
+    {
+        "img": require('./Assets/images/recipeThumb-01.jpg'),
+        "title": "Mexican Grilled ",
+        "stars": "",
+        "time": "30 min"
+    },
+    {
+        "img": require('./Assets/images/recipeThumb-02.jpg'),
+        "title": "Choclate Cake With Green Tea Cream",
+        "stars": "4",
+        "time": "1 hr 30 min"
+    },
+    {
+        "img": require('./Assets/images/recipeThumb-03.jpg'),
+        "title": "Thai Yellow Curry Chicken",
+        "stars": "",
+        "time": "45 min"
+    },
+    {
+        "img": require('./Assets/images/recipeThumb-04.jpg'),
+        "title": "Pollo Borracho With Homemade Tortillas",
+        "stars": "",
+        "time": "30 min"
+    },
+    {
+        "img": require('./Assets/images/recipeThumb-05.jpg'),
+        "title": "Avocado Melon Salad With Lime Vinaigrette",
+        "stars": "",
+        "time": "15 min"
+    },
+    {
+        "img": require('./Assets/images/recipeThumb-06.jpg'),
+        "title": "Sweet Chilli and Lime Chicken Wings",
+        "stars": "",
+        "time": "45 min"
+    },
+    {
+        "img": require('./Assets/images/recipeThumb-07.jpg'),
+        "title": "Farmhouse Vegetable And Barley Soup",
+        "stars": "",
+        "time": "1 hr 30 min"
+    },
+    {
+        "img": require('./Assets/images/recipeThumb-08.jpg'),
+        "title": "Roast Chicken With Lemon Gravy",
+        "stars": "",
+        "time": " 1 hr 20 min"
+    },
+    {
+        "img": require('./Assets/images/recipeThumb-09.jpg'),
+        "title": "Chunky Beef Stew",
+        "stars": "",
+        "time": " 2 hr 30 min"
+    }
+
+]
