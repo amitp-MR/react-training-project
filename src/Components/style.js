@@ -20,7 +20,7 @@ export const BackDrop = styled.div`
 `
 export const CaptionBann = styled.div`
     padding:6% 0px;
-    width:70%;
+    width:75%;
     margin:0 auto;
     li{
         display:inline;
@@ -87,7 +87,7 @@ export const BannBtn = styled.div`
     }
     nav{
         margin:0 auto;
-        width:70%;
+        width:75%;
         overflow:hidden;
     ul{
         margin:0;
@@ -100,7 +100,7 @@ export const BannBtn = styled.div`
             background: #f2f2f2;
             height:75px;
             text-align: center;
-            width:225px;
+            width:245px;
             display:flex;
             list-style-type: none;
             justify-content: center;
@@ -122,7 +122,7 @@ export const BannBtn = styled.div`
 `
 export const Wrapper = styled.div`
     display:block;
-    width:70%;
+    width:75%;
     margin:0 auto;
     height:100%;
 `
@@ -186,7 +186,7 @@ export const Author = styled.div`
 `
 
 export const RecipeContainer = styled.div`
-        width: 210px;
+        width: 220px;
         height: 400px;
         background-color: #f8f8f8;
         overflow:hidden;
