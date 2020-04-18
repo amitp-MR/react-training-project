@@ -79,11 +79,12 @@ export const CaptionBann = styled.div`
 `
 
 export const BannBtn = styled.div`
-    .active{
+background-color:${props => props.buttonTrue};
+    buttonTrue{
         background-color:#8dc63f;
-        span{
-            color:#fff;
-        }
+    }
+    buttonFalse{
+        background-color:#f2f2f2;
     }
     nav{
         margin:0 auto;
@@ -183,6 +184,67 @@ export const Author = styled.div`
         color:#808080;
         font-weight:0;
     }
+`
+export const PopularRecipes = styled.div`
+        color: #606060;
+        font-weight: 500;
+        font-size:20px;
+        cursor:pointer;
+        .popularImg:hover .faicon{
+            right: 0px;
+            transition:.6s;
+        }
+        .faicon{
+            position: absolute;
+            top: 0;
+            right: -33px;
+            background: #8dc63f;
+            padding: 10px;
+            transition:.6s;
+        }
+    span{
+        display:inline-block;
+        width: 34%;
+        border: 1px solid #ebebeb;
+        vertical-align: middle;
+    }
+    div{
+        overflow: hidden;
+        height:100px;
+        position:relative;
+        margin: 3px 0px;
+    img{
+        width:100%;
+        position:absolute;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+    }
+    
+    h4{
+        color:#fff;
+        font-size: 14px;
+        font-weight: 700;
+        margin:0;
+        line-height: 24px;
+        position: absolute;
+        padding: 15px;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.3);
+        .star-rating::after {
+            content: "    ";
+            font-family: fontawesome;
+            color: rgb(255, 199, 65);
+            display: block;
+            position: absolute;
+            font-size: 16px;
+            z-index: 10;
+            letter-spacing: -0.5px;
+            font-style: normal;
+        }
+    }
+}
 `
 
 export const RecipeContainer = styled.div`

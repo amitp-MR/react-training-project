@@ -11,7 +11,7 @@ class Banner extends Component {
             serve: "4 Servings",
             time: "30 MIN",
             cheff: "By Sandra Fortin",
-            img: require('./Assets/images/sliderA_01.jpg')
+            img: require('./Assets/images/sliderA_01.jpg'),
         }
     }
     switchContent = (idx) => {
@@ -24,7 +24,7 @@ class Banner extends Component {
                     serve: captionData[i].serve,
                     time: captionData[i].time,
                     cheff: captionData[i].cheff,
-                    img: captionData[i].img
+                    img: captionData[i].img,
                 })
             }
         }
@@ -51,7 +51,7 @@ class Banner extends Component {
                     <nav>
                         <ul className="btnWrap">
                             {listLinkBtn.map((items, i) => {
-                                return <li onClick={() => this.switchContent("linkBtn_" + i)} key={i} className={this.state.active === i ? 'active' : ''}><span>{items.text1}<br />{items.text2}</span></li>
+                                return <li onClick={() => this.switchContent("linkBtn_" + i)} key={"key_"+i}><span>{items.text1}<br />{items.text2}</span></li>
                             })}
                         </ul>
                     </nav>

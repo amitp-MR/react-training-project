@@ -140,7 +140,7 @@ export const cardgallery_data = [
     {
         "img": require('./Assets/images/recipeThumb-01.jpg'),
         "title": "Mexican Grilled ",
-        "stars": "",
+        "stars": "5",
         "time": "30 min"
     },
     {
@@ -152,7 +152,7 @@ export const cardgallery_data = [
     {
         "img": require('./Assets/images/recipeThumb-03.jpg'),
         "title": "Thai Yellow Curry Chicken",
-        "stars": "",
+        "stars": "4",
         "time": "45 min"
     },
     {
@@ -189,7 +189,22 @@ export const cardgallery_data = [
         "img": require('./Assets/images/recipeThumb-09.jpg'),
         "title": "Chunky Beef Stew",
         "stars": "",
-        "time": " 2 hr 30 min"
+        "time": "2 hr 30 min"
     }
 
+]
+
+export const popular_data = [
+    {
+        "img": require('./Assets/images/featuredRecipe-01.jpg'),
+        "title": "Choclate Cake With Green Tea Cream"
+    },
+    {
+        "img": require('./Assets/images/featuredRecipe-02.jpg'),
+        "title": "Mexican Grilled Corn Recipe"
+    },
+    {
+        "img": require('./Assets/images/featuredRecipe-03.jpg'),
+        "title": "Pollo Borracho With Homemade Tortillas"
+    }
 ]
