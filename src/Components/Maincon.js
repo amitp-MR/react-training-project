@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { cardgallery_data, popular_data } from '../Components/Data';
-import { Wrapper, Cardgallery, Sidecontent, Author, PopularRecipes, RecipeContainer, ImgContainer, TextContainer } from './style';
+import { Wrapper, Cardgallery, Sidecontent, Author, PopularRecipes, RecipeContainer, ImgContainer, TextContainer, Social } from './style';
 import author from './Assets/images/author-photo.jpg';
 
 
@@ -56,6 +56,33 @@ class Maincon extends Component {
                             })
                         }
                     </PopularRecipes>
+                    <Social>
+                        <p>Share</p>
+                        <div className="facebook">
+                            <i className="fa fa-facebook" aria-hidden="true"></i>
+                            <span className="anim">
+                            <p>1,234</p>
+                            <p className="Follow">Fans</p>
+                            </span>
+                            <p className="Likes">Like</p>
+                        </div>
+                        <div className="twitter">
+                            <i className="fa fa-twitter" aria-hidden="true"></i>
+                            <span className="anim">
+                            <p>863</p>
+                            <p className="Follow">Followers</p>
+                            </span>
+                            <p className="Likes">Follow</p>
+                        </div>
+                        <div className="google">
+                            <i className="fa fa-google-plus" aria-hidden="true"></i>
+                            <span className="anim">
+                            <p>902</p>
+                            <p className="Follow">Following</p>
+                            </span>
+                            <p className="Likes">Follow</p>
+                        </div>
+                    </Social>
                 </Sidecontent>
             </Wrapper>
         )

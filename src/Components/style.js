@@ -247,6 +247,174 @@ export const PopularRecipes = styled.div`
 }
 `
 
+export const Social = styled.div`
+        .facebook{
+            color: #fff;
+            background-color: #3b5998;
+            width:117px;
+            height:106px;
+            text-align:center;
+            display: inline-block;
+            overflow:hidden;
+            margin-right:5px;
+            padding: 15px 0px;
+            position: relative;
+            p{
+                margin:0px;
+            }
+            i{
+                font-size:30px;
+                margin-bottom:10px;
+                display: block;
+            }
+            .Follow{
+                font-size:13px;
+                width:50px;
+                margin:0 auto;
+
+            }
+            .Likes{
+                font-size:13px;
+                background-color:rgba(255,255,255,.4);
+                width:50px;
+                margin:0 auto;
+                opacity:0;
+                transition:.3s;
+                position:absolute;
+                left: 30%;
+                padding: 5px 0px;
+                top: 74px;
+            }
+            .anim{
+                position:absolute;
+                left: 30%;
+                top: 55px;
+                opacity:1;
+                transition:.3s;
+            }
+        }
+        .facebook:hover .Likes{
+                opacity:1;
+                transition:.3s;
+                top: 60px;
+        }
+        .facebook:hover:hover .anim{
+                top:38px;
+                opacity:0;
+                transition:.3s;
+        }
+        .twitter{
+            color: #fff;
+            background-color: #33bcf3;
+            width:117px;
+            height:106px;
+            text-align:center;
+            display: inline-block;
+            overflow:hidden;
+            padding: 15px 0px;
+            position: relative;
+            p{
+                margin:0px;
+            }
+            i{
+                font-size:30px;
+                margin-bottom:10px;
+            }
+            .Follow{
+                font-size:13px;
+                width:50px;
+                margin:0 auto;
+
+            }
+            .Likes{
+                font-size:13px;
+                background-color:rgba(255,255,255,.4);
+                width:50px;
+                margin:0 auto;
+                opacity:0;
+                transition:.3s;
+                position:absolute;
+                left: 30%;
+                padding: 5px 0px;
+                top: 74px;
+            }
+            .anim{
+                position:absolute;
+                left: 30%;
+                top: 55px;
+                opacity:1;
+                transition:.3s;
+            }
+        }
+        .twitter:hover .Likes{
+                opacity:1;
+                transition:.3s;
+                top: 60px;
+        }
+        .twitter:hover:hover .anim{
+                top:38px;
+                opacity:0;
+                transition:.3s;
+        }
+        }
+        .google{
+            color: #fff;
+            background-color: #dd4b39;
+            width:117px;
+            height:106px;
+            text-align:center;
+            display: inline-block;
+            overflow:hidden;
+            padding: 15px 0px;
+            position: relative;
+            p{
+                margin:0px;
+            }
+            i{
+                font-size:30px;
+                margin-bottom:10px;
+            }
+            .Follow{
+                font-size:13px;
+                width:50px;
+                margin:0 auto;
+
+            }
+            .Likes{
+                font-size:13px;
+                background-color:rgba(255,255,255,.4);
+                width:50px;
+                margin:0 auto;
+                opacity:0;
+                transition:.3s;
+                position:absolute;
+                left: 30%;
+                padding: 5px 0px;
+                top: 74px;
+            }
+            .anim{
+                position:absolute;
+                left: 30%;
+                top: 55px;
+                opacity:1;
+                transition:.3s;
+            }
+        }
+        .google:hover .Likes{
+                opacity:1;
+                transition:.3s;
+                top: 60px;
+        }
+        .google:hover:hover .anim{
+                top:38px;
+                opacity:0;
+                transition:.3s;
+        }
+        }
+        
+       
+`
+
 export const RecipeContainer = styled.div`
         width: 220px;
         height: 400px;
