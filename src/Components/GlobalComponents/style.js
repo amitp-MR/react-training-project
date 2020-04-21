@@ -78,6 +78,11 @@ export const HeaderNav = styled.nav`
                 height:150px;
                 transition: .3s;
     }
+    .Subnavlist{
+        font-size:12px;
+        color:#fff;
+        padding: 10px;
+    }
 `
 //footer styling
 export const FooterWrapper = styled.div`

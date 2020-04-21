@@ -21,6 +21,7 @@ function Header() {
                                     return <li className="navlist" key={"key_"+idx}><a value={items.text + '_' + idx}>{items.text}<i className="fa fa-caret-down"></i></a>
                                         <ul className="dp">
                                             {items.submenu.map((sub, subIdx) => {
+                                            return  <li className="Subnavlist">{sub.subtext}</li>
                                             })}
                                         </ul>
                                     </li>
