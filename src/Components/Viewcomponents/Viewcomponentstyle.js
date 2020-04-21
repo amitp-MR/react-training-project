@@ -15,6 +15,7 @@ export const RecipeContainer = styled.div`
         overflow:hidden;
         margin-right:10px;
         margin-top:20px;
+        position:relative;
         .viewrecipe{
             position:absolute;
             width:100%;
@@ -76,6 +77,16 @@ export const TextContainer = styled.div`
             float: right;
             margin-left: 15px;
             font-family:"open-sans";
+        }
+    }
+    .contentrating{
+        display:flex;
+        justify-content:space-between;
+        span{
+            margin-left: 0px;
+        }
+        .contentstars{
+            color: rgb(255, 199, 65);
         }
     }
     
@@ -176,6 +187,9 @@ export const GridContentContainer = styled.div`
                     text-transform: uppercase;
                     font-size:12px;
 
+                }
+                .contentstars{
+                    color: rgb(255, 199, 65);
                 }
         }
 `

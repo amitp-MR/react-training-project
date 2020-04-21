@@ -9,6 +9,10 @@ class Listview extends Component {
             <Gridgallery>
                 {
                     cardgallery_data.map((conitems, idx) => {
+                        const stars = [];
+                    for(let i=0; i<conitems.stars; i++){
+                        stars.push(<i key={i} className="contentstars fa fa-star" aria-hidden="true"></i>);  
+                    };
                         return (
                             <GridContainer key={"key_" + idx} className="recipecontainer">
                                 <GridimgContainer>
@@ -21,7 +25,7 @@ class Listview extends Component {
                                         <p>{conitems.recipeContent}</p>
                                     </div>
                                     <p><span>
-                                        {conitems.stars}
+                                        {stars}
                                        </span><span>{conitems.time}</span><span>{conitems.author}}</span></p>
                                 </GridContentContainer>
                             </GridContainer>

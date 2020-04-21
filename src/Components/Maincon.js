@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { popular_data } from '../Components/Data';
-import { Wrapper, Sidecontent, Author, PopularRecipes, Social } from './style';
+import { Wrapper, Sidecontent, Author, PopularRecipes, Social,Searchbar } from './style';
 import author from './Assets/images/author-photo.jpg';
 import Listview from '../Components/Viewcomponents/Listview';
 import Gridview from '../Components/Viewcomponents/Gridview';
@@ -13,13 +13,17 @@ class Maincon extends Component {
         return (
             <Wrapper>
                 <Router>
-                <p>Latest Recipes <span className=""> <Link to="/">Listview</Link> </span><Link to="/Gridview">Gridview</Link></p>
+                <p className="Contentheading">Latest Recipes <span> <Link className="Listview" to="/">Listview</Link> </span><Link className="Gridview" to="/Gridview">Gridview</Link></p>
                     <Switch>
                     <Route path="/" exact component={Listview} />
                     <Route path="/Gridview" component={Gridview} />
                     </Switch>
                 </Router>
+
                 <Sidecontent>
+                    <Searchbar>
+                    <div className="subs"><input className="subInp" type="text" placeholder="search for recipes"/><span className="subBtn"><i className="fa fa-search" aria-hidden="true"></i></span></div>
+                    </Searchbar>
                     <Author>
                         <p className="title">Author</p>
                         <span className="name">Sandra <br /> Fortin</span>
@@ -29,7 +33,6 @@ class Maincon extends Component {
                     </Author>
                     <PopularRecipes>
                         <p>Popular Recipes <span></span> </p>
-
                         {
                             popular_data.map((pitems, pidx) => {
                                 return (

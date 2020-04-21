@@ -166,7 +166,7 @@ export const cardgallery_data = [
         "title": "Pollo Borracho With Homemade Tortillas",
         "recipeContent":"Maecenas in massa eget urna ullamcorper pharetra. Curabitur laoreet scelerisque bibendum. Aenean ullamcorper neque ac tristique semper. Phasellus enim mauris, mollis vulputate blandit in, ornare sed leo.",
         "author":"By Sandra Fortin",
-        "stars": "",
+        "stars": "2",
         "time": "30 min"
     },
     {
@@ -174,7 +174,7 @@ export const cardgallery_data = [
         "title": "Avocado Melon Salad With Lime Vinaigrette",
         "recipeContent":"Maecenas in massa eget urna ullamcorper pharetra. Curabitur laoreet scelerisque bibendum. Aenean ullamcorper neque ac tristique semper. Phasellus enim mauris, mollis vulputate blandit in, ornare sed leo.",
         "author":"By Sandra Fortin",
-        "stars": "",
+        "stars": "5",
         "time": "15 min"
     },
     {
@@ -182,7 +182,7 @@ export const cardgallery_data = [
         "title": "Sweet Chilli and Lime Chicken Wings",
         "recipeContent":"Maecenas in massa eget urna ullamcorper pharetra. Curabitur laoreet scelerisque bibendum. Aenean ullamcorper neque ac tristique semper. Phasellus enim mauris, mollis vulputate blandit in, ornare sed leo.",
         "author":"By Sandra Fortin",
-        "stars": "",
+        "stars": "1",
         "time": "45 min"
     },
     {
@@ -190,7 +190,7 @@ export const cardgallery_data = [
         "title": "Farmhouse Vegetable And Barley Soup",
         "recipeContent":"Maecenas in massa eget urna ullamcorper pharetra. Curabitur laoreet scelerisque bibendum. Aenean ullamcorper neque ac tristique semper. Phasellus enim mauris, mollis vulputate blandit in, ornare sed leo.",
         "author":"By Sandra Fortin",
-        "stars": "",
+        "stars": "3",
         "time": "1 hr 30 min"
     },
     {
@@ -198,7 +198,7 @@ export const cardgallery_data = [
         "title": "Roast Chicken With Lemon Gravy",
         "recipeContent":"Maecenas in massa eget urna ullamcorper pharetra. Curabitur laoreet scelerisque bibendum. Aenean ullamcorper neque ac tristique semper. Phasellus enim mauris, mollis vulputate blandit in, ornare sed leo.",
         "author":"By Sandra Fortin",
-        "stars": "",
+        "stars": "2",
         "time": " 1 hr 20 min"
     },
     {
@@ -206,7 +206,7 @@ export const cardgallery_data = [
         "title": "Chunky Beef Stew",
         "recipeContent":"Maecenas in massa eget urna ullamcorper pharetra. Curabitur laoreet scelerisque bibendum. Aenean ullamcorper neque ac tristique semper. Phasellus enim mauris, mollis vulputate blandit in, ornare sed leo.",
         "author":"By Sandra Fortin",
-        "stars": "",
+        "stars": "5",
         "time": "2 hr 30 min"
     }
 

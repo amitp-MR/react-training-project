@@ -126,6 +126,28 @@ export const Wrapper = styled.div`
     width:75%;
     margin:0 auto;
     height:100%;
+    .Contentheading{
+        font-size: 22px;
+        background-color: #fff;
+        padding-right: 10px;
+        font-weight:lighter;
+        font-family: sans-serif;
+    }
+    .Listview,.Gridview{
+        font-size:14px;
+        text-decoration: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-weight: 700;
+    }
+    .Listview{
+        color: #fff;
+        background-color: #8dc63f;
+    }
+    .Gridview{
+        color: #000;
+        background: #e1e1e1;
+    }
 `
 export const Sidecontent = styled.div`
     float:right;
@@ -137,6 +159,7 @@ export const Author = styled.div`
     margin: 0;
     border: 1px solid #e8e8e8;
     padding: 28px 25px;
+    margin-top: 20%;
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
@@ -406,4 +429,39 @@ export const Social = styled.div`
         }
         
        
+`
+export const Searchbar = styled.div`
+margin-bottom:10px;
+.subs{
+    position:relative;
+    top: -26px;
+}
+.subBtn{
+    background-color: #8dc63f;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    float: right;
+    position: relative;
+    padding: 12px 15px;
+    margin: 0;
+    height: 44px;
+    transition: all .2s ease-in-out;
+    border: none;
+    color: #fff;
+    box-shadow: none;
+}
+.subInp{
+    width:100%;
+    position:absolute;
+    color: gray;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 11px 16px;
+    height: 44px;
+    background-color: #fff;
+    border: 1px solid #e8e8e8;
+    outline:none;
+}
 `
