@@ -140,54 +140,72 @@ export const cardgallery_data = [
     {
         "img": require('./Assets/images/recipeThumb-01.jpg'),
         "title": "Mexican Grilled ",
+        "recipeContent":"Maecenas in massa eget urna ullamcorper pharetra. Curabitur laoreet scelerisque bibendum. Aenean ullamcorper neque ac tristique semper. Phasellus enim mauris, mollis vulputate blandit in, ornare sed leo.",
+        "author":"By Sandra Fortin",
         "stars": "5",
         "time": "30 min"
     },
     {
         "img": require('./Assets/images/recipeThumb-02.jpg'),
         "title": "Choclate Cake With Green Tea Cream",
+        "recipeContent":"Maecenas in massa eget urna ullamcorper pharetra. Curabitur laoreet scelerisque bibendum. Aenean ullamcorper neque ac tristique semper. Phasellus enim mauris, mollis vulputate blandit in, ornare sed leo.",
+        "author":"By Sandra Fortin",
         "stars": "4",
         "time": "1 hr 30 min"
     },
     {
         "img": require('./Assets/images/recipeThumb-03.jpg'),
         "title": "Thai Yellow Curry Chicken",
+        "recipeContent":"Maecenas in massa eget urna ullamcorper pharetra. Curabitur laoreet scelerisque bibendum. Aenean ullamcorper neque ac tristique semper. Phasellus enim mauris, mollis vulputate blandit in, ornare sed leo.",
+        "author":"By Sandra Fortin",
         "stars": "4",
         "time": "45 min"
     },
     {
         "img": require('./Assets/images/recipeThumb-04.jpg'),
         "title": "Pollo Borracho With Homemade Tortillas",
+        "recipeContent":"Maecenas in massa eget urna ullamcorper pharetra. Curabitur laoreet scelerisque bibendum. Aenean ullamcorper neque ac tristique semper. Phasellus enim mauris, mollis vulputate blandit in, ornare sed leo.",
+        "author":"By Sandra Fortin",
         "stars": "",
         "time": "30 min"
     },
     {
         "img": require('./Assets/images/recipeThumb-05.jpg'),
         "title": "Avocado Melon Salad With Lime Vinaigrette",
+        "recipeContent":"Maecenas in massa eget urna ullamcorper pharetra. Curabitur laoreet scelerisque bibendum. Aenean ullamcorper neque ac tristique semper. Phasellus enim mauris, mollis vulputate blandit in, ornare sed leo.",
+        "author":"By Sandra Fortin",
         "stars": "",
         "time": "15 min"
     },
     {
         "img": require('./Assets/images/recipeThumb-06.jpg'),
         "title": "Sweet Chilli and Lime Chicken Wings",
+        "recipeContent":"Maecenas in massa eget urna ullamcorper pharetra. Curabitur laoreet scelerisque bibendum. Aenean ullamcorper neque ac tristique semper. Phasellus enim mauris, mollis vulputate blandit in, ornare sed leo.",
+        "author":"By Sandra Fortin",
         "stars": "",
         "time": "45 min"
     },
     {
         "img": require('./Assets/images/recipeThumb-07.jpg'),
         "title": "Farmhouse Vegetable And Barley Soup",
+        "recipeContent":"Maecenas in massa eget urna ullamcorper pharetra. Curabitur laoreet scelerisque bibendum. Aenean ullamcorper neque ac tristique semper. Phasellus enim mauris, mollis vulputate blandit in, ornare sed leo.",
+        "author":"By Sandra Fortin",
         "stars": "",
         "time": "1 hr 30 min"
     },
     {
         "img": require('./Assets/images/recipeThumb-08.jpg'),
         "title": "Roast Chicken With Lemon Gravy",
+        "recipeContent":"Maecenas in massa eget urna ullamcorper pharetra. Curabitur laoreet scelerisque bibendum. Aenean ullamcorper neque ac tristique semper. Phasellus enim mauris, mollis vulputate blandit in, ornare sed leo.",
+        "author":"By Sandra Fortin",
         "stars": "",
         "time": " 1 hr 20 min"
     },
     {
         "img": require('./Assets/images/recipeThumb-09.jpg'),
         "title": "Chunky Beef Stew",
+        "recipeContent":"Maecenas in massa eget urna ullamcorper pharetra. Curabitur laoreet scelerisque bibendum. Aenean ullamcorper neque ac tristique semper. Phasellus enim mauris, mollis vulputate blandit in, ornare sed leo.",
+        "author":"By Sandra Fortin",
         "stars": "",
         "time": "2 hr 30 min"
     }
