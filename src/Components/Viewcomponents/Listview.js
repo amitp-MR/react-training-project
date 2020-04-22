@@ -4,6 +4,12 @@ import { Cardgallery, RecipeContainer, ImgContainer, TextContainer } from '../Vi
 
 
 class Listview extends Component{
+
+    changeEve = (value,e) =>{
+        e.preventDefault();
+        console.log(value)
+    }
+
     render(){
         return(
             <Cardgallery>
@@ -16,7 +22,7 @@ class Listview extends Component{
                     return (
                         <RecipeContainer key={"key_"+idx} className="recipecontainer">
                             <ImgContainer>
-                                <span className="viewrecipe" id={"view_" + idx}><a href="#">VIEW RECIPE</a></span>
+                                <span onClick={this.changeEve.bind(this, "view_" + idx)} className="viewrecipe" id={"view_" + idx}><a href="#">VIEW RECIPE</a></span>
                                 <img src={conitems.img} alt={"recipeImg_" + idx} />
                             </ImgContainer>
                             <TextContainer>

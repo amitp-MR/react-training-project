@@ -35,12 +35,12 @@ export const HeaderNav = styled.nav`
             border-bottom: 3px solid transparent;
             transition: .4s;
             color: #505050;
+            font-weight:100;
             i{
                 margin-left:5px;
             }
         }
         a:hover{
-            border-bottom:3px solid#8dc63f;
             transition: .4s;
         }
 

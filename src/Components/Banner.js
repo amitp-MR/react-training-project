@@ -17,7 +17,6 @@ class Banner extends Component {
     switchContent = (idx) => {
         for (var i = 0; i < captionData.length; i++) {
             if (captionData[i].id === idx) {
-
                 this.setState({
                     badge: captionData[i].badge,
                     heading: captionData[i].heading,
