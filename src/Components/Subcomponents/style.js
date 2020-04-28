@@ -111,16 +111,31 @@ background-color:${props => props.buttonTrue};
                 display:block;
             }
         }
-        li:hover{
-            color:#fff;
-            background:#8dc63f;
-            span{
-                color:#fff;
-            }
+        // li:hover{
+        //     color:#fff;
+        //     background:#8dc63f;
+        //     span{
+        //         color:#fff;
+        //     }
         }
     }
+    .activeButton{
+        color:#fff;
+        background:#8dc63f;
+        span{
+               color:#fff;
+            }
+      }
+      
+      .deactiveButton{
+        background: #f2f2f2;
+        color: black;
+      }
 }
 `
+export const MainWrapper = styled.div`
+`
+
 export const Wrapper = styled.div`
     display:block;
     width:75%;
@@ -463,5 +478,255 @@ margin-bottom:10px;
     background-color: #fff;
     border: 1px solid #e8e8e8;
     outline:none;
+}
+`
+export const Ttlebar = styled.div`
+    background-color: #f6f6f6;
+    min-height: 88px;
+    margin: 0 0 40px;
+    div{
+        width:75%;
+        margin:0 auto;
+        p{
+            font-size: 24px;
+            font-weight: 500;
+            float: left;
+            width: 100%;
+            margin: 29px 0 0;
+            color: #606060;
+        }
+    }
+   
+`
+
+export const Recipefrom = styled.form`
+    width:75%;
+    margin:0 auto;
+
+`
+export const RecipeBlock = styled.div`
+    margin-bottom:25px;
+    label{
+        font-size: 18px;
+        line-height: 30px;
+        margin-bottom: 10px;
+        color: #606060;
+        font-weight: 500;
+        display: block;
+    }
+    input,textarea,select{
+        position: relative;
+        font-weight: 600;
+        width: 100%;
+        max-width: 100%;
+        border: 1px solid #ddd;
+        font-size: 14px;
+        padding: 14px 15px 12px;
+        line-height: 24px;
+        height: 52px;
+        box-sizing: border-box;
+        display: inline-block;
+        top: 0;
+        color: #777;
+        outline:none;
+    }
+    select{
+        -webkit-appearance: none;
+    }
+`
+
+export const RecipeWrapper = styled.div`
+    height:100%;
+    position:relative;
+`
+export const Recipeheader = styled.div`
+    height:200px;
+    width:100%;
+    background: url(${props => props.bgIm});
+
+`
+
+export const Recipecontainer = styled.div`
+    display:flex;
+    width:75%;
+    margin:0 auto;
+    height:100%;
+    padding:5% 0px;
+`
+export const RightContainer = styled.div`
+    width:75%;
+    padding:20px;
+    position:relative;
+`
+export const Recipecard = styled.div`
+    position:relative;
+    width:95%;
+    background-color:#f8f8f8;
+    top: -10%;
+    left: 0;
+    clip-path: polygon(94% 0,103% 5%,100% 100%,0 100%,0 0);
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0px;
+        right: -3px;
+        border-width: 0px 50px 36px 0px;
+        border-style: solid;
+        border-color: #e0e0e0 transparent;
+        z-index: 1;
+    }
+
+`
+export const Recipeheading = styled.div`
+padding:35px;
+h4{
+    font-size: 30px;
+    font-family: arvo;
+    margin: 0 0 1px;
+    z-index: 20;
+    position: relative;
+    width: 90%;
+    line-height: 36px;
+    color: #606060;
+    font-weight: 500;
+}
+`
+export const Carousel = styled.div`
+    height:320px;
+    background: url(${props => props.bgIm});
+    position:relative;
+    p{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.2);
+        top: 0;
+        left: 0;
+        box-sizing: border-box;
+        margin: 0;
+        span{
+            position: relative;
+            right: 0;
+            bottom: -80%;
+            display: inline-block;
+            float: right;
+            i{
+                font-size: 50px;
+                color: snow;
+                letter-spacing: 10px;
+                cursor:pointer;
+            }
+        }
+        
+    }
+
+`
+export const Carouselcontent = styled.div`
+    display:flex;
+    padding:20px;
+    justify-content:space-between;
+    .printbtn{
+        background-color: #8dc63f;
+        color:#fff;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding: 5px 10px;
+        display: inline-block;
+        line-height: 24px;
+    }
+
+    div{
+        display:flex;
+        padding:0px;
+        span{
+            flex:1;
+            width:80px;
+            font-size:13px;
+            font-weight:100;
+            color: #707070;
+            border-right:0.6px solid #707070;
+            margin-right:15px;
+            p{
+                font-size:14px;
+                font-weight: 600;
+                color: #707070;
+                margin:0px;
+            }
+        }
+       
+    }
+`
+export const Recipedescription = styled.div`
+    background:#fff;
+    padding: 15px 0;
+    margin-bottom: 0;
+    p{
+        font-size:14px;
+        font-weight:100;
+        color:grey;
+    }
+`
+export const Recipeingredients =styled.ul`
+    p{
+        font-size:22px;
+    }
+    background-color: #fff;
+    border: 1px solid #e9e9e9;
+    position: relative;
+    margin: 12px 0 35px;
+    padding:0px;
+    li{
+        list-style:none;
+        border-top: 1px solid #e9e9e9;
+        padding:10px 14%;
+        font-size: 14px;
+        font-weight: 400;
+        color: grey;
+        height:40px;
+        input{
+            font-size: 30px;
+            vertical-align: baseline;
+        }
+    }
+    &::after{
+        content:"";
+        height:100%;
+        position:absolute;
+        top:0;
+        border-left: 6px double #ffd4d4;
+        left: 65px;
+    }
+`
+export const Recipedirection = styled.div`
+ul{
+    counter-reset: headings;
+    li{
+        position: relative;
+        margin-bottom: 15px;
+        padding: 8px 14px;
+        line-height: 24px;
+        font-size:14px;
+        color:#808080;
+        list-style:none;
+        counter-reset: headings;
+        &::before{
+            position: absolute;
+            top: 3px;
+            left: -34px;
+            width: 34px;
+            height: 34px;
+            text-align: center;
+            line-height: 32px;
+            color: #999;
+            font-weight: 700;
+            font-size: 16px;
+            background-color: #f4f4f4;
+            counter-increment: headings;
+            content: counter(headings, decimal);
+            cursor: default;
+        }
+    }
+
 }
 `

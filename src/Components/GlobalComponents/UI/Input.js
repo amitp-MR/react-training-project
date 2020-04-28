@@ -1,22 +1,35 @@
 import React from 'react';
-import classes from './UI.css';
+import { Inputblock, Label, Errorblock } from './Uistyle';
 
 const Input = (props) => {
+
     let inputElement = null;
 
-    switch(props.inputtype){
-        case('input'):inputElement=<input className={ classes.inputElement } {...props}/>
+    switch(props.elementType){
+        case('input'):
+            inputElement=<input  
+            {...props.elementConf}
+            value={props.value}
+            ref={props.ref}
+            onChange={ props.changed }
+            onBlur={props.focusout}
+            />
         break;
-        case('checkbox'):inputElement=<checkbox className={ classes.inputElement }  {...props}/>
+        case('checkbox'):
+            inputElement=<checkbox 
+            {...props.elementConf}
+            onChange={ props.changed }
+            />
         break;
-        default:inputElement=<input className={ classes.inputElement }  {...props}/>
         
     }
     return (
-        <div className={ classes.Input } >
-            <label  className={ classes.Label } htmlFor="">{props.label}</label>
+        <Inputblock className="Inputblock">
+            <Label  className="Label">{props.label}</Label>
             { inputElement }
-        </div>
+            <span className='line'></span>
+            <Errorblock>{props.label} is required <i className="fa fa-exclamation-circle" aria-hidden="true"></i></Errorblock>
+        </Inputblock>
     );
 }
 

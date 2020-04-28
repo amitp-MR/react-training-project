@@ -1,5 +1,5 @@
 import React from 'react';
-import { FooterWrapper,FooterContent } from '../GlobalComponents/style';
+import { FooterWrapper,FooterContent } from '../style';
 
 
 const Footer = () => {

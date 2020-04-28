@@ -36,6 +36,7 @@ export const HeaderNav = styled.nav`
             transition: .4s;
             color: #505050;
             font-weight:100;
+            text-decoration:none;
             i{
                 margin-left:5px;
             }
@@ -45,7 +46,7 @@ export const HeaderNav = styled.nav`
         }
 
         ul{
-            width: 160px;
+            max-width: 160px;
             position: absolute;
             top: 71px;
             padding:0px;

@@ -1,10 +1,12 @@
 export const list = [
     {
         "text": "Home",
+        "path":"/Home",
         "submenu": []
     },
     {
         "text": "Demos",
+        "path":"/Demos",
         "submenu": [
             {
                 "subtext": "Grid Homepage"
@@ -19,6 +21,7 @@ export const list = [
     },
     {
         "text": "Recipes",
+        "path":"/Recipes",
         "submenu": [
             {
                 "subtext": "Browse Recipes"
@@ -33,6 +36,7 @@ export const list = [
     },
     {
         "text": "Pages",
+        "path":"/Pages",
         "submenu": [
             {
                 "subtext": "Shortcodes"
@@ -47,6 +51,7 @@ export const list = [
     },
     {
         "text": "Shop",
+        "path":"/Shop",
         "submenu": [
             {
                 "subtext": "Shop"
@@ -58,6 +63,7 @@ export const list = [
     },
     {
         "text": "Submit Recipe",
+        "path":"/Submitrecipe",
         "submenu": []
     }
 ]
@@ -224,5 +230,17 @@ export const popular_data = [
     {
         "img": require('./Assets/images/featuredRecipe-03.jpg'),
         "title": "Pollo Borracho With Homemade Tortillas"
+    }
+]
+
+export const author_content = [
+    {
+        'id':'01',
+        'title':'Author',
+        'name':'Sandra',
+        'lastname':'Fortin',
+        'contact':'sandra@chow.com',
+        'authorImg': require('./Assets/images/featuredRecipe-01.jpg'),
+        'description':'I\'m Sandra and this is where I share my stuff. I am madly in love with food. You will find a balance of healthy recipes, comfort food and indulgent desserts.'
     }
 ]

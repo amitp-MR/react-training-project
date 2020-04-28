@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { FormWrapper, RightContent, LeftContent} from './FormStyle';
 import Signup from './Signup';
+import Receipe from '../../Assets/images/receipe.jpeg';
 
 
 class Form extends Component{
@@ -8,7 +9,7 @@ class Form extends Component{
         return(
             <FormWrapper>
                 <LeftContent>
-                right
+                <img src={Receipe} alt=""/>
                 </LeftContent>
                 <RightContent>
                     <Signup />
