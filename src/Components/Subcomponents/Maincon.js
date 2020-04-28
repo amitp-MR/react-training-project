@@ -17,11 +17,11 @@ const Maincon =() => {
                 <Banner />
                 <Wrapper>
                     <p className="Contentheading">Latest Recipes <span> 
-                    <Link className="Listview" to="/"> Gridview</Link> <Link className="Gridview" to="/Listview">Listview</Link> </span>
+                    <Link className="Listview" to="/Gridview"> Gridview</Link> <Link className="Gridview" to="/Listview">Listview</Link> </span>
                         
                     </p>
                     <Switch>
-                        <Route path="/Gridview" component={Gridview} /> 
+                        <Route exact path="/Gridview" component={Gridview} /> 
                         <Route path="/Listview" exact component={Listview} />
                     </Switch>
                     <Rightcomponent />
