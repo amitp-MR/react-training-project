@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { SignupWrapper, SignupHeading, Signupbtn, Checkbtn, Forminput, Checkboxblock, Signupbtnblock } from '../Form/FormStyle';
 import Input from '../../GlobalComponents/UI/Input';
 import { NavLink } from 'react-router-dom';
+import { Errorblock } from '../UI/Uistyle';
+import classes from '../../../App.css';
 
-const dnone =  "none";
-const dblock = "block";
+
 class Signup extends Component {
     constructor(props) {
         super(props);
@@ -14,7 +15,6 @@ class Signup extends Component {
                     label: "Full Name",
                     elementType: "input",
                     ischeckbtn: "false",
-                    disp: dblock,
                     elementConf: {
                         type: "text",
                         placeholder: "Name..."
@@ -23,13 +23,13 @@ class Signup extends Component {
                     validation: {
                         required: true
                     },
-                    valid: false
+                    valid: false,
+                    checkStatus: false
                 },
                 email: {
                     label: "Email",
                     elementType: "input",
                     ischeckbtn: "false",
-                    disp: dnone,
                     elementConf: {
                         type: "email",
                         placeholder: "Email..."
@@ -38,13 +38,13 @@ class Signup extends Component {
                     validation: {
                         required: true
                     },
-                    valid: false
+                    valid: false,
+                    checkStatus: false
                 },
                 username: {
                     label: "Username",
                     elementType: "input",
                     ischeckbtn: "false",
-                    disp: dnone,
                     elementConf: {
                         type: "text",
                         placeholder: "Username..."
@@ -55,13 +55,13 @@ class Signup extends Component {
                         minLength: 6,
                         maxLength: 6
                     },
-                    valid: false
+                    valid: false,
+                    checkStatus: false
                 },
                 password: {
                     label: "Password",
                     elementType: "input",
                     ischeckbtn: "false",
-                    disp: dnone,
                     elementConf: {
                         type: "password",
                         placeholder: "********"
@@ -70,13 +70,13 @@ class Signup extends Component {
                     validation: {
                         required: true
                     },
-                    valid: false
+                    valid: false,
+                    checkStatus: false
                 },
                 conpassword: {
                     label: "Repeat Password",
                     elementType: "input",
                     ischeckbtn: "false",
-                    disp: dnone,
                     elementConf: {
                         type: "password",
                         placeholder: "********"
@@ -85,7 +85,8 @@ class Signup extends Component {
                     validation: {
                         required: true
                     },
-                    valid: false
+                    valid: false,
+                    checkStatus: false
                 }
             }
 
@@ -121,10 +122,13 @@ class Signup extends Component {
     }
 
     inputonfocusoutHandler = (event, inputIdentifier) => {
-        event.preventDefault();
         if (event.target.value !== '') {
-            this.setState(()=>{
-                this.setState.disp=dblock;
+            this.setState(() => {
+                this.state.formData[inputIdentifier].checkStatus = true;
+            })
+        } else {
+            this.setState(() => {
+                this.state.formData[inputIdentifier].checkStatus = false;
             })
         }
     }
@@ -135,7 +139,6 @@ class Signup extends Component {
             getFormData[formElementIdentifier] = this.state.formData[formElementIdentifier].value;
         }
         let parseDate = JSON.stringify(getFormData);
-        console.log(parseDate);
         localStorage.setItem('getFormData', parseDate);
 
     }
@@ -165,12 +168,13 @@ class Signup extends Component {
                                         elementConf={formEle.config.elementConf}
                                         value={formEle.config.value}
                                         ref={formEle.config.ref}
+                                        invalid={!formEle.config.valid}
                                         changed={(event) => this.inputChangedHandler(event, formEle.id)}
                                         focusout={(event) => this.inputonfocusoutHandler(event, formEle.id)}
                                     />
-                                    <Checkbtn style={{ display: this.state.disp }}>
-                                        <i className="fa fa-check" aria-hidden="true"></i>
-                                    </Checkbtn>
+                                    {this.state.formData[formEle.id].checkStatus ? <Checkbtn><i className="fa fa-check" aria-hidden="true"></i></Checkbtn> :
+                                        ''
+                                    }
                                 </Forminput>
                             )
                         })
@@ -179,7 +183,8 @@ class Signup extends Component {
                         <Checkboxblock><input type="checkbox" /> <label htmlFor=""> I agree to the Terms of User</label></Checkboxblock>
                         <Signupbtnblock>
                             <Signupbtn >submit</Signupbtn>
-                                <NavLink to="/Maincon">sign in</NavLink>
+                            <NavLink to="/Maincon">sign in</NavLink>
+                            <Errorblock ><span className="errorMsg" ></span><i className="fa fa-exclamation-circle" aria-hidden="true"></i></Errorblock>
                         </Signupbtnblock>
                     </div>
 

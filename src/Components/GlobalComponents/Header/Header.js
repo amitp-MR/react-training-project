@@ -21,7 +21,7 @@ function Header() {
                         <ul>
                             {
                                 list.map((items, idx) => {
-                                return <li className="navlist" key={"key_"+idx}><Link to={items.path} value={items.text + '_' + idx}>{items.text} {(items.submenu !=="" ? <i className="fa fa-caret-down"></i>: "")}</Link>
+                                return <li className="navlist" key={"key_"+idx}><Link to={items.path} value={items.text + '_' + idx}>{items.text} {(items.submenu.length !==0 ? <i className="fa fa-caret-down"></i>: "")}</Link>
                                         <ul className="dp">
                                             {items.submenu.map((sub, subIdx) => {
                                             return  (sub.subtext !== ""?<li className="Subnavlist" key={"subitem_"+subIdx}>{sub.subtext}</li>:"")

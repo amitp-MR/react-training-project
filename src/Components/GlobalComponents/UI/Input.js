@@ -1,13 +1,16 @@
 import React from 'react';
-import { Inputblock, Label, Errorblock } from './Uistyle';
+import { Inputblock, Label } from './Uistyle';
+import classes from '../../../App.css';
 
 const Input = (props) => {
-
     let inputElement = null;
-
+    const inputClasses = [classes.InputElement];
+   
     switch(props.elementType){
         case('input'):
-            inputElement=<input  
+        
+            inputElement=<input
+            className={inputClasses.join(' ')}  
             {...props.elementConf}
             value={props.value}
             ref={props.ref}
@@ -18,17 +21,20 @@ const Input = (props) => {
         case('checkbox'):
             inputElement=<checkbox 
             {...props.elementConf}
+            value={props.value}
             onChange={ props.changed }
             />
         break;
         
+    }
+    if(props.invalid){
+        inputClasses.push('invalid');
     }
     return (
         <Inputblock className="Inputblock">
             <Label  className="Label">{props.label}</Label>
             { inputElement }
             <span className='line'></span>
-            <Errorblock>{props.label} is required <i className="fa fa-exclamation-circle" aria-hidden="true"></i></Errorblock>
         </Inputblock>
     );
 }

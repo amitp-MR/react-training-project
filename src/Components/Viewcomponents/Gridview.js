@@ -3,7 +3,7 @@ import { GridimgContainer, Gridgallery, GridContainer, GridContentContainer } fr
 import { cardgallery_data } from '../Data';
 
 
-class Listview extends Component {
+class Gridview extends Component {
     render() {
         return (
             <Gridgallery>
@@ -38,4 +38,4 @@ class Listview extends Component {
 }
 
 
-export default Listview;
+export default Gridview;

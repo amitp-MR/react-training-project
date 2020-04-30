@@ -28,6 +28,7 @@ export const RightContent = styled.div`
     padding:72px 50px 50px;
 `
 export const SignupWrapper = styled.div`
+
     
 `
 export const SignupHeading = styled.span`
@@ -41,8 +42,8 @@ export const SignupHeading = styled.span`
     padding-bottom: 59px;
 `
 export const Signupbtnblock = styled.div`
-display: flex;
-justify-content:space-between;
+    display: flex;
+    justify-content:space-between;
 `
 
 export const Signupbtn = styled.button`

@@ -1,35 +1,49 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Wrapper, MainWrapper } from './style';
 import Listview from '../Viewcomponents/Listview';
 import Gridview from '../Viewcomponents/Gridview';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import  Rightcomponent  from '../Subcomponents/Rightcomponent';
+import Rightcomponent from '../Subcomponents/Rightcomponent';
 import Banner from '../Subcomponents/Banner';
 import Footer from '../GlobalComponents/Footer/Footer';
 import Header from '../GlobalComponents/Header/Header';
 
 
-const Maincon =() => {
+class Maincon extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            vadlidState: false,
+        }
+        this.componentHandler = this.componentHandler.bind(this);
+    }
+    componentHandler = (ele) => {
+        this.setState({ vadlidState: ele, });
+    }
+
+    render() {
         return (
             <MainWrapper>
-                 <Header />
-                <Router>
+                <Header />
                 <Banner />
                 <Wrapper>
-                    <p className="Contentheading">Latest Recipes <span> 
-                    <Link className="Listview" to="/Gridview"> Gridview</Link> <Link className="Gridview" to="/Listview">Listview</Link> </span>
-                        
+                    <p className="Contentheading">Latest Recipes
+                        <span style={this.state.color}
+                            onClick={() => this.componentHandler(false)}
+                            className="Listview"> Gridview</span>
+                        <span style={this.state.color}
+                            onClick={() => this.componentHandler(true)}
+                            className="Gridview" >Listview</span>
+
                     </p>
-                    <Switch>
-                        <Route exact path="/Gridview" component={Gridview} /> 
-                        <Route path="/Listview" exact component={Listview} />
-                    </Switch>
+                    {this.state.vadlidState ? <Gridview /> : <Listview />}
                     <Rightcomponent />
                 </Wrapper>
-                </Router>
                 <Footer />
             </MainWrapper>
         )
+    }
+
 }
+
 
 export default Maincon;

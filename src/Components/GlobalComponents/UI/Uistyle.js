@@ -64,6 +64,17 @@ export const Errorblock = styled.span`
     font-size: 18px;
     top: 50%;
     font-size: 14px;
-    border:1px solid #c80000;
-    display:none;
+    &:hover .errorMsg{
+        opacity:1;
+        transition:.3s;
+    }
+    .errorMsg{
+        opacity:0;
+        transition:.3s;
+        transition: .3s;
+        border: 1px solid;
+        padding: 0px 30px 0px 5px;
+        position: relative;
+        left: 22px;
+    }
 `
