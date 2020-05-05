@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from '../../Assets/images/logo.jpg';
 import { list } from '../../Data';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Link } from 'react-router-dom';
 import {
     Head,
     Wrapper,
@@ -9,7 +9,7 @@ import {
     HeaderNav
 } from '../style';
 
-function Header() {
+const Header = () => {
     return (
         <Head>
             <Wrapper>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { cardgallery_data } from '../Data';
 import { Cardgallery, RecipeContainer, ImgContainer, TextContainer } from '../Viewcomponents/Viewcomponentstyle';
-
+import { Link } from 'react-router-dom';
 
 class Listview extends Component{
 
@@ -22,7 +22,7 @@ class Listview extends Component{
                     return (
                         <RecipeContainer key={"key_"+idx} className="recipecontainer">
                             <ImgContainer>
-                                <span onClick={this.changeEve.bind(this, "view_" + idx)} className="viewrecipe" id={"view_" + idx}><a href="#">VIEW RECIPE</a></span>
+                                <span to="/Viewrecipe" onClick={this.changeEve.bind(this, "view_" + idx)} className="viewrecipe" id={"view_" + idx}><a>VIEW RECIPE</a></span>
                                 <img src={conitems.img} alt={"recipeImg_" + idx} />
                             </ImgContainer>
                             <TextContainer>

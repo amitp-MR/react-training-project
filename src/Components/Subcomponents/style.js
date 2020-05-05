@@ -79,7 +79,6 @@ export const CaptionBann = styled.div`
 `
 
 export const BannBtn = styled.div`
-background-color:${props => props.buttonTrue};
     buttonTrue{
         background-color:#8dc63f;
     }
@@ -148,12 +147,16 @@ export const Wrapper = styled.div`
         font-weight:lighter;
         font-family: sans-serif;
     }
+    .viewComponents{
+        margin-left:20%;
+    }
     .Listview,.Gridview{
         font-size:14px;
         text-decoration: none;
         padding: 10px 20px;
         cursor: pointer;
         font-weight: 700;
+        margin:10px;
     }
     .Listview{
         color: #fff;
@@ -564,16 +567,16 @@ export const Recipecard = styled.div`
     background-color:#f8f8f8;
     top: -10%;
     left: 0;
-    clip-path: polygon(94% 0,103% 5%,100% 100%,0 100%,0 0);
+    clip-path: polygon(91.9% 0%,100% 3.28%,100% 100%,0% 100%,0% 0);
     &::after {
         content: "";
         position: absolute;
         top: 0px;
-        right: -3px;
-        border-width: 0px 50px 36px 0px;
-        border-style: solid;
-        border-color: #e0e0e0 transparent;
-        z-index: 1;
+        right: 0px;
+        background: #e0e0e0;
+        border: 1px solid #e0e0e0;
+        width: 50px;
+        height: 50px;
     }
 
 `
@@ -677,25 +680,34 @@ export const Recipeingredients =styled.ul`
     margin: 12px 0 35px;
     padding:0px;
     li{
-        list-style:none;
+        list-style: none;
         border-top: 1px solid #e9e9e9;
-        padding:10px 14%;
+        padding: 0px 0px 0px 18%;
         font-size: 14px;
         font-weight: 400;
         color: grey;
-        height:40px;
+        height: 40px;
+        line-height: 41px;
         input{
             font-size: 30px;
             vertical-align: baseline;
         }
+    }
+    &::before{
+        content:"";
+        height:100%;
+        position:absolute;
+        top:0;
+        border-left: 1px solid #ffd4d4;
+        left: 70px;
     }
     &::after{
         content:"";
         height:100%;
         position:absolute;
         top:0;
-        border-left: 6px double #ffd4d4;
-        left: 65px;
+        border-left: 1px solid #ffd4d4;
+        left: 74px;
     }
 `
 export const Recipedirection = styled.div`

@@ -25,7 +25,8 @@ const Input = (props) => {
             onChange={ props.changed }
             />
         break;
-        
+      
+    
     }
     if(props.invalid){
         inputClasses.push('invalid');

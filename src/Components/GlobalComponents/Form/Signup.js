@@ -3,7 +3,7 @@ import { SignupWrapper, SignupHeading, Signupbtn, Checkbtn, Forminput, Checkboxb
 import Input from '../../GlobalComponents/UI/Input';
 import { NavLink } from 'react-router-dom';
 import { Errorblock } from '../UI/Uistyle';
-import classes from '../../../App.css';
+import { is } from '@babel/types';
 
 
 class Signup extends Component {
@@ -21,10 +21,12 @@ class Signup extends Component {
                     },
                     value: "",
                     validation: {
-                        required: true
+                        required: "true"
                     },
                     valid: false,
-                    checkStatus: false
+                    checkStatus: false,
+                    errorStatus: false,
+                    error: "name is required"
                 },
                 email: {
                     label: "Email",
@@ -36,10 +38,12 @@ class Signup extends Component {
                     },
                     value: "",
                     validation: {
-                        required: true
+                        required: "true"
                     },
                     valid: false,
-                    checkStatus: false
+                    checkStatus: false,
+                    errorStatus: false,
+                    error: "valid email is required: ex@xyz"
                 },
                 username: {
                     label: "Username",
@@ -51,12 +55,14 @@ class Signup extends Component {
                     },
                     value: "",
                     validation: {
-                        required: true,
+                        required: "true",
                         minLength: 6,
                         maxLength: 6
                     },
                     valid: false,
-                    checkStatus: false
+                    checkStatus: false,
+                    errorStatus: false,
+                    error: "user name is required"
                 },
                 password: {
                     label: "Password",
@@ -68,10 +74,12 @@ class Signup extends Component {
                     },
                     value: "",
                     validation: {
-                        required: true
+                        required: "true"
                     },
                     valid: false,
-                    checkStatus: false
+                    checkStatus: false,
+                    errorStatus: false,
+                    error: "password is required"
                 },
                 conpassword: {
                     label: "Repeat Password",
@@ -83,10 +91,12 @@ class Signup extends Component {
                     },
                     value: "",
                     validation: {
-                        required: true
+                        required: "true"
                     },
                     valid: false,
-                    checkStatus: false
+                    checkStatus: false,
+                    errorStatus: false,
+                    error: "repeat password is required"
                 }
             }
 
@@ -95,7 +105,7 @@ class Signup extends Component {
 
     //validation function
     checkValidaty(value, rules) {
-        let isValid = true;
+        let isValid = "true";
 
         if (rules.required) {
             isValid = value.trim() !== '' && isValid;
@@ -110,27 +120,45 @@ class Signup extends Component {
         return isValid;
     }
 
-    inputChangedHandler = (event, inputIdentifier) => {
-        event.preventDefault();
-        const updatedFrom = { ...this.state.formData }
-        const updatedFromElement = { ...this.state.formData[inputIdentifier] }
-        updatedFromElement.value = event.target.value;
-        updatedFromElement.valid = this.checkValidaty(updatedFromElement.value, updatedFromElement.validation);
-        updatedFrom[inputIdentifier] = updatedFromElement;
-        this.setState({ formData: updatedFrom })
-
-    }
-
     inputonfocusoutHandler = (event, inputIdentifier) => {
-        if (event.target.value !== '') {
-            this.setState(() => {
-                this.state.formData[inputIdentifier].checkStatus = true;
-            })
+        if (this.state.formData[inputIdentifier].value.length !== 0) {
+            this.setState(() => { this.state.formData[inputIdentifier].checkStatus = true 
+                this.state.formData[inputIdentifier].errorStatus = false;
+            });
         } else {
-            this.setState(() => {
+            this.setState(() => { 
                 this.state.formData[inputIdentifier].checkStatus = false;
-            })
+                this.state.formData[inputIdentifier].errorStatus = true;
+            });
         }
+        if(this.state.formData[inputIdentifier].label === "Username"){
+            if(this.state.formData[inputIdentifier].value.length !== 6){
+                this.setState(() => { 
+                    this.state.formData[inputIdentifier].checkStatus = false;
+                    this.state.formData[inputIdentifier].errorStatus = true;
+                (this.state.formData[inputIdentifier].value.length === 0 ?  this.state.formData[inputIdentifier].error = "user name is required":this.state.formData[inputIdentifier].error = "user name length should be 6")
+                });
+            }
+            else{
+                this.setState(() => { 
+                    this.state.formData[inputIdentifier].checkStatus = true;
+                    this.state.formData[inputIdentifier].errorStatus = false;
+                });
+            }
+        }
+
+        const updatedFrom = { ...this.state.formData }
+        this.setState({ formData: updatedFrom });
+        
+    }
+    inputChangedHandler = (event, inputIdentifier) => {
+         event.preventDefault();
+         const updatedFrom = { ...this.state.formData }
+         const updatedFromElement = { ...this.state.formData[inputIdentifier] }
+         updatedFromElement.value = event.target.value;
+         updatedFromElement.valid = this.checkValidaty(updatedFromElement.value, updatedFromElement.validation);
+         updatedFrom[inputIdentifier] = updatedFromElement;
+         this.setState({ formData: updatedFrom });
     }
     fotmSubmission = (event) => {
         event.preventDefault();
@@ -169,11 +197,14 @@ class Signup extends Component {
                                         value={formEle.config.value}
                                         ref={formEle.config.ref}
                                         invalid={!formEle.config.valid}
-                                        changed={(event) => this.inputChangedHandler(event, formEle.id)}
                                         focusout={(event) => this.inputonfocusoutHandler(event, formEle.id)}
+                                        changed={(event) => this.inputChangedHandler(event, formEle.id)}
+
                                     />
-                                    {this.state.formData[formEle.id].checkStatus ? <Checkbtn><i className="fa fa-check" aria-hidden="true"></i></Checkbtn> :
-                                        ''
+                                    {
+                                        (this.state.formData[formEle.id].errorStatus ? <Errorblock ><span className="errorMsg" >{this.state.formData[formEle.id].error}</span><i className="fa fa-exclamation-circle" aria-hidden="true"></i></Errorblock> : "")
+                                    }{
+                                        (this.state.formData[formEle.id].checkStatus ? <Checkbtn><i className="fa fa-check" aria-hidden="true"></i></Checkbtn> : "")
                                     }
                                 </Forminput>
                             )
@@ -184,7 +215,6 @@ class Signup extends Component {
                         <Signupbtnblock>
                             <Signupbtn >submit</Signupbtn>
                             <NavLink to="/Maincon">sign in</NavLink>
-                            <Errorblock ><span className="errorMsg" ></span><i className="fa fa-exclamation-circle" aria-hidden="true"></i></Errorblock>
                         </Signupbtnblock>
                     </div>
 

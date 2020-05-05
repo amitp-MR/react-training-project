@@ -27,13 +27,14 @@ class Maincon extends Component {
                 <Banner />
                 <Wrapper>
                     <p className="Contentheading">Latest Recipes
-                        <span style={this.state.color}
-                            onClick={() => this.componentHandler(false)}
-                            className="Listview"> Gridview</span>
-                        <span style={this.state.color}
-                            onClick={() => this.componentHandler(true)}
-                            className="Gridview" >Listview</span>
-
+                        <span className="viewComponents">
+                            <span style={this.state.color}
+                                onClick={() => this.componentHandler(false)}
+                                className="Listview"> Gridview</span>
+                            <span style={this.state.color}
+                                onClick={() => this.componentHandler(true)}
+                                className="Gridview" >Listview</span>
+                        </span>
                     </p>
                     {this.state.vadlidState ? <Gridview /> : <Listview />}
                     <Rightcomponent />

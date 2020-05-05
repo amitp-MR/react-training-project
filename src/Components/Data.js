@@ -1,7 +1,7 @@
 export const list = [
     {
         "text": "Home",
-        "path":"/Home",
+        "path":"/Maincon",
         "submenu": []
     },
     {
@@ -244,3 +244,4 @@ export const author_content = [
         'description':'I\'m Sandra and this is where I share my stuff. I am madly in love with food. You will find a balance of healthy recipes, comfort food and indulgent desserts.'
     }
 ]
+

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { GridimgContainer, Gridgallery, GridContainer, GridContentContainer } from '../Viewcomponents/Viewcomponentstyle';
 import { cardgallery_data } from '../Data';
+import { Link } from 'react-router-dom';
 
 
 class Gridview extends Component {
@@ -16,12 +17,12 @@ class Gridview extends Component {
                         return (
                             <GridContainer key={"key_" + idx} className="recipecontainer">
                                 <GridimgContainer>
-                                    <span className="viewrecipe"><a href="#">VIEW RECIPE</a></span>
+                                    <Link to="/Viewrecipe" className="viewrecipe">VIEW RECIPE</Link>
                                     <img src={conitems.img} />
                                 </GridimgContainer>
                                 <GridContentContainer>
                                     <div>
-                                        <h3><a href="">{conitems.title}</a></h3>
+                                        <h3>{conitems.title}</h3>
                                         <p>{conitems.recipeContent}</p>
                                     </div>
                                     <p><span>

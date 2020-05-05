@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Bann, BannInnerWrap, BannBtn, CaptionBann, BackDrop } from './style';
 import { listLinkBtn, captionData } from '../Data';
 
-const left='-26%';
-const right='0%';
+const left = '-26%';
+const right = '0%';
 class Banner extends Component {
     constructor(props) {
         super(props);
@@ -14,8 +14,9 @@ class Banner extends Component {
             time: "30 MIN",
             cheff: "By Sandra Fortin",
             img: require('../Assets/images/sliderA_01.jpg'),
-            left:right
+            left: right
         }
+        this.switchContent = this.switchContent.bind(this);
     }
     switchContent = (idx, event) => {
         for (var i = 0; i < captionData.length; i++) {
@@ -29,19 +30,18 @@ class Banner extends Component {
                     img: captionData[i].img,
                 });
             }
-            if(idx === 'linkBtn_1'){
+            if (idx === 'linkBtn_1') {
                 this.setState({
-                left:left
+                    left: left
                 });
             }
-            else  if(idx === 'linkBtn_3'){
+            else if (idx === 'linkBtn_3') {
                 this.setState({
-                    left:right
-                    });
+                    left: right
+                });
             }
         }
     }
-
     render() {
         return (
             <Bann>
@@ -59,31 +59,24 @@ class Banner extends Component {
                         </CaptionBann>
                     </BackDrop>
                 </BannInnerWrap>
-
-
-
                 <BannBtn>
                     <nav>
                         <ul className="btnWrap"
-                            style={{left: this.state.left}}
+                            style={{ left: this.state.left }}
                             onClick={this.move}
                         >
                             {listLinkBtn.map((items, i) => {
                                 return <li
-                                    style={{background: this.state.color}}
-                                    onClick={() => this.switchContent("linkBtn_" + i)}
+                                    active
+                                    id={"linkBtn_"+i}
+                                    onClick={(event) => this.switchContent("linkBtn_" + i, event)}
                                     key={"key_" + i}><span>{items.text1}<br />{items.text2}</span></li>
                             })}
                         </ul>
                     </nav>
                 </BannBtn>
-
-
-
-                
             </Bann>
         );
     }
 }
-
 export default Banner;
