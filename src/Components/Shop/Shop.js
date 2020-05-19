@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Shopheader, Shopcontent, Sidebar, Searchbar, Cart, Shopgallery, Headline, CheckoutBox, AboveSec, Belowsec, Viewcart, Checkout, Dropdown, ProductView, Product, ImageBox, Captionbox } from './style';
+import { Shopheader, Shopcontent, Sidebar, Searchbar, Cart, Shopgallery, Headline, CheckoutBox, AboveSec, Belowsec, Viewcart, Checkout, Dropdown, ProductView, Product, ImageBox, Captionbox } from '../../Components/Common/StyleComponent/style';
 import { Link } from 'react-router-dom';
 import { viewcart_card } from '../../Data/Data';
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { RecipeWrapper, Recipecontainer, RightContainer, Recipeheader, Recipeheading, Recipecard, Carousel, Carouselcontent, Recipedescription, Recipeingredients, Recipedirection } from './style';
+import { RecipeWrapper, Recipecontainer, RightContainer, Recipeheader, Recipeheading, Recipecard, Carousel, Carouselcontent, Recipedescription, Recipeingredients, Recipedirection } from '../Common/StyleComponent/style';
 import Rightcomponent from '../Sidebar/Sidebar';
 import { view_recipe } from '../../Data/ViewrecipeData';
 import Footer from '../Common/Footer/Footer';
@@ -9,7 +9,7 @@ class Viewrecipe extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            img: require('../Assets/images/sliderA_01.jpg'),
+            img: require('../../Assets/images/sliderA_01.jpg'),
         }
     }
     render() {

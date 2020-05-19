@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { Ttlebar, Recipefrom, RecipeBlock } from './style';
-import Footer from '../Common/Footer/Footer';
-import Header from '../Common/Header/Header';
+import { Ttlebar, Recipefrom, RecipeBlock } from '../../Components/Common/StyleComponent/style';
 
 class Submitrecipe extends Component {
     constructor(props) {

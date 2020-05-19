@@ -1,6 +1,7 @@
 import React from 'react'
 import { GridimgContainer, GridContainer, GridContentContainer } from '../StyleComponent/style';
 import { Link } from 'react-router-dom';
+import PropTes from 'prop-types';
 
 const Gridcard=(props)=> {
     const stars = [];
@@ -25,6 +26,13 @@ const Gridcard=(props)=> {
             </GridContentContainer>
         </GridContainer>
     )
+}
+
+Gridcard.propTypes = {
+    title: PropTypes.string,
+    recipeContent: PropTypes.string,
+    time: PropTypes.String,
+    image:PropTypes.String
 }
 
 export default Gridcard;
