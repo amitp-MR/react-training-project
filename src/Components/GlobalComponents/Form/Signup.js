@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { SignupWrapper, SignupHeading, Signupbtn, Checkbtn, Forminput, Checkboxblock, Signupbtnblock } from '../Form/FormStyle';
 import Input from '../../GlobalComponents/UI/Input';
-import { NavLink } from 'react-router-dom';
 import { Errorblock } from '../UI/Uistyle';
-import { is } from '@babel/types';
-
+import { Link} from 'react-router-dom';
+import history from '../history';
 
 class Signup extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            isValid: true,
             formData: {
                 name: {
                     label: "Full Name",
@@ -102,7 +102,6 @@ class Signup extends Component {
 
         }
     }
-
     //validation function
     checkValidaty(value, rules) {
         let isValid = "true";
@@ -121,45 +120,72 @@ class Signup extends Component {
     }
 
     inputonfocusoutHandler = (event, inputIdentifier) => {
-        if (this.state.formData[inputIdentifier].value.length !== 0) {
-            this.setState(() => { this.state.formData[inputIdentifier].checkStatus = true 
-                this.state.formData[inputIdentifier].errorStatus = false;
+        event.preventDefault();
+        const { formData } = this.state;
+        if (formData[inputIdentifier].value.length !== 0) {
+            this.setState(() => {
+                formData[inputIdentifier].checkStatus = true;
+                formData[inputIdentifier].errorStatus = false;
             });
         } else {
-            this.setState(() => { 
-                this.state.formData[inputIdentifier].checkStatus = false;
-                this.state.formData[inputIdentifier].errorStatus = true;
+            this.setState(() => {
+                formData[inputIdentifier].checkStatus = false;
+                formData[inputIdentifier].errorStatus = true;
             });
         }
-        if(this.state.formData[inputIdentifier].label === "Username"){
-            if(this.state.formData[inputIdentifier].value.length !== 6){
-                this.setState(() => { 
-                    this.state.formData[inputIdentifier].checkStatus = false;
-                    this.state.formData[inputIdentifier].errorStatus = true;
-                (this.state.formData[inputIdentifier].value.length === 0 ?  this.state.formData[inputIdentifier].error = "user name is required":this.state.formData[inputIdentifier].error = "user name length should be 6")
+        if (formData[inputIdentifier].label === "Username") {
+            if (formData[inputIdentifier].value.length !== 6) {
+                this.setState(() => {
+                    formData[inputIdentifier].checkStatus = false;
+                    formData[inputIdentifier].errorStatus = true;
+                    (formData[inputIdentifier].value.length === 0 ? formData[inputIdentifier].error = "user name is required" : formData[inputIdentifier].error = "user name length should be 6")
                 });
             }
-            else{
-                this.setState(() => { 
-                    this.state.formData[inputIdentifier].checkStatus = true;
-                    this.state.formData[inputIdentifier].errorStatus = false;
+            else {
+                this.setState(() => {
+                    formData[inputIdentifier].checkStatus = true;
+                    formData[inputIdentifier].errorStatus = false;
                 });
             }
         }
-
+        if (formData[inputIdentifier].label === "Repeat Password") {
+            if (event.target.value !== formData['password'].value || event.target.value === "") {
+                this.setState(() => {
+                    formData[inputIdentifier].checkStatus = false;
+                    formData[inputIdentifier].errorStatus = true;
+                    (formData[inputIdentifier].value.length === 0 ? formData[inputIdentifier].error = "Repeat password is required" : formData[inputIdentifier].error = "password did not match")
+                });
+            }
+            else {
+                this.setState(() => {
+                    formData[inputIdentifier].checkStatus = true;
+                    formData[inputIdentifier].errorStatus = false;
+                });
+            }
+        }
+        if (!formData[inputIdentifier].errorStatus) {
+            this.setState(() => {
+                this.state.isValid = false
+            });
+        } else {
+            this.setState(() => {
+                this.state.isValid = true
+            });
+        }
         const updatedFrom = { ...this.state.formData }
         this.setState({ formData: updatedFrom });
-        
+
     }
     inputChangedHandler = (event, inputIdentifier) => {
-         event.preventDefault();
-         const updatedFrom = { ...this.state.formData }
-         const updatedFromElement = { ...this.state.formData[inputIdentifier] }
-         updatedFromElement.value = event.target.value;
-         updatedFromElement.valid = this.checkValidaty(updatedFromElement.value, updatedFromElement.validation);
-         updatedFrom[inputIdentifier] = updatedFromElement;
-         this.setState({ formData: updatedFrom });
+        event.preventDefault();
+        const updatedFrom = { ...this.state.formData }
+        const updatedFromElement = { ...this.state.formData[inputIdentifier] }
+        updatedFromElement.value = event.target.value;
+        updatedFromElement.valid = this.checkValidaty(updatedFromElement.value, updatedFromElement.validation);
+        updatedFrom[inputIdentifier] = updatedFromElement;
+        this.setState({ formData: updatedFrom });
     }
+
     fotmSubmission = (event) => {
         event.preventDefault();
         const getFormData = {};
@@ -167,7 +193,13 @@ class Signup extends Component {
             getFormData[formElementIdentifier] = this.state.formData[formElementIdentifier].value;
         }
         let parseDate = JSON.stringify(getFormData);
+        console.log('on˜submit', getFormData);
         localStorage.setItem('getFormData', parseDate);
+
+         //if(this.state.isValid){
+            history.push('/Home');
+
+         //}
 
     }
 
@@ -183,7 +215,7 @@ class Signup extends Component {
         return (
             <SignupWrapper>
                 <SignupHeading>Sign Up</SignupHeading>
-                <form onSubmit={this.fotmSubmission}>
+                <form onSubmit={(event) => this.fotmSubmission(event)}>
                     {
                         formElementArray.map((formEle, idx) => {
 
@@ -211,11 +243,15 @@ class Signup extends Component {
                         })
                     }
                     <div>
-                        <Checkboxblock><input type="checkbox" /> <label htmlFor=""> I agree to the Terms of User</label></Checkboxblock>
+                        <Checkboxblock>
+                        <input type="checkbox" /> 
+                        <label htmlFor=""> I agree to the Terms of User</label></Checkboxblock>
+                        
                         <Signupbtnblock>
-                            <Signupbtn >submit</Signupbtn>
-                            <NavLink to="/Maincon">sign in</NavLink>
+                            <Signupbtn>submit </Signupbtn>
                         </Signupbtnblock>
+                        
+                        
                     </div>
 
                 </form>

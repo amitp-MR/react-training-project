@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Bann, BannInnerWrap, BannBtn, CaptionBann, BackDrop } from './style';
 import { listLinkBtn, captionData } from '../Data';
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 const left = '-26%';
 const right = '0%';
@@ -67,7 +68,6 @@ class Banner extends Component {
                         >
                             {listLinkBtn.map((items, i) => {
                                 return <li
-                                    active
                                     id={"linkBtn_"+i}
                                     onClick={(event) => this.switchContent("linkBtn_" + i, event)}
                                     key={"key_" + i}><span>{items.text1}<br />{items.text2}</span></li>

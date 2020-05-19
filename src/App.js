@@ -1,23 +1,28 @@
 import React from 'react';
 import './App.css';
-import Maincon from './Components/Subcomponents/Maincon';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import Viewrecipe from './Components/Subcomponents/Viewrecipe';
 import Form from './Components/GlobalComponents/Form/Form';
+import Shop from './Components/Subcomponents/Shop';
+import Maincon from './Components/Subcomponents/Maincon';
+import Viewrecipe from './Components/Subcomponents/Viewrecipe';
 import Submitrecipe from './Components/Subcomponents/Submitrecipe';
+import Header from './Components/GlobalComponents/Header/Header';
+import Footer from './Components/GlobalComponents/Footer/Footer';
 function App() {
   return (
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path="/"  component={Form} />
-          <Route exact path="/Maincon"  component={Maincon} />
-          <Route exact path="/Viewrecipe"  component={Viewrecipe} />
-          <Route exact path="/Submitrecipe" component={Submitrecipe} />
+          {/* <Route exact path="/"  component={Form} />
+          <Route exact path="/Home"  component={Home} /> */}
+          <Route exact path="/"><Form /></Route>
+          <Route exact path="/"><Shop /></Route>
+          <Route exact path="/"><Form /></Route>
+          <Route exact path="/"><Shop /></Route>
+          <Route exact path="/"><Form /></Route>
+          <Route exact path="/"><Shop /></Route>
         </Switch>
       </Router>
-      
-      {/* <Viewrecipe /> */}
     </div>
   );
 }

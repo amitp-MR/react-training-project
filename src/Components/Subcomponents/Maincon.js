@@ -4,8 +4,6 @@ import Listview from '../Viewcomponents/Listview';
 import Gridview from '../Viewcomponents/Gridview';
 import Rightcomponent from '../Subcomponents/Rightcomponent';
 import Banner from '../Subcomponents/Banner';
-import Footer from '../GlobalComponents/Footer/Footer';
-import Header from '../GlobalComponents/Header/Header';
 
 
 class Maincon extends Component {
@@ -23,7 +21,6 @@ class Maincon extends Component {
     render() {
         return (
             <MainWrapper>
-                <Header />
                 <Banner />
                 <Wrapper>
                     <p className="Contentheading">Latest Recipes
@@ -39,7 +36,6 @@ class Maincon extends Component {
                     {this.state.vadlidState ? <Gridview /> : <Listview />}
                     <Rightcomponent />
                 </Wrapper>
-                <Footer />
             </MainWrapper>
         )
     }

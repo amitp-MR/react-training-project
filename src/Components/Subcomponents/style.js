@@ -742,3 +742,253 @@ ul{
 
 }
 `
+export const Sidebar = styled.div`
+    width:220px;
+    margin: 0px 10px;
+    .subs{
+        top:0px;
+        width:220px;
+    }
+`
+
+export const Shopheader = styled.div`
+    background-color: #f6f6f6;
+    min-height: 88px;
+    margin: 0 0 40px;
+    div{
+        width:75%;
+        margin:0 auto;
+        display:flex;
+        h3{
+            font-size: 24px;
+            font-weight: 500;
+            float: left;
+            width: 100%;
+            margin: 29px 0 0;
+            color: #606060;
+        }
+        p{
+            width: 460px;
+            float: right;
+            font-size: 13px;
+            margin-top: 30px;
+            font-weight: 500;
+            color: #909090;
+            background: 0 0;
+            display: flex;
+            justify-content: flex-end;
+            word-spacing: 2px;
+            span{
+               
+                a{
+                    color: gray;
+                    font-weight: 600;
+                    cursor:pointer;
+                    text-decoration:none;
+                    padding:0 5px;
+                }
+            }
+        }
+    }
+`
+export const Shopcontent = styled.div`
+            width:75%;
+            margin:0 auto;
+            display:flex;
+`
+export const Headline = styled.div`
+            height:46px;
+            font-size: 20px;
+            background-color: #fff;
+            padding-right: 10px;
+            z-index: 5;
+            color: #606060;
+            font-weight: 500;
+            font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+`
+export const CheckoutBox = styled.div`
+            background-color: #f8f8f8;
+            padding: 8px 20px 16px;
+            
+`
+export const AboveSec = styled.div`
+            height:101px;
+            border-bottom: 1px solid #e5e5e5;
+            padding: 15px 0;
+            display: block;
+            overflow: hidden;
+            display:flex;
+            justify-content: space-between;
+            div{
+                a{
+                    margin:0;
+                    color: #606060;
+                    font-size: 14px;
+                    font-weight: 600;
+                }
+                p{
+                    color: #909090;
+                    font-size: 14px;
+                    margin:0;
+                }
+            }
+
+`
+export const Belowsec = styled.div`
+            border-bottom: 1px solid #e5e5e5;
+            display: block;
+            overflow: hidden;
+            justify-content: space-between;
+            p{
+                margin:14px 0px;
+                font-weight: 600;
+                color: #707070;
+                font-size:14px;
+                span{
+                    font-weight:100;
+                }
+            }
+
+
+`
+export const Viewcart = styled.div`
+a{
+    cursor: pointer;
+    height:38px;
+    padding: 7px 14px;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 13px;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+    color: #fff;
+    background-color: #a0a0a0;
+    border: none;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    line-height: 25px;
+}
+&:hover a{
+    background-color: #555!important;
+}
+
+`
+export const Checkout = styled.div`
+    a{
+        background-color: #8dc63f;
+        height:38px;
+        width:100%;
+        text-align:center;
+        text-decoration:none;
+        cursor: pointer;
+        padding: 7px 14px;
+        display: inline-block;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 13px;
+        outline: none;
+        overflow: hidden;
+        position: relative;
+        z-index: 10;
+        color: #fff;
+        border: none;
+        -webkit-transition: all .2s ease-in-out;
+        -moz-transition: all .2s ease-in-out;
+        -ms-transition: all .2s ease-in-out;
+        -o-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+        line-height: 25px;
+    }
+    &:hover a{
+        background-color: #555!important;
+    }
+
+`
+export const Shopgallery = styled.div`
+    width:75%;
+`
+export const Cart = styled.div`
+            margin-top:30%;
+
+`
+export const ProductView = styled.div`
+            display:flex;
+            flex-wrap: wrap;
+`
+export const Product = styled.div`
+           margin: 23px 20px 0 0;
+           width:213px;
+           height:323px;
+           overflow:hidden;
+`
+export const ImageBox = styled.div`
+          overflow:hidden;
+          position:relative;
+          img{
+              width:100%;
+          }
+          span{
+            position:absolute;
+            background-color: #8dc63f;
+            color: #fff;
+            text-align: center;
+            font-size: 14px;
+            width: 42px;
+            height: 42px;
+            display: block;
+            bottom: -43px;
+            right:0;
+            transition:.3s;
+            cursor:pointer;
+            &:hover{
+                background-color: #555555;
+            }
+            i{
+                line-height:40px;
+            }
+          }
+          &:hover span{
+            bottom: 0px;
+            transition:.3s;
+          }
+`
+export const Captionbox = styled.div`
+        padding: 16px 0 15px;
+        text-align: center;
+        background-color: #f8f8f8;
+        height:101px;
+        h5{
+            margin:0;
+            color: #707070;
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 500;
+        }
+        p{
+            margin:0;
+            font-size: 16px;
+            font-weight: 700;
+            color: #606060;
+            padding: 1px 0 5px;
+            display: block;
+        }
+        span{
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #aaa;
+        }
+        
+`
+
+
+

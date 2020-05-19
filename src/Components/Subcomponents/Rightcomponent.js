@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { popular_data, author_content } from '../Data';
 import {  Sidecontent, Author, PopularRecipes, Social, Searchbar } from './style';
 
-const Rightcomponent = () =>{
+class Rightcomponent extends Component{
+    state ={
+        search:""
+    }
+    onchangeHandler = e => {
+        this.setState({
+            search: e.target.value
+        });
+        console.log(e.target.value)
+    }
+  render(){
     return(
         <Sidecontent>
         <Searchbar>
-            <div className="subs"><input className="subInp" type="text" placeholder="search for recipes" /><span className="subBtn"><i className="fa fa-search" aria-hidden="true"></i></span></div>
+            <div className="subs"><input onChange={this.onchangeHandler} className="subInp" type="text" placeholder="search for recipes" /><span className="subBtn"><i className="fa fa-search" aria-hidden="true"></i></span></div>
         </Searchbar>
         <Author>
             {
@@ -70,6 +80,7 @@ const Rightcomponent = () =>{
         </Social>
     </Sidecontent>
     )
+  }
 }
 
 

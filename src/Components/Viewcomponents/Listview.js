@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { cardgallery_data } from '../Data';
 import { Cardgallery, RecipeContainer, ImgContainer, TextContainer } from '../Viewcomponents/Viewcomponentstyle';
-import { Link } from 'react-router-dom';
 
 class Listview extends Component{
 
