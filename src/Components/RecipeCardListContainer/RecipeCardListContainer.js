@@ -16,7 +16,7 @@ class RecipeCardListContainer extends Component {
                 {
                     cardgallery_data.map((conitems, idx) => {
                         return (
-                            <Listcard  Listdata={conitems} />
+                            <Listcard  listdata={conitems} />
                     )
                     })
                 }

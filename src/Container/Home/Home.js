@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Wrapper, MainWrapper } from '../../Components/Common/StyleComponent/style';
+import { CardWrapper, MainWrapper } from '../../Components/Common/StyleComponent/style';
 import Sidebar from '../../Components/Sidebar/Sidebar';
 import Banner from '../../Components/Banner/Banner';
 import Header from '../../Components/Common/Header/Header';
@@ -23,7 +23,7 @@ class Home extends Component {
             <MainWrapper>
                 <Header />
                 <Banner />
-                <Wrapper>
+                <CardWrapper>
                     <p className="Contentheading">Latest Recipes
                         <span className="viewComponents">
                             <span style={this.state.color}
@@ -34,10 +34,10 @@ class Home extends Component {
                                 className="Gridview" >Listview</span>
                         </span>
                     </p>
-                    <RecipeCardGridContainer />
-                    {/* {this.state.vadlidState ? <Gridview /> : <Listview />} */}
+                    
+                    {this.state.vadlidState ? <RecipeCardGridContainer /> : <RecipeCardListContainer />}
                     <Sidebar />
-                </Wrapper>
+                </CardWrapper>
                 <Footer />
             </MainWrapper>
         )

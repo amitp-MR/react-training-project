@@ -1068,20 +1068,31 @@ export const AboveSec = styled.div`
             overflow: hidden;
             display:flex;
             justify-content: space-between;
-            div{
-                a{
-                    margin:0;
-                    color: #606060;
-                    font-size: 14px;
-                    font-weight: 600;
-                }
-                p{
-                    color: #909090;
-                    font-size: 14px;
-                    margin:0;
-                }
-            }
 
+`
+export const Subsec = styled.div`
+        width: 70px;
+        height: 70px;
+        overflow: hidden;
+        img{
+            width:100%;
+        }
+`
+export const Pricesec = styled.div`
+        width: 90px;
+        height: 70px;
+        overflow: hidden;
+        a{
+            margin:0;
+            color: #606060;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        p{
+            color: #909090;
+            font-size: 14px;
+            margin:0;
+        }
 `
 export const Belowsec = styled.div`
             border-bottom: 1px solid #e5e5e5;
@@ -1513,4 +1524,129 @@ export const Forminput = styled.div`
 `
 export const Checkboxblock = styled.div`
     padding-bottom:33px;
+`
+
+export const Productdetailwrapper = styled.div`
+    width:75%;
+    margin:0 auto;
+    overflow:hidden;
+`
+export const Productview = styled.div`
+
+`
+export const Productimg = styled.div`
+    width:461px;
+    height:397px;
+    overflow:hidden;
+    display:inline-block;
+    img{
+        width:100%;
+    }
+`
+export const Productcaption = styled.div`
+    width:460px;
+    height:309px;
+    overflow:hidden;
+    padding-left: 20px;
+    display:inline-block;
+    vertical-align: top;
+`
+export const Producttitle = styled.div`
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 30px;
+    color: #606060;
+    font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+`
+export const Productprice = styled.div`
+    padding: 0 0 20px;
+    border-bottom: 1px solid #ebebeb;
+    color: #888;
+    font-weight: 500;
+    font-size: 22px;
+    margin: 3px 0 0;
+`
+export const Productdescription = styled.div`
+    line-height: 24px;
+    border-bottom: 1px solid #ebebeb;
+    padding: 20px 0;
+    -webkit-font-smoothing: antialiased;
+    font-size: 14px;
+    color: #808080;
+`
+export const Buttonblock = styled.div`
+
+`
+export const IncrementBtn = styled.div`
+display:inline-block;
+    span{
+        background: silver;
+        display:inline-block;
+        color: #fff;
+        border: none;
+        font-family: fontawesome;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        font-size: 13px;
+        outline: 0;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-transition: all .2s ease-in-out;
+        -moz-transition: all .2s ease-in-out;
+        -o-transition: all .2s ease-in-out;
+        -ms-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+        text-align:center;
+        line-height: 40px;
+        }
+        p{
+            display:inline-block;
+            width: 40px;
+        height: 40px;
+        text-align:center;
+        background-color: #f8f8f8;
+        border-color: #f8f8f8;
+        margin:0;
+        line-height: 37px;
+        }
+`
+export const Addtocartbtn = styled.div`
+        background-color: #8dc63f;
+        display:inline-block;
+        margin: 0 0 0 25px;
+        padding: 8px 15px 8px 52px;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 13px;
+        outline: none;
+        overflow: hidden;
+        position: relative;
+        z-index: 10;
+        color: #fff;
+        border: none;
+        -webkit-transition: all .2s ease-in-out;
+        -moz-transition: all .2s ease-in-out;
+        -ms-transition: all .2s ease-in-out;
+        -o-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+        font: inherit;
+        vertical-align: top;
+        i{
+            position: absolute;
+    left: 0;
+    width: 40px;
+    background: rgba(0,0,0,.06);
+    height: 40px;
+    top: 0;
+    text-align: center;
+    line-height: 40px;
+
+        }
+
 `

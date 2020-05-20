@@ -3,12 +3,13 @@ import { SignupWrapper, SignupHeading, Signupbtn, Checkbtn, Forminput, Checkboxb
 import Input from '../Input/Input';
 import { Errorblock } from '../StyleComponent/style';
 import history from '../history';
+import { Link} from 'react-router-dom';
 
 class Signup extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isValid: true,
+            isValid: false,
             formData: {
                 name: {
                     label: "Full Name",
@@ -192,14 +193,9 @@ class Signup extends Component {
             getFormData[formElementIdentifier] = this.state.formData[formElementIdentifier].value;
         }
         let parseDate = JSON.stringify(getFormData);
-        console.log('on˜submit', getFormData);
+
         localStorage.setItem('getFormData', parseDate);
-
-         //if(this.state.isValid){
-            this.props.history.push('/Home');
-
-         //}
-
+        console.log(getFormData.length);
     }
 
     render() {
@@ -242,12 +238,9 @@ class Signup extends Component {
                         })
                     }
                     <div>
-                        <Checkboxblock>
-                        <input type="checkbox" /> 
-                        <label htmlFor=""> I agree to the Terms of User</label></Checkboxblock>
                         
                         <Signupbtnblock>
-                            <Signupbtn>submit </Signupbtn>
+                            <Signupbtn>{!this.state.isValid ? <Link to="/Signin">submit</Link> : "Submit" } </Signupbtn>
                         </Signupbtnblock>
                         
                         

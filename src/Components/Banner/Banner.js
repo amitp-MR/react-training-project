@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Bann, BannInnerWrap, BannBtn, CaptionBann, BackDrop } from '../Common/StyleComponent/style';
 import { listLinkBtn, captionData } from '../../Data/Data';
-import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 const left = '-26%';
 const right = '0%';

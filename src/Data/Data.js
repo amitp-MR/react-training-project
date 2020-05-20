@@ -1,7 +1,7 @@
 export const list = [
     {
         "text": "Home",
-        "path":"/Maincon",
+        "path":"/Home",
         "submenu": []
     },
     {
@@ -247,46 +247,46 @@ export const author_content = [
 
 export const viewcart_card = [
     {
-        "id":"01",
+        "id":"cart0",
         "img": require('../Assets/veiwcart/shop_item_01.jpg'),
         "category":"Spices",
         "item":"Cardamom Pods",
-        "prices":"$2.99"
+        "prices":"$ 9.99"
     },
     {
-        "id":"01",
+        "id":"cart1",
         "img": require('../Assets/veiwcart/shop_item_02.jpg'),
         "category":"Spices",
         "item":"Mixed Herbs",
-        "prices":"$2.99"
+        "prices":"$ 3.99"
     },
     {
-        "id":"01",
+        "id":"cart2",
         "img": require('../Assets/veiwcart/shop_item_03.jpg'),
         "category":"Spices",
         "item":"Chilli Powder",
-        "prices":"$2.99"
+        "prices":"$ 1.99"
     },
     {
-        "id":"01",
+        "id":"cart3",
         "img": require('../Assets/veiwcart/shop_item_04.jpg'),
         "category":"Spices",
         "item":"Black Peppercorns",
-        "prices":"$2.99"
+        "prices":"$ 12.99"
     },
     {
-        "id":"01",
+        "id":"cart4",
         "img": require('../Assets/veiwcart/shop_item_05.jpg'),
         "category":"Spices",
         "item":"Cumin Seeds",
-        "prices":"$2.99"
+        "prices":"$ 54.99"
     },
     {
-        "id":"01",
+        "id":"cart5",
         "img": require('../Assets/veiwcart/shop_item_06.jpg'),
         "category":"Spices",
         "item":"Garlic Granules",
-        "prices":"$2.99"
+        "prices":"$ 0.99"
     },
     
 ]

@@ -1,14 +1,46 @@
 import React, { Component } from 'react';
-import { Shopheader, Shopcontent, Sidebar, Searchbar, Cart, Shopgallery, Headline, CheckoutBox, AboveSec, Belowsec, Viewcart, Checkout, Dropdown, ProductView, Product, ImageBox, Captionbox } from '../../Components/Common/StyleComponent/style';
+import { Shopheader, Shopcontent, Sidebar, Searchbar, Cart, Shopgallery, Headline, CheckoutBox, AboveSec, Belowsec, Viewcart, Checkout, Dropdown, ProductView, Product, ImageBox, Captionbox, Subsec, Pricesec } from '../../Components/Common/StyleComponent/style';
 import { Link } from 'react-router-dom';
 import { viewcart_card } from '../../Data/Data';
+import Axios from 'axios';
 
 
 class Shop extends Component {
     constructor(props) {
         super(props);
         this.state = {
-           
+            imagecart:"",
+            category:"Select",
+            price:"$0.00",
+            viewcartcard:[]
+        }
+    }
+    componentDidMount(){
+        Axios.get(`http://www.mocky.io/v2/5ec45a1f30000064fe39c82d`)
+        .then(res=>{
+            this.setState({
+                viewcartcard:res.data
+            })
+        }).catch(error =>{
+            console.log(error);
+          })
+          .finally(()=> {
+            
+          }); 
+        
+    }
+    updateCartHandler = (ids)=>{
+       
+        for (var i = 0; i < viewcart_card.length; i++) {
+            
+            if (viewcart_card[i].id === ids) {
+                console.log(viewcart_card[i].item)
+                this.setState({
+                    imagecart: viewcart_card[i].img,
+                    category: viewcart_card[i].item,
+                    price: viewcart_card[i].prices
+                });
+            }
         }
     }
     render() {
@@ -16,7 +48,7 @@ class Shop extends Component {
             <div>
                 <Shopheader>
                     <div>
-                        <h3>Shop</h3>
+        <h3>Shop</h3>
                         <p>You are here: <span><Link to="/Home">Home</Link></span> > Shop</p>
                     </div>
                 </Shopheader>
@@ -29,21 +61,22 @@ class Shop extends Component {
                             <Headline>Cart</Headline>
                             <CheckoutBox>
                                 <AboveSec>
-                                    <div>
-                                        <img src="" alt="" />
+                                    <Subsec>
+                                        <img src={this.state.imagecart} alt="" />
 
-                                    </div>
+                                    </Subsec>
 
-                                    <div>
-                                        <a>Mixed Herbs</a>
-                                        <p>1 X $2.99</p>
-                                    </div>
+                                    <Pricesec>
+                                       
+                                        <a>{this.state.category}</a>
+                                        <p>1 X <span>{this.state.price}</span></p>
+                                    </Pricesec>
                                 </AboveSec>
                                 <Belowsec>
-                                    <p>Subtotal:<span> $2.99</span></p>
+                                    <p>Subtotal:<span>{this.state.price}</span></p>
                                     <div>
-                                        <Viewcart><a href="#" class="button">View Cart</a></Viewcart>
-                                        <Checkout><a href="#" class="button color">Checkout</a></Checkout>
+                                        <Viewcart><a href="#" className="button">View Cart</a></Viewcart>
+                                        <Checkout><a href="#" className="button color">Checkout</a></Checkout>
                                     </div>
                                 </Belowsec>
                             </CheckoutBox>
@@ -52,13 +85,12 @@ class Shop extends Component {
                     <Shopgallery>
                         <ProductView>
                             {
-                                viewcart_card.map((item, vidx) => {
-                                    console.log(item);
+                                viewcart_card.map((item, vidx) => {     
                                     return (
-                                        <Product>
+                                        <Product key={vidx}>
                                             <ImageBox>
                                                 <img src={item.img} alt="" />
-                                                <span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+                                                <span onClick={(e)=>this.updateCartHandler("cart"+vidx)}><i className="fa fa-shopping-cart" aria-hidden="true"></i></span>
                                             </ImageBox>
                                             <Captionbox>
                                                 <span>{item.category}</span>
