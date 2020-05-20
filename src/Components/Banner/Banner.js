@@ -49,7 +49,7 @@ class Banner extends Component {
                     <BackDrop id="back off">
                         <CaptionBann>
                             <li>{this.state.badge}</li>
-                            <h1><a href="#"> {this.state.heading}</a></h1>
+                            <h1><a href="!#"> {this.state.heading}</a></h1>
                             <p>
                                 <span><i className="fa fa-cutlery" aria-hidden="true"></i> {this.state.serve}</span>
                                 <span><i className="fa fa-clock-o" aria-hidden="true"></i> {this.state.time}</span>

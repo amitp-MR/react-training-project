@@ -10,7 +10,7 @@ class RecipeCardGridContainer extends Component {
                 {
                     cardgallery_data.map((conitems, idx) => {
                         return (
-                           <Gridcard griddata={conitems}></Gridcard>
+                           <Gridcard griddata={conitems} key={idx} />
                         )
                     })
                 }

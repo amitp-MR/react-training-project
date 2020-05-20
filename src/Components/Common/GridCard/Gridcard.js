@@ -12,8 +12,8 @@ const Gridcard=(props)=> {
     return (
         <GridContainer  className="recipecontainer">
             <GridimgContainer>
-                <Link to="/Viewrecipe" className="viewrecipe">VIEW RECIPE</Link>
-                <img src={props.griddata.img} />
+            <span to="/Viewrecipe" className="viewrecipe" ><Link to="/Viewrecipe">VIEW RECIPE</Link></span>
+                <img alt="gridimg" src={props.griddata.img} />
             </GridimgContainer>
             <GridContentContainer>
                 <div>

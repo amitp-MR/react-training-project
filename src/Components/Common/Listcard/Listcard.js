@@ -1,5 +1,6 @@
 import React from 'react'
 import { RecipeContainer, ImgContainer, TextContainer } from '../StyleComponent/style';
+import { Link } from 'react-router-dom';
 
 const Listcard = (props) => {
     const stars = [];
@@ -9,11 +10,11 @@ const Listcard = (props) => {
     return (
         <RecipeContainer  className="recipecontainer">
             <ImgContainer>
-                <span to="/Viewrecipe" className="viewrecipe" ><a>VIEW RECIPE</a></span>
+                <span to="/Viewrecipe" className="viewrecipe" ><Link to="/Viewrecipe">VIEW RECIPE</Link></span>
                 <img src={props.listdata.img} alt={"recipeImg_"} />
             </ImgContainer>
             <TextContainer>
-                <a>{props.listdata.title}</a>
+                <a href="!#">{props.listdata.title}</a>
                 <div className="contentrating">
                     <span></span><span></span><span> {props.listdata.time}</span>
                 </div>

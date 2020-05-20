@@ -6,7 +6,6 @@ import Home from '../../Container/Home/Home';
 import Submitrecipe from '../../Components/Submitrecipe/Submitrecipe';
 import Viewrecipe from '../../Components/Viewrecipe/Viewrecipe';
 import Shop from '../../Components/Shop/Shop';
-import Signin from '../../Components/Common/Form/Signin';
 function App() {
   return (
     <div className="App">
@@ -17,6 +16,7 @@ function App() {
           <Route path="/Shop" component={Shop} />
           <Route path="/Viewrecipe" component={Viewrecipe} />
           <Route path="/Submitrecipe" component={Submitrecipe} />
+          <Route path="/Signin" component={Submitrecipe} />
         </Switch>
       </Router>
     </div>

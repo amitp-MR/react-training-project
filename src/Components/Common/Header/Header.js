@@ -1,7 +1,8 @@
 import React from 'react';
 import Logo from '../../../Assets/images/logo.jpg';
 import { list } from '../../../Data/Data';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import '../../../Container/App/App.css';
+import { BrowserRouter as Router, NavLink} from 'react-router-dom';
 
 import {Head,Wrapper,HeaderLogo,HeaderNav} from '../StyleComponent/style';
 
@@ -21,9 +22,9 @@ const Header = (props) => {
                             {
                                 list.map((items, idx) => {
                                 return <li className="navlist" key={"key_"+idx}>
-                                        <Link to={items.path} value={items.text + '_' + idx}>
+                                        <NavLink activeClassName="active" to={items.path} value={items.text + '_' + idx}>
                                             {items.text} {(items.submenu.length !==0 ? <i className="fa fa-caret-down"></i>: "")}
-                                        </Link>
+                                        </NavLink>
                                         <ul className="dp">
                                             {items.submenu.map((sub, subIdx) => {
                                             return  (sub.subtext !== ""?<li className="Subnavlist" key={"subitem_"+subIdx}>{sub.subtext}</li>:"")

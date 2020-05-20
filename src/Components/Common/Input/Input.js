@@ -14,6 +14,7 @@ const Input = (props) => {
             {...props.elementConf}
             value={props.value}
             ref={props.ref}
+            autoComplete="off"
             onChange={ props.changed }
             onBlur={props.focusout}
             />
@@ -25,7 +26,7 @@ const Input = (props) => {
             onChange={ props.changed }
             />
         break;
-       
+        default:
       
     
     }

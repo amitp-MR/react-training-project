@@ -19,24 +19,20 @@ class Viewrecipe extends Component {
                     <Recipeheader bgIm={this.state.img}></Recipeheader>
                     <Recipecontainer>
                         <RightContainer>
-
-
-
                             {
                                 view_recipe.map((ite, idx) => {
                                     return (
 
-                                        <Recipecard key={"recipe_" + ite.id}>
+                                        <Recipecard key={"recipe_" + idx}>
                                             <Recipeheading>
                                                 <h4>{ite.title}</h4>
                                                 <p>{ite.review}</p>
                                             </Recipeheading>
 
                                             {
-                                                ite.Slider.map((it, idx, key) => {
-                                                    console.log(idx)
+                                                ite.Slider.map((i, idx) => {
                                                     return (
-                                                        <div>
+                                                        <div key={'Slider' + idx}>
                                                             <Carousel bgIm={this.state.img}>
                                                                 <p><span>  <i className="fa fa-chevron-circle-left" aria-hidden="true"></i><i className="fa fa-chevron-circle-right" aria-hidden="true"></i></span></p>
                                                             </Carousel>
@@ -47,15 +43,15 @@ class Viewrecipe extends Component {
                                                                     </span>
                                                                     <span>
                                                                         Prep Time
-                                    <p>30 min</p>
+<p>30 min</p>
                                                                     </span>
                                                                     <span>
                                                                         Cooking
-                                    <p>2 hours</p>
+<p>2 hours</p>
                                                                     </span>
                                                                     <span>
                                                                         Calories
-                                    <p>632 kcal</p>
+<p>632 kcal</p>
                                                                     </span>
                                                                 </div>
                                                                 <span className="printbtn"><i className="fa fa-print" aria-hidden="true"></i> print</span>
@@ -75,7 +71,7 @@ class Viewrecipe extends Component {
                                                     {
                                                         ite.Ingredients.map((ig, key) => {
                                                             return (
-                                                                <li> <input name={"chkbox_" + key} id={"check_" + key} type="checkbox" />  <label htmlFor={"check_" + key}> {ig.ingred}    </label> </li>
+                                                                <li key={'hoc'+key}> <input name={"chkbox_" + key} id={"check_" + key} type="checkbox" />  <label htmlFor={"check_" + key}> {ig.ingred}    </label> </li>
                                                             )
                                                         })
                                                     }

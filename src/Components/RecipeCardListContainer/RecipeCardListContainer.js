@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { cardgallery_data } from '../../Data/Data';
-import { Cardgallery, RecipeContainer, ImgContainer, TextContainer } from '../../Components/Common/StyleComponent/style';
+import { Cardgallery } from '../../Components/Common/StyleComponent/style';
 import Listcard from '../Common/Listcard/Listcard';
 
 class RecipeCardListContainer extends Component {
@@ -16,7 +16,7 @@ class RecipeCardListContainer extends Component {
                 {
                     cardgallery_data.map((conitems, idx) => {
                         return (
-                            <Listcard  listdata={conitems} />
+                            <Listcard  listdata={conitems} key={idx}/>
                     )
                     })
                 }

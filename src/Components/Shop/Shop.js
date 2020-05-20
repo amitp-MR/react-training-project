@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Shopheader, Shopcontent, Sidebar, Searchbar, Cart, Shopgallery, Headline, CheckoutBox, AboveSec, Belowsec, Viewcart, Checkout, Dropdown, ProductView, Product, ImageBox, Captionbox, Subsec, Pricesec } from '../../Components/Common/StyleComponent/style';
+import { Shopheader, Shopcontent, Sidebar, Searchbar, Cart, Shopgallery, Headline, CheckoutBox, AboveSec, Belowsec, Viewcart, Checkout, ProductView, Product, ImageBox, Captionbox, Subsec, Pricesec } from '../../Components/Common/StyleComponent/style';
 import { Link } from 'react-router-dom';
 import { viewcart_card } from '../../Data/Data';
 import Axios from 'axios';
@@ -68,15 +68,15 @@ class Shop extends Component {
 
                                     <Pricesec>
                                        
-                                        <a>{this.state.category}</a>
+                                        <a href="!#">{this.state.category}</a>
                                         <p>1 X <span>{this.state.price}</span></p>
                                     </Pricesec>
                                 </AboveSec>
                                 <Belowsec>
                                     <p>Subtotal:<span>{this.state.price}</span></p>
                                     <div>
-                                        <Viewcart><a href="#" className="button">View Cart</a></Viewcart>
-                                        <Checkout><a href="#" className="button color">Checkout</a></Checkout>
+                                        <Viewcart><a href="!#" className="button">View Cart</a></Viewcart>
+                                        <Checkout><a href="!#" className="button color">Checkout</a></Checkout>
                                     </div>
                                 </Belowsec>
                             </CheckoutBox>

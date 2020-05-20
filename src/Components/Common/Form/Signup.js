@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { SignupWrapper, SignupHeading, Signupbtn, Checkbtn, Forminput, Checkboxblock, Signupbtnblock } from '../StyleComponent/style';
+import { SignupWrapper, SignupHeading, Signupbtn, Checkbtn, Forminput, Signupbtnblock } from '../StyleComponent/style';
 import Input from '../Input/Input';
 import { Errorblock } from '../StyleComponent/style';
-import history from '../history';
 import { Link} from 'react-router-dom';
 
 class Signup extends Component {
@@ -163,15 +162,15 @@ class Signup extends Component {
                 });
             }
         }
-        if (!formData[inputIdentifier].errorStatus) {
-            this.setState(() => {
-                this.state.isValid = false
-            });
-        } else {
-            this.setState(() => {
-                this.state.isValid = true
-            });
-        }
+        // if (!formData[inputIdentifier].errorStatus) {
+        //     this.setState(() => {
+        //         this.state.isValid = false
+        //     });
+        // } else {
+        //     this.setState(() => {
+        //         this.state.isValid = true
+        //     });
+        // }
         const updatedFrom = { ...this.state.formData }
         this.setState({ formData: updatedFrom });
 
@@ -217,6 +216,7 @@ class Signup extends Component {
                             return (
                                 <Forminput key={'tick' + formEle.id}>
                                     <Input
+                                        autocomplete="off"
                                         label={formEle.config.label}
                                         key={formEle.id}
                                         elementType={formEle.config.elementType}

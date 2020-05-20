@@ -22,7 +22,7 @@ class Sidebar extends Component{
             {
                 author_content.map((authIdx, aidx) => {
                     return (
-                        <div key={"popularItems_" + authIdx}>
+                        <div key={"popularItems_" + aidx}>
                             <p className="title">{authIdx.title}</p>
                             <span className="name">{authIdx.name} <br />{authIdx.lastname}</span>
                             <span className="contact"><a href="mailto:sandra@chow.com">{authIdx.contact}</a></span>

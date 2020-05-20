@@ -7,9 +7,6 @@ import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 
 class Form extends Component {
-    constructor(props){
-        super(props);
-    }
     render() {
         return (
             <FormWrapper>
