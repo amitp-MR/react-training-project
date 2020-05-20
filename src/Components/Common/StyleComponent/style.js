@@ -261,6 +261,7 @@ export const BannInnerWrap = styled.div`
     background-color:#404040;
     background: url(${props => props.bgImage});
     transition:.6s;
+    overflow:hidden;
 `
 export const BackDrop = styled.div`
     background-color:rgba(0,0,0,0.4);

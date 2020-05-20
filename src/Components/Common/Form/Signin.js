@@ -95,15 +95,6 @@ class Signin extends Component {
                 });
             }
         }
-        // if (!formData[inputIdentifier].errorStatus) {
-        //     this.setState(() => {
-        //         this.state.isValid = false
-        //     });
-        // } else {
-        //     this.setState(() => {
-        //         this.state.isValid = true
-        //     });
-        // }
         const updatedFrom = { ...this.state.formData }
         this.setState({ formData: updatedFrom });
 
@@ -126,9 +117,9 @@ class Signin extends Component {
         }
         let parseDate = JSON.stringify(getFormData);
         localStorage.getItem('getFormData', parseDate);
-        console.log(localStorage.getItem('getFormData', parseDate))
+        // console.log(localStorage.getItem('getFormData', parseDate))
 
-            this.props.history.push('/Home');
+            // this.props.history.push('/Home');
 
     }
 
@@ -176,7 +167,7 @@ class Signin extends Component {
                       
                         
                         <Signupbtnblock>
-                            <Signupbtn>Sign In </Signupbtn>
+                            <Signupbtn>Login</Signupbtn>
                         </Signupbtnblock>
                         
                         

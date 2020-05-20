@@ -27,6 +27,7 @@ const Input = (props) => {
             />
         break;
         default:
+                break;
       
     
     }

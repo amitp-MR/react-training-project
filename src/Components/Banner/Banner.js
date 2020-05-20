@@ -1,27 +1,22 @@
-import React, { Component } from 'react';
+import React, {useState}  from 'react';
 import { Bann, BannInnerWrap, BannBtn, CaptionBann, BackDrop } from '../Common/StyleComponent/style';
 import { listLinkBtn, captionData } from '../../Data/Data';
 
-const left = '-26%';
-const right = '0%';
-class Banner extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            badge: "Baking",
-            heading: "Mexican Grilled Corn Recipe",
-            serve: "4 Servings",
-            time: "30 MIN",
-            cheff: "By Sandra Fortin",
-            img: require('../../Assets/images/sliderA_01.jpg'),
-            left: right
-        }
-        this.switchContent = this.switchContent.bind(this);
-    }
-    switchContent = (idx, event) => {
+const Banner = (props)=> {
+    const [currState , updateState] = useState({
+                    badge: "Baking",
+                    heading: "Mexican Grilled Corn Recipe",
+                    serve: "4 Servings",
+                    time: "30 MIN",
+                    cheff: "By Sandra Fortin",
+                    img: require('../../Assets/images/sliderA_01.jpg'),
+    });
+
+    function switchContent(idx, e) {
+
         for (var i = 0; i < captionData.length; i++) {
             if (captionData[i].id === idx) {
-                this.setState({
+                updateState({
                     badge: captionData[i].badge,
                     heading: captionData[i].heading,
                     serve: captionData[i].serve,
@@ -30,52 +25,44 @@ class Banner extends Component {
                     img: captionData[i].img,
                 });
             }
-            if (idx === 'linkBtn_1') {
-                this.setState({
-                    left: left
-                });
-            }
-            else if (idx === 'linkBtn_3') {
-                this.setState({
-                    left: right
-                });
-            }
+            
         }
     }
-    render() {
-        return (
-            <Bann>
-                <BannInnerWrap bgImage={this.state.img}>
-                    <BackDrop id="back off">
-                        <CaptionBann>
-                            <li>{this.state.badge}</li>
-                            <h1><a href="!#"> {this.state.heading}</a></h1>
-                            <p>
-                                <span><i className="fa fa-cutlery" aria-hidden="true"></i> {this.state.serve}</span>
-                                <span><i className="fa fa-clock-o" aria-hidden="true"></i> {this.state.time}</span>
-                                <span><i className="fa fa-user" aria-hidden="true"></i> {this.state.cheff}</span>
-                            </p>
-                            <span>VIEW RECIPE</span>
-                        </CaptionBann>
-                    </BackDrop>
-                </BannInnerWrap>
-                <BannBtn>
-                    <nav>
-                        <ul className="btnWrap"
-                            style={{ left: this.state.left }}
-                            onClick={this.move}
-                        >
-                            {listLinkBtn.map((items, i) => {
-                                return <li
-                                    id={"linkBtn_"+i}
-                                    onClick={(event) => this.switchContent("linkBtn_" + i, event)}
-                                    key={"key_" + i}><span>{items.text1}<br />{items.text2}</span></li>
-                            })}
-                        </ul>
-                    </nav>
-                </BannBtn>
-            </Bann>
-        );
-    }
+
+
+
+    return(
+        <Bann>
+        <BannInnerWrap bgImage={currState.img}>
+            <BackDrop id="back off">
+                <CaptionBann>
+                    <li>{currState.badge}</li>
+                    <h1><a href="!#"> {currState.heading}</a></h1>
+                    <p>
+                        <span><i className="fa fa-cutlery" aria-hidden="true"></i> {currState.serve}</span>
+                        <span><i className="fa fa-clock-o" aria-hidden="true"></i> {currState.time}</span>
+                        <span><i className="fa fa-user" aria-hidden="true"></i> {currState.cheff}</span>
+                    </p>
+                    <span>VIEW RECIPE</span>
+                </CaptionBann>
+            </BackDrop>
+        </BannInnerWrap>
+        <BannBtn>
+            <nav>
+                <ul className="btnWrap"
+                    style={{ left: currState.left}}
+                >
+                    {listLinkBtn.map((items, i) => {
+                        return <li
+                            id={"linkBtn_"+i}
+                            onClick={() => switchContent("linkBtn_" + i)}
+                            key={"key_" + i}>
+                            <span>{items.text1}<br />{items.text2}</span></li>
+                    })}
+                </ul>
+            </nav>
+        </BannBtn>
+    </Bann>
+    );
 }
 export default Banner;

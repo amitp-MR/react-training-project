@@ -8,8 +8,8 @@ class Signup extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isValid: false,
             formData: {
+                isValid: false,
                 name: {
                     label: "Full Name",
                     elementType: "input",
@@ -162,15 +162,6 @@ class Signup extends Component {
                 });
             }
         }
-        // if (!formData[inputIdentifier].errorStatus) {
-        //     this.setState(() => {
-        //         this.state.isValid = false
-        //     });
-        // } else {
-        //     this.setState(() => {
-        //         this.state.isValid = true
-        //     });
-        // }
         const updatedFrom = { ...this.state.formData }
         this.setState({ formData: updatedFrom });
 
@@ -226,7 +217,6 @@ class Signup extends Component {
                                         invalid={!formEle.config.valid}
                                         focusout={(event) => this.inputonfocusoutHandler(event, formEle.id)}
                                         changed={(event) => this.inputChangedHandler(event, formEle.id)}
-
                                     />
                                     {
                                         (this.state.formData[formEle.id].errorStatus ? <Errorblock ><span className="errorMsg" >{this.state.formData[formEle.id].error}</span><i className="fa fa-exclamation-circle" aria-hidden="true"></i></Errorblock> : "")
@@ -240,7 +230,7 @@ class Signup extends Component {
                     <div>
                         
                         <Signupbtnblock>
-                            <Signupbtn>{!this.state.isValid ? <Link to="/Signin">submit</Link> : "Submit" } </Signupbtn>
+                            <Signupbtn>Submit </Signupbtn> {!this.state.isValid ? <Link to="/Signin">Signin  <i className="fa fa-long-arrow-right" aria-hidden="true"></i></Link> : "" }
                         </Signupbtnblock>
                         
                         
