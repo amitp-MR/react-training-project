@@ -14,7 +14,6 @@ const Input = (props) => {
             {...props.elementConf}
             value={props.value}
             name={props.name}
-            ref={props.ref}
             autoComplete="off"
             onChange={ props.changed }
             onBlur={props.focusout}
