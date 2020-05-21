@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { RecipeWrapper, Recipecontainer, RightContainer, Recipeheader, Recipeheading, Recipecard, Carousel, Carouselcontent, Recipedescription, Recipeingredients, Recipedirection } from '../Common/StyleComponent/style';
 import Rightcomponent from '../Sidebar/Sidebar';
 import { view_recipe } from '../../Data/ViewrecipeData';
-import Footer from '../Common/Footer/Footer';
 
 
 class Viewrecipe extends Component {
@@ -43,15 +42,15 @@ class Viewrecipe extends Component {
                                                                     </span>
                                                                     <span>
                                                                         Prep Time
-<p>30 min</p>
+                                                                        <p>30 min</p>
                                                                     </span>
                                                                     <span>
                                                                         Cooking
-<p>2 hours</p>
+                                                                        <p>2 hours</p>
                                                                     </span>
                                                                     <span>
                                                                         Calories
-<p>632 kcal</p>
+                                                                        <p>632 kcal</p>
                                                                     </span>
                                                                 </div>
                                                                 <span className="printbtn"><i className="fa fa-print" aria-hidden="true"></i> print</span>
@@ -71,7 +70,7 @@ class Viewrecipe extends Component {
                                                     {
                                                         ite.Ingredients.map((ig, key) => {
                                                             return (
-                                                                <li key={'hoc'+key}> <input name={"chkbox_" + key} id={"check_" + key} type="checkbox" />  <label htmlFor={"check_" + key}> {ig.ingred}    </label> </li>
+                                                                <li key={'hoc' + key}> <input name={"chkbox_" + key} id={"check_" + key} type="checkbox" />  <label htmlFor={"check_" + key}> {ig.ingred}    </label> </li>
                                                             )
                                                         })
                                                     }
@@ -105,7 +104,6 @@ class Viewrecipe extends Component {
                         <Rightcomponent />
                     </Recipecontainer>
                 </RecipeWrapper>
-                <Footer />
             </div>
         )
     }

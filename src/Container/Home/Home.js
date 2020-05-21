@@ -21,7 +21,6 @@ class Home extends Component {
     render() {
         return (
             <MainWrapper>
-                <Header />
                 <Banner />
                 <CardWrapper>
                     <p className="Contentheading">Latest Recipes
@@ -38,7 +37,6 @@ class Home extends Component {
                     {this.state.vadlidState ? <RecipeCardGridContainer /> : <RecipeCardListContainer />}
                     <Sidebar />
                 </CardWrapper>
-                <Footer />
             </MainWrapper>
         )
     }

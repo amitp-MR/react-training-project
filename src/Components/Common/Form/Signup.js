@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import { SignupWrapper, SignupHeading, Signupbtn, Checkbtn, Forminput, Signupbtnblock } from '../StyleComponent/style';
 import Input from '../Input/Input';
 import { Errorblock } from '../StyleComponent/style';
-import { Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Signup extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            isValid: false,
             formData: {
-                isValid: false,
                 name: {
                     label: "Full Name",
                     elementType: "input",
@@ -93,6 +93,7 @@ class Signup extends Component {
                         required: "true"
                     },
                     valid: false,
+                    onvalid: false,
                     checkStatus: false,
                     errorStatus: false,
                     error: "repeat password is required"
@@ -183,9 +184,12 @@ class Signup extends Component {
             getFormData[formElementIdentifier] = this.state.formData[formElementIdentifier].value;
         }
         let parseDate = JSON.stringify(getFormData);
-
+        if (!this.state.formData.conpassword.errorStatus) {
+            this.setState({
+                onvalid: true
+            })
+        }
         localStorage.setItem('getFormData', parseDate);
-        console.log(getFormData.length);
     }
 
     render() {
@@ -196,7 +200,6 @@ class Signup extends Component {
                 config: this.state.formData[key]
             })
         }
-
         return (
             <SignupWrapper>
                 <SignupHeading>Sign Up</SignupHeading>
@@ -210,6 +213,7 @@ class Signup extends Component {
                                         autocomplete="off"
                                         label={formEle.config.label}
                                         key={formEle.id}
+                                        name={formEle.id}
                                         elementType={formEle.config.elementType}
                                         elementConf={formEle.config.elementConf}
                                         value={formEle.config.value}
@@ -228,12 +232,12 @@ class Signup extends Component {
                         })
                     }
                     <div>
-                        
+
                         <Signupbtnblock>
-                            <Signupbtn>Submit </Signupbtn> {!this.state.isValid ? <Link to="/Signin">Signin  <i className="fa fa-long-arrow-right" aria-hidden="true"></i></Link> : "" }
+                            <Signupbtn>Submit </Signupbtn> {!this.state.formData.conpassword.onvalid ? <Link to="/Signin">Signin  <i className="fa fa-long-arrow-right" aria-hidden="true"></i></Link> : ""}
                         </Signupbtnblock>
-                        
-                        
+
+
                     </div>
 
                 </form>

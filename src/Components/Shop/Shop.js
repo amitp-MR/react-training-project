@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Shopheader, Shopcontent, Sidebar, Searchbar, Cart, Shopgallery, Headline, CheckoutBox, AboveSec, Belowsec, Viewcart, Checkout, ProductView, Product, ImageBox, Captionbox, Subsec, Pricesec } from '../../Components/Common/StyleComponent/style';
+import { Shopheader, Shopcontent, Sidebar, Searchbar, Cart, Shopgallery, Headline, CheckoutBox, AboveSec, Belowsec, Viewcart, Checkout, ProductView, Subsec, Pricesec } from '../../Components/Common/StyleComponent/style';
 import { Link } from 'react-router-dom';
 import { viewcart_card } from '../../Data/Data';
+import Productcard from '../Common/Productcard/Productcard';
 import Axios from 'axios';
 
 
@@ -87,17 +88,11 @@ class Shop extends Component {
                             {
                                 viewcart_card.map((item, vidx) => {     
                                     return (
-                                        <Product key={vidx}>
-                                            <ImageBox>
-                                                <img src={item.img} alt="" />
-                                                <span onClick={(e)=>this.updateCartHandler("cart"+vidx)}><i className="fa fa-shopping-cart" aria-hidden="true"></i></span>
-                                            </ImageBox>
-                                            <Captionbox>
-                                                <span>{item.category}</span>
-                                                <h5>{item.item}</h5>
-                                                <p>{item.prices}</p>
-                                            </Captionbox>
-                                        </Product>
+                                        <Productcard 
+                                            item={item}
+                                            key={vidx}
+                                            onclick={(e) => this.updateCartHandler("cart" + vidx)}
+                                        />
                                     );
                                 })
                             }

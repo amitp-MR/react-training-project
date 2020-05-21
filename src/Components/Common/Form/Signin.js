@@ -7,7 +7,6 @@ class Signin extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isValid: true,
             formData: {
                 username: {
                     label: "Username",
@@ -111,16 +110,13 @@ class Signin extends Component {
 
     fotmSubmission = (event) => {
         event.preventDefault();
-        const getFormData = {};
-        for (let formElementIdentifier in this.state.formData) {
-            getFormData[formElementIdentifier] = this.state.formData[formElementIdentifier].value;
+        let curruser = this.state.formData.username.value;
+        let curpass = this.state.formData.password.value;
+
+        const localdata = JSON.parse(localStorage.getItem("getFormData"));
+        if(curruser === localdata.username && curpass === localdata.password){
+            this.props.history.push('/Home');
         }
-        let parseDate = JSON.stringify(getFormData);
-        localStorage.getItem('getFormData', parseDate);
-        // console.log(localStorage.getItem('getFormData', parseDate))
-
-            // this.props.history.push('/Home');
-
     }
 
     render() {

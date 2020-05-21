@@ -9,28 +9,34 @@ export const list = [
         "path":"/Demos",
         "submenu": [
             {
-                "subtext": "Grid Homepage"
+                "subtext": "Grid Homepage",
+                "path":"/Home",
             },
             {
-                "subtext": "List HomePage"
+                "subtext": "List HomePage",
+                "path":"/Home"
             },
             {
-                "subtext": "Boxed Version"
+                "subtext": "Boxed Version",
+                "path":"/Home"
             }
         ]
     },
     {
         "text": "Recipes",
-        "path":"/Recipes",
+        "path":"/Viewrecipe",
         "submenu": [
             {
-                "subtext": "Browse Recipes"
+                "subtext": "Browse Recipes",
+                "path":"/Viewrecipe",
             },
             {
-                "subtext": "Recipe Page #1"
+                "subtext": "Recipe Page #1",
+                "path":"/Home",
             },
             {
-                "subtext": "Recipe Page #2"
+                "subtext": "Recipe Page #2",
+                "path":"/Home",
             }
         ]
     },
@@ -39,13 +45,16 @@ export const list = [
         "path":"/Pages",
         "submenu": [
             {
-                "subtext": "Shortcodes"
+                "subtext": "Shortcodes",
+                "path":"/Home",
             },
             {
-                "subtext": "Typography"
+                "subtext": "Typography",
+                "path":"/Home",
             },
             {
-                "subtext": "Contact"
+                "subtext": "Contact",
+                "path":"/Home",
             }
         ]
     },
@@ -54,10 +63,12 @@ export const list = [
         "path":"/Shop",
         "submenu": [
             {
-                "subtext": "Shop"
+                "subtext": "Shop",
+                "path":"/Shop",
             },
             {
-                "subtext": "Product Pages"
+                "subtext": "Product Pages",
+                "path":"/Productdetail",
             }
         ]
     },

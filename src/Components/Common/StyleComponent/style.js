@@ -267,6 +267,7 @@ export const BackDrop = styled.div`
     background-color:rgba(0,0,0,0.4);
     width:100%;
     height:100%;
+    overflow:hidden;
 `
 export const CaptionBann = styled.div`
     padding:6% 0px;
@@ -1651,3 +1652,43 @@ export const Addtocartbtn = styled.div`
         }
 
 `
+
+export const RelatedProducts = styled.div`
+    display: flex;
+`
+export const Productdes = styled.div`
+
+`
+export const Btnblock = styled.div`
+display: flex;
+`
+
+export const Ctabtnstyle = styled.div`
+    background-color: #f2f2f2;
+    margin:0px 2px;
+    border-bottom: 1px solid #fff;
+    color: #888;
+    font-weight: normal;
+    font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform:capitalize;
+    font-size:14px;
+    display: block;
+    letter-spacing: .8px;
+    outline: none;
+    padding: 0 20px;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+    line-height: 42px;
+    cursor:pointer;
+    &:hover {
+        transition: all .5s ease-in-out;
+        background-color: #e6e5e5;
+    }
+`
+export const Descrptblock = styled.div`
+margin: 0 0 15px 0;
+line-height: 24px;
+font-size:14px;
+color:#808080;
+`
+

@@ -13,6 +13,7 @@ const Input = (props) => {
             className={inputClasses.join(' ')}  
             {...props.elementConf}
             value={props.value}
+            name={props.name}
             ref={props.ref}
             autoComplete="off"
             onChange={ props.changed }
