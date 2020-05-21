@@ -3,7 +3,7 @@ import { RecipeContainer, ImgContainer, TextContainer } from '../StyleComponent/
 import { Link } from 'react-router-dom';
 
 const Listcard = (props) => {
-    const stars = [];
+    const stars=[];
     for (let i = 0; i < props.listdata.stars; i++) {
         stars.push(<i key={i} className="contentstars fa fa-star" aria-hidden="true"></i>);
     };
@@ -16,7 +16,7 @@ const Listcard = (props) => {
             <TextContainer>
                 <a href="!#">{props.listdata.title}</a>
                 <div className="contentrating">
-                    <span></span><span></span><span> {props.listdata.time}</span>
+                    <span>  {stars}</span><span></span><span> {props.listdata.time}</span>
                 </div>
             </TextContainer>
         </RecipeContainer>

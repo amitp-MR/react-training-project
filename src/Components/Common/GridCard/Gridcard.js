@@ -28,12 +28,12 @@ const Gridcard=(props)=> {
     )
 }
 
-Gridcard.propTypes = {
-    title: PropTypes.string,
-    recipeContent: PropTypes.string,
-    time: PropTypes.string,
-    image:PropTypes.string
+// Gridcard.propTypes = {
+//     title: PropTypes.string,
+//     recipeContent: PropTypes.string,
+//     time: PropTypes.string,
+//     image:PropTypes.string
 
-}
+// }
 
 export default Gridcard;
