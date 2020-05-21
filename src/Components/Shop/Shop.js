@@ -49,7 +49,7 @@ class Shop extends Component {
             <div>
                 <Shopheader>
                     <div>
-        <h3>Shop</h3>
+                        <h3>Shop</h3>
                         <p>You are here: <span><Link to="/Home">Home</Link></span> > Shop</p>
                     </div>
                 </Shopheader>

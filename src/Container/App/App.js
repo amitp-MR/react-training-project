@@ -6,7 +6,6 @@ import Home from '../../Container/Home/Home';
 import Submitrecipe from '../../Components/Submitrecipe/Submitrecipe';
 import Viewrecipe from '../../Components/Viewrecipe/Viewrecipe';
 import Shop from '../../Components/Shop/Shop';
-import Signin from '../../Components/Common/Form/Signin';
 import Productdetail from '../../Components/Productdetail/Productdetail';
 import Header from '../../Components/Common/Header/Header';
 import Footer from '../../Components/Common/Footer/Footer';

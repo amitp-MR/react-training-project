@@ -54,6 +54,7 @@ export const HeaderNav = styled.nav`
             height:0px;
             overflow:hidden;
             border-top:3px solid transparent;
+            z-index: 10;
             li{
                 text-align:center;
                 border-bottom:.5px solid #c1c1c1;

@@ -32,11 +32,11 @@ export const list = [
             },
             {
                 "subtext": "Recipe Page #1",
-                "path":"/Home",
+                "path":"/Viewrecipe",
             },
             {
                 "subtext": "Recipe Page #2",
-                "path":"/Home",
+                "path":"/Viewrecipe",
             }
         ]
     },
@@ -46,15 +46,15 @@ export const list = [
         "submenu": [
             {
                 "subtext": "Shortcodes",
-                "path":"/Home",
+                "path":"/Pages",
             },
             {
                 "subtext": "Typography",
-                "path":"/Home",
+                "path":"/Pages",
             },
             {
                 "subtext": "Contact",
-                "path":"/Home",
+                "path":"/Pages",
             }
         ]
     },

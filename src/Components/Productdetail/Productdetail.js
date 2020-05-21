@@ -1,7 +1,7 @@
 import React from 'react';
 import { 
     Productdetailwrapper, Productview, Descrptblock,
-    Productimg, Productcaption, Producttitle, 
+    Productimg, Productcaption, Producttitle, Shopheader,
     Productprice, Productdescription, Buttonblock, 
     IncrementBtn, RelatedProducts, Productdes, Btnblock
 } from '../Common/StyleComponent/style';
@@ -11,6 +11,13 @@ import {Addbtn, Ctabtn} from '../Common/Input/CtaButton';
 
 const Productdetail = (props) => {
     return (
+        <div>
+             <Shopheader>
+                    <div>
+                        <h3>Shop</h3>
+                        <p>You are here: <span>Home</span> > Shop > <span> Cardamom Pod</span></p>
+                    </div>
+                </Shopheader>
         <Productdetailwrapper>
             <Productview>
                 <Productimg>
@@ -49,6 +56,7 @@ const Productdetail = (props) => {
                 }
             </RelatedProducts>
         </Productdetailwrapper>
+        </div>
     )
 }
 

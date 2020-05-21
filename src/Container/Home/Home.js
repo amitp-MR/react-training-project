@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { CardWrapper, MainWrapper } from '../../Components/Common/StyleComponent/style';
 import Sidebar from '../../Components/Sidebar/Sidebar';
 import Banner from '../../Components/Banner/Banner';
-import Header from '../../Components/Common/Header/Header';
-import Footer from '../../Components/Common/Footer/Footer';
 import RecipeCardGridContainer from '../../Components/RecipeCardGridContainer/RecipeCardGridContainer';
 import RecipeCardListContainer from '../../Components/RecipeCardListContainer/RecipeCardListContainer';
 class Home extends Component {
