@@ -127,7 +127,7 @@ class Signup extends Component {
                 formData[inputIdentifier].checkStatus = true;
                 formData[inputIdentifier].errorStatus = false;
             });
-        } else {
+        } else if(formData[inputIdentifier].value== "" ){
             this.setState(() => {
                 formData[inputIdentifier].checkStatus = false;
                 formData[inputIdentifier].errorStatus = true;
@@ -163,6 +163,11 @@ class Signup extends Component {
                 });
             }
         }
+        if (formData[inputIdentifier].errorStatus) {
+            this.setState({
+                isValid:true
+            })
+        }
         const updatedFrom = { ...this.state.formData }
         this.setState({ formData: updatedFrom });
 
@@ -180,15 +185,13 @@ class Signup extends Component {
     fotmSubmission = (event) => {
         event.preventDefault();
         const getFormData = {};
+        const getFormele ={};
         for (let formElementIdentifier in this.state.formData) {
             getFormData[formElementIdentifier] = this.state.formData[formElementIdentifier].value;
+            getFormele[formElementIdentifier] = this.state.formData[formElementIdentifier].errorStatus;
         }
+        console.log(getFormele)
         let parseDate = JSON.stringify(getFormData);
-        if (!this.state.formData.conpassword.errorStatus) {
-            this.setState({
-                onvalid: true
-            })
-        }
         localStorage.setItem('getFormData', parseDate);
     }
 
@@ -217,7 +220,6 @@ class Signup extends Component {
                                         elementType={formEle.config.elementType}
                                         elementConf={formEle.config.elementConf}
                                         value={formEle.config.value}
-                                        ref={formEle.config.ref}
                                         invalid={!formEle.config.valid}
                                         focusout={(event) => this.inputonfocusoutHandler(event, formEle.id)}
                                         changed={(event) => this.inputChangedHandler(event, formEle.id)}
@@ -234,7 +236,13 @@ class Signup extends Component {
                     <div>
 
                         <Signupbtnblock>
-                            <Signupbtn>Submit </Signupbtn> {!this.state.formData.conpassword.onvalid ? <Link to="/Signin">Signin  <i className="fa fa-long-arrow-right" aria-hidden="true"></i></Link> : ""}
+                            <Signupbtn disabled={this.state.isValid}>
+                                Submit 
+                            </Signupbtn> 
+                            {!this.state.isValid ? 
+                            <Link to="/Signin">Signin  
+                            <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            </Link> : ""}
                         </Signupbtnblock>
 
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { SignupWrapper, SignupHeading, Signupbtn, Checkbtn, Forminput, Signupbtnblock } from '../StyleComponent/style';
 import Input from '../Input/Input';
 import { Errorblock } from '../StyleComponent/style';
+import { Link } from 'react-router-dom';
 
 class Signin extends Component {
     constructor(props) {
@@ -144,7 +145,6 @@ class Signin extends Component {
                                         elementType={formEle.config.elementType}
                                         elementConf={formEle.config.elementConf}
                                         value={formEle.config.value}
-                                        ref={formEle.config.ref}
                                         invalid={!formEle.config.valid}
                                         focusout={(event) => this.inputonfocusoutHandler(event, formEle.id)}
                                         changed={(event) => this.inputChangedHandler(event, formEle.id)}
@@ -163,7 +163,7 @@ class Signin extends Component {
                       
                         
                         <Signupbtnblock>
-                            <Signupbtn>Login</Signupbtn>
+                            <Signupbtn>Login</Signupbtn><Link to="/">Not Registered</Link>
                         </Signupbtnblock>
                         
                         

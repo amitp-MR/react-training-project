@@ -5,24 +5,6 @@ export const list = [
         "submenu": []
     },
     {
-        "text": "Demos",
-        "path":"/Demos",
-        "submenu": [
-            {
-                "subtext": "Grid Homepage",
-                "path":"/Home",
-            },
-            {
-                "subtext": "List HomePage",
-                "path":"/Home"
-            },
-            {
-                "subtext": "Boxed Version",
-                "path":"/Home"
-            }
-        ]
-    },
-    {
         "text": "Recipes",
         "path":"/Viewrecipe",
         "submenu": [
@@ -37,24 +19,6 @@ export const list = [
             {
                 "subtext": "Recipe Page #2",
                 "path":"/Viewrecipe",
-            }
-        ]
-    },
-    {
-        "text": "Pages",
-        "path":"/Pages",
-        "submenu": [
-            {
-                "subtext": "Shortcodes",
-                "path":"/Pages",
-            },
-            {
-                "subtext": "Typography",
-                "path":"/Pages",
-            },
-            {
-                "subtext": "Contact",
-                "path":"/Pages",
             }
         ]
     },
@@ -75,6 +39,11 @@ export const list = [
     {
         "text": "Submit Recipe",
         "path":"/Submitrecipe",
+        "submenu": []
+    },
+    {
+        "text": "Logout",
+        "path":"/",
         "submenu": []
     }
 ]
