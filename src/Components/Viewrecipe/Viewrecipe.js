@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { RecipeWrapper, Recipecontainer, RightContainer, Recipeheader, Recipeheading, Recipecard, Carousel, Carouselcontent, Recipedescription, Recipeingredients, Recipedirection } from '../Common/StyleComponent/style';
 import Rightcomponent from '../Sidebar/Sidebar';
 import { view_recipe } from '../../Data/ViewrecipeData';
+import Hoc from '../../Container/Hoc/Hoc';
 
 
 class Viewrecipe extends Component {
@@ -30,6 +31,7 @@ class Viewrecipe extends Component {
 
                                             {
                                                 ite.Slider.map((i, idx) => {
+                                                    console.log(idx);
                                                     return (
                                                         <div key={'Slider' + idx}>
                                                             <Carousel bgIm={this.state.img}>
@@ -38,19 +40,19 @@ class Viewrecipe extends Component {
                                                             <Carouselcontent>
                                                                 <div>
                                                                     <span>
-                                                                        <p>4 people</p>
+                                                                    <p>{i.Serves}</p>
                                                                     </span>
                                                                     <span>
-                                                                        Prep Time
-                                                                        <p>30 min</p>
+                                                                        {i.Prep}
+                                                                        <p>{i.PrepTime}</p>
                                                                     </span>
                                                                     <span>
-                                                                        Cooking
-                                                                        <p>2 hours</p>
+                                                                        {i.task}
+                                                                        <p>{i.cookingtime}</p>
                                                                     </span>
                                                                     <span>
-                                                                        Calories
-                                                                        <p>632 kcal</p>
+                                                                        {i.unit}
+                                                                        <p>{i.value}</p>
                                                                     </span>
                                                                 </div>
                                                                 <span className="printbtn"><i className="fa fa-print" aria-hidden="true"></i> print</span>
@@ -109,4 +111,4 @@ class Viewrecipe extends Component {
     }
 }
 
-export default Viewrecipe;
+export default Hoc(Viewrecipe);

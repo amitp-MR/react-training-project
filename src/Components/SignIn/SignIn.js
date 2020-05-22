@@ -1,49 +1,14 @@
 import React, { Component } from 'react';
-import { SignupWrapper, SignupHeading, Signupbtn, Checkbtn, Forminput, Signupbtnblock } from '../StyleComponent/style';
-import Input from '../Input/Input';
-import { Errorblock } from '../StyleComponent/style';
+import { SignupWrapper, SignupHeading, Checkbtn, Forminput, Signupbtnblock, Errorblock } from '../Common/StyleComponent/style';
+import Input from '../../Components/Common/Input/Input';
+import {LoginButton, Reg} from '../Common/Input/CtaButton';
 import { Link } from 'react-router-dom';
 
-class Signup extends Component {
+class Signin extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isValid: false,
             formData: {
-                name: {
-                    label: "Full Name",
-                    elementType: "input",
-                    ischeckbtn: "false",
-                    elementConf: {
-                        type: "text",
-                        placeholder: "Name..."
-                    },
-                    value: "",
-                    validation: {
-                        required: "true"
-                    },
-                    valid: false,
-                    checkStatus: false,
-                    errorStatus: false,
-                    error: "name is required"
-                },
-                email: {
-                    label: "Email",
-                    elementType: "input",
-                    ischeckbtn: "false",
-                    elementConf: {
-                        type: "email",
-                        placeholder: "Email..."
-                    },
-                    value: "",
-                    validation: {
-                        required: "true"
-                    },
-                    valid: false,
-                    checkStatus: false,
-                    errorStatus: false,
-                    error: "valid email is required: ex@xyz"
-                },
                 username: {
                     label: "Username",
                     elementType: "input",
@@ -79,24 +44,6 @@ class Signup extends Component {
                     checkStatus: false,
                     errorStatus: false,
                     error: "password is required"
-                },
-                conpassword: {
-                    label: "Repeat Password",
-                    elementType: "input",
-                    ischeckbtn: "false",
-                    elementConf: {
-                        type: "password",
-                        placeholder: "********"
-                    },
-                    value: "",
-                    validation: {
-                        required: "true"
-                    },
-                    valid: false,
-                    onvalid: false,
-                    checkStatus: false,
-                    errorStatus: false,
-                    error: "repeat password is required"
                 }
             }
 
@@ -127,7 +74,7 @@ class Signup extends Component {
                 formData[inputIdentifier].checkStatus = true;
                 formData[inputIdentifier].errorStatus = false;
             });
-        } else if(formData[inputIdentifier].value== "" ){
+        } else {
             this.setState(() => {
                 formData[inputIdentifier].checkStatus = false;
                 formData[inputIdentifier].errorStatus = true;
@@ -148,26 +95,6 @@ class Signup extends Component {
                 });
             }
         }
-        if (formData[inputIdentifier].label === "Repeat Password") {
-            if (event.target.value !== formData['password'].value || event.target.value === "") {
-                this.setState(() => {
-                    formData[inputIdentifier].checkStatus = false;
-                    formData[inputIdentifier].errorStatus = true;
-                    (formData[inputIdentifier].value.length === 0 ? formData[inputIdentifier].error = "Repeat password is required" : formData[inputIdentifier].error = "password did not match")
-                });
-            }
-            else {
-                this.setState(() => {
-                    formData[inputIdentifier].checkStatus = true;
-                    formData[inputIdentifier].errorStatus = false;
-                });
-            }
-        }
-        if (formData[inputIdentifier].errorStatus) {
-            this.setState({
-                isValid:true
-            })
-        }
         const updatedFrom = { ...this.state.formData }
         this.setState({ formData: updatedFrom });
 
@@ -184,15 +111,13 @@ class Signup extends Component {
 
     fotmSubmission = (event) => {
         event.preventDefault();
-        const getFormData = {};
-        const getFormele ={};
-        for (let formElementIdentifier in this.state.formData) {
-            getFormData[formElementIdentifier] = this.state.formData[formElementIdentifier].value;
-            getFormele[formElementIdentifier] = this.state.formData[formElementIdentifier].errorStatus;
+        let curruser = this.state.formData.username.value;
+        let curpass = this.state.formData.password.value;
+
+        const localdata = JSON.parse(localStorage.getItem("getFormData"));
+        if(curruser === localdata.username && curpass === localdata.password){
+            this.props.history.push('/home');
         }
-        console.log(getFormele)
-        let parseDate = JSON.stringify(getFormData);
-        localStorage.setItem('getFormData', parseDate);
     }
 
     render() {
@@ -203,9 +128,10 @@ class Signup extends Component {
                 config: this.state.formData[key]
             })
         }
+
         return (
             <SignupWrapper>
-                <SignupHeading>Sign Up</SignupHeading>
+                <SignupHeading>Sign In</SignupHeading>
                 <form onSubmit={(event) => this.fotmSubmission(event)}>
                     {
                         formElementArray.map((formEle, idx) => {
@@ -216,13 +142,13 @@ class Signup extends Component {
                                         autocomplete="off"
                                         label={formEle.config.label}
                                         key={formEle.id}
-                                        name={formEle.id}
                                         elementType={formEle.config.elementType}
                                         elementConf={formEle.config.elementConf}
                                         value={formEle.config.value}
                                         invalid={!formEle.config.valid}
                                         focusout={(event) => this.inputonfocusoutHandler(event, formEle.id)}
                                         changed={(event) => this.inputChangedHandler(event, formEle.id)}
+
                                     />
                                     {
                                         (this.state.formData[formEle.id].errorStatus ? <Errorblock ><span className="errorMsg" >{this.state.formData[formEle.id].error}</span><i className="fa fa-exclamation-circle" aria-hidden="true"></i></Errorblock> : "")
@@ -234,18 +160,13 @@ class Signup extends Component {
                         })
                     }
                     <div>
-
+                      
+                        
                         <Signupbtnblock>
-                            <Signupbtn disabled={this.state.isValid}>
-                                Submit 
-                            </Signupbtn> 
-                            {!this.state.isValid ? 
-                            <Link to="/Signin">Signin  
-                            <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
-                            </Link> : ""}
+                        <LoginButton> Login</LoginButton>  <Reg><Link to="/Signup">Not Registered</Link></Reg>
                         </Signupbtnblock>
-
-
+                        
+                        
                     </div>
 
                 </form>
@@ -254,5 +175,5 @@ class Signup extends Component {
     }
 }
 
-export default Signup;
+export default Signin;
 

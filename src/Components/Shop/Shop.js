@@ -4,36 +4,43 @@ import { Link } from 'react-router-dom';
 import { viewcart_card } from '../../Data/Data';
 import Productcard from '../Common/Productcard/Productcard';
 import Axios from 'axios';
-
+import Hoc from '../../Container/Hoc/Hoc';
+import Loader from '../Common/Loader/Loader';
 
 class Shop extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            imagecart:"",
-            category:"Select",
-            price:"$0.00",
-            viewcartcard:[]
+            viewcartcard: [],
+            imagecart: "",
+            category: "",
+            price: "",
+            loading:false,
         }
+
     }
-    componentDidMount(){
-        Axios.get(`http://www.mocky.io/v2/5ec45a1f30000064fe39c82d`)
-        .then(res=>{
-            this.setState({
-                viewcartcard:res.data
-            })
-        }).catch(error =>{
-            console.log(error);
-          })
-          .finally(()=> {
-            
-          }); 
-        
+    componentDidMount() {
+        this.setState({ loading: true }, () => {
+            Axios.get(`http://www.mocky.io/v2/5ec685363200007000d74ef5`)
+                .then(res => {
+                    const viewcartcard = res.data;
+                    this.setState({
+                        loading: false,
+                        viewcartcard
+                    });
+                }).catch(error => {
+                })
+                .finally(() => {
+
+                });
+        });
+
+
     }
-    updateCartHandler = (ids)=>{
-       
+    updateCartHandler = (ids) => {
+
         for (var i = 0; i < viewcart_card.length; i++) {
-            
+
             if (viewcart_card[i].id === ids) {
                 console.log(viewcart_card[i].item)
                 this.setState({
@@ -68,9 +75,9 @@ class Shop extends Component {
                                     </Subsec>
 
                                     <Pricesec>
-                                       
+
                                         <a href="!#">{this.state.category}</a>
-                                        <p>1 X <span>{this.state.price}</span></p>
+                                       {this.state.price === ""? "Cart is empty":<p>1 X <span>{this.state.price}</span></p> } 
                                     </Pricesec>
                                 </AboveSec>
                                 <Belowsec>
@@ -84,11 +91,12 @@ class Shop extends Component {
                         </Cart>
                     </Sidebar>
                     <Shopgallery>
+                        {this.state.loading ? <Loader/> :
                         <ProductView>
                             {
-                                viewcart_card.map((item, vidx) => {     
+                                this.state.viewcartcard.map((item, vidx) => {
                                     return (
-                                        <Productcard 
+                                        <Productcard
                                             item={item}
                                             key={vidx}
                                             onclick={(e) => this.updateCartHandler("cart" + vidx)}
@@ -97,6 +105,7 @@ class Shop extends Component {
                                 })
                             }
                         </ProductView>
+                        }
                     </Shopgallery>
                 </Shopcontent>
             </div>
@@ -105,4 +114,7 @@ class Shop extends Component {
 }
 
 
-export default Shop;
+export default Hoc(Shop);
+
+
+

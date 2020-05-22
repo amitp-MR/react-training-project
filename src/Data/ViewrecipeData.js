@@ -6,9 +6,12 @@ export const view_recipe = [
         'Slider':[
             {
                 'Serves':'4 people',
-                'Prep Time': '30 min',
-                'Cooking':'2 hours',
-                'Calories':'632 kcal',
+                'Prep':'Prep Time',
+                'PrepTime': '30 min',
+                'task':'Cooking',
+                'cookingtime':'2 hours',
+                'unit':'Calories',
+                'value':'632 kcal',
             }
         ],
         'description':'This is a very basic beef stew. It’s easy, delicious and inexpensive to make. While there are hundreds of variations of this traditional recipe, it’s hard to improve on this version’s savory and comforting goodness.',

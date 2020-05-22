@@ -1,14 +1,48 @@
 import React, { Component } from 'react';
-import { SignupWrapper, SignupHeading, Signupbtn, Checkbtn, Forminput, Signupbtnblock } from '../StyleComponent/style';
-import Input from '../Input/Input';
-import { Errorblock } from '../StyleComponent/style';
+import { SignupWrapper, SignupHeading, Signupbtn, Checkbtn, Forminput, Signupbtnblock, Errorblock } from '../Common/StyleComponent/style';
+import Input from '../Common/Input/Input';
 import { Link } from 'react-router-dom';
 
-class Signin extends Component {
+class Signup extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            isValid: false,
             formData: {
+                name: {
+                    label: "Full Name",
+                    elementType: "input",
+                    ischeckbtn: "false",
+                    elementConf: {
+                        type: "text",
+                        placeholder: "Name..."
+                    },
+                    value: "",
+                    validation: {
+                        required: "true"
+                    },
+                    valid: false,
+                    checkStatus: false,
+                    errorStatus: false,
+                    error: "name is required"
+                },
+                email: {
+                    label: "Email",
+                    elementType: "input",
+                    ischeckbtn: "false",
+                    elementConf: {
+                        type: "email",
+                        placeholder: "Email..."
+                    },
+                    value: "",
+                    validation: {
+                        required: "true"
+                    },
+                    valid: false,
+                    checkStatus: false,
+                    errorStatus: false,
+                    error: "valid email is required: ex@xyz"
+                },
                 username: {
                     label: "Username",
                     elementType: "input",
@@ -20,8 +54,8 @@ class Signin extends Component {
                     value: "",
                     validation: {
                         required: "true",
-                        minLength: 6,
-                        maxLength: 6
+                        minLength: 3,
+                        maxLength: 8
                     },
                     valid: false,
                     checkStatus: false,
@@ -44,6 +78,24 @@ class Signin extends Component {
                     checkStatus: false,
                     errorStatus: false,
                     error: "password is required"
+                },
+                conpassword: {
+                    label: "Repeat Password",
+                    elementType: "input",
+                    ischeckbtn: "false",
+                    elementConf: {
+                        type: "password",
+                        placeholder: "********"
+                    },
+                    value: "",
+                    validation: {
+                        required: "true"
+                    },
+                    valid: false,
+                    onvalid: false,
+                    checkStatus: false,
+                    errorStatus: false,
+                    error: "repeat password is required"
                 }
             }
 
@@ -74,7 +126,7 @@ class Signin extends Component {
                 formData[inputIdentifier].checkStatus = true;
                 formData[inputIdentifier].errorStatus = false;
             });
-        } else {
+        } else if (formData[inputIdentifier].value === "") {
             this.setState(() => {
                 formData[inputIdentifier].checkStatus = false;
                 formData[inputIdentifier].errorStatus = true;
@@ -95,6 +147,26 @@ class Signin extends Component {
                 });
             }
         }
+        if (formData[inputIdentifier].label === "Repeat Password") {
+            if (event.target.value !== formData['password'].value || event.target.value === "") {
+                this.setState(() => {
+                    formData[inputIdentifier].checkStatus = false;
+                    formData[inputIdentifier].errorStatus = true;
+                    (formData[inputIdentifier].value.length === 0 ? formData[inputIdentifier].error = "Repeat password is required" : formData[inputIdentifier].error = "password did not match")
+                });
+            }
+            else {
+                this.setState(() => {
+                    formData[inputIdentifier].checkStatus = true;
+                    formData[inputIdentifier].errorStatus = false;
+                });
+            }
+        }
+        if (formData[inputIdentifier].errorStatus) {
+            this.setState({
+                isValid: true
+            })
+        }
         const updatedFrom = { ...this.state.formData }
         this.setState({ formData: updatedFrom });
 
@@ -111,13 +183,15 @@ class Signin extends Component {
 
     fotmSubmission = (event) => {
         event.preventDefault();
-        let curruser = this.state.formData.username.value;
-        let curpass = this.state.formData.password.value;
-
-        const localdata = JSON.parse(localStorage.getItem("getFormData"));
-        if(curruser === localdata.username && curpass === localdata.password){
-            this.props.history.push('/Home');
+        const getFormData = {};
+        const getFormele = {};
+        for (let formElementIdentifier in this.state.formData) {
+            getFormData[formElementIdentifier] = this.state.formData[formElementIdentifier].value;
+            getFormele[formElementIdentifier] = this.state.formData[formElementIdentifier].errorStatus;
         }
+        console.log(getFormele)
+        let parseDate = JSON.stringify(getFormData);
+        localStorage.setItem('getFormData', parseDate);
     }
 
     render() {
@@ -128,10 +202,9 @@ class Signin extends Component {
                 config: this.state.formData[key]
             })
         }
-
         return (
             <SignupWrapper>
-                <SignupHeading>Sign In</SignupHeading>
+                <SignupHeading>Sign Up</SignupHeading>
                 <form onSubmit={(event) => this.fotmSubmission(event)}>
                     {
                         formElementArray.map((formEle, idx) => {
@@ -142,13 +215,13 @@ class Signin extends Component {
                                         autocomplete="off"
                                         label={formEle.config.label}
                                         key={formEle.id}
+                                        name={formEle.id}
                                         elementType={formEle.config.elementType}
                                         elementConf={formEle.config.elementConf}
                                         value={formEle.config.value}
                                         invalid={!formEle.config.valid}
                                         focusout={(event) => this.inputonfocusoutHandler(event, formEle.id)}
                                         changed={(event) => this.inputChangedHandler(event, formEle.id)}
-
                                     />
                                     {
                                         (this.state.formData[formEle.id].errorStatus ? <Errorblock ><span className="errorMsg" >{this.state.formData[formEle.id].error}</span><i className="fa fa-exclamation-circle" aria-hidden="true"></i></Errorblock> : "")
@@ -160,13 +233,18 @@ class Signin extends Component {
                         })
                     }
                     <div>
-                      
-                        
+
                         <Signupbtnblock>
-                            <Signupbtn>Login</Signupbtn><Link to="/">Not Registered</Link>
+                            <Signupbtn disabled={this.state.isValid}>
+                                Submit
+                            </Signupbtn>
+                            {!this.state.isValid ?
+                                <Link to="/">Login
+                            <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                </Link> : ""}
                         </Signupbtnblock>
-                        
-                        
+
+
                     </div>
 
                 </form>
@@ -175,5 +253,5 @@ class Signin extends Component {
     }
 }
 
-export default Signin;
+export default Signup;
 

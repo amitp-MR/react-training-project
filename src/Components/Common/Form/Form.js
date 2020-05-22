@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { FormWrapper, RightContent, LeftContent } from '../StyleComponent/style';
-import Signup from './Signup';
+import Signup from '../../SignUp/SignUp';
 import Receipe from '../../../Assets/images/receipe.jpeg';
-import Signin from '../Form/Signin';
-import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import SignIn from '../../SignIn/SignIn';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
 class Form extends Component {
@@ -15,10 +15,10 @@ class Form extends Component {
                 </LeftContent>
                 <RightContent>
                     <Router>
-                    <Switch>
-                    <Route exact path="/"><Signup {...this.props}/></Route>
-                    <Route path="/Signin" component={Signin} />
-                    </Switch>
+                        <Switch>
+                            <Route exact path="/" component={SignIn} />
+                            <Route path="/Signup"><Signup {...this.props} /></Route>
+                        </Switch>
                     </Router>
                 </RightContent>
             </FormWrapper>

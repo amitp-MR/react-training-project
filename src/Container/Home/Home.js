@@ -4,13 +4,13 @@ import Sidebar from '../../Components/Sidebar/Sidebar';
 import Banner from '../../Components/Banner/Banner';
 import RecipeCardGridContainer from '../../Components/RecipeCardGridContainer/RecipeCardGridContainer';
 import RecipeCardListContainer from '../../Components/RecipeCardListContainer/RecipeCardListContainer';
+import Hoc from '../../Container/Hoc/Hoc';
 class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
             vadlidState: false,
         }
-        this.componentHandler = this.componentHandler.bind(this);
     }
     componentHandler = (ele) => {
         this.setState({ vadlidState: ele, });
@@ -42,4 +42,4 @@ class Home extends Component {
 }
 
 
-export default Home;
+export default Hoc(Home);

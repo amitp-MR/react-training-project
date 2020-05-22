@@ -5,39 +5,39 @@ import classes from '../../../Container/App/App.css';
 const Input = (props) => {
     let inputElement = null;
     const inputClasses = [classes.InputElement];
-   
-    switch(props.elementType){
-        case('input'):
-        
-            inputElement=<input
-            className={inputClasses.join(' ')}  
-            {...props.elementConf}
-            value={props.value}
-            name={props.name}
-            autoComplete="off"
-            onChange={ props.changed }
-            onBlur={props.focusout}
+
+    switch (props.elementType) {
+        case ('input'):
+
+            inputElement = <input
+                className={inputClasses.join(' ')}
+                {...props.elementConf}
+                value={props.value}
+                name={props.name}
+                autoComplete="off"
+                onChange={props.changed}
+                onBlur={props.focusout}
             />
-        break;
-        case('checkbox'):
-            inputElement=<checkbox 
-            {...props.elementConf}
-            value={props.value}
-            onChange={ props.changed }
+            break;
+        case ('checkbox'):
+            inputElement = <checkbox
+                {...props.elementConf}
+                value={props.value}
+                onChange={props.changed}
             />
-        break;
+            break;
         default:
-                break;
-      
-    
+            break;
+
+
     }
-    if(props.invalid){
+    if (props.invalid) {
         inputClasses.push('invalid');
     }
     return (
         <Inputblock className="Inputblock">
-            <Label  className="Label">{props.label}</Label>
-            { inputElement }
+            <Label className="Label">{props.label}</Label>
+            {inputElement}
             <span className='line'></span>
         </Inputblock>
     );

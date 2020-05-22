@@ -3,20 +3,14 @@ import Logo from '../../../Assets/images/logo.jpg';
 import { list } from '../../../Data/Data';
 import '../../../Container/App/App.css';
 import { Link, NavLink} from 'react-router-dom';
-
 import {Head,Wrapper,HeaderLogo,HeaderNav} from '../StyleComponent/style';
 
 const Header = (props) => {
-    // const chnageRoutes = (path) => {
-    //     props.history.push(path)
-    //     console.log(path);
-    // }
     return (
         <Head>
             <Wrapper>
                 <HeaderLogo><img src={Logo} alt="" /></HeaderLogo>
-                <div className="nav-content">
-                    
+                <div className="nav-content">   
                     <HeaderNav className="">
                         <ul>
                             {
@@ -27,7 +21,7 @@ const Header = (props) => {
                                         </NavLink>
                                         <ul className="dp">
                                             {items.submenu.map((sub, subIdx) => {
-                                            return  (sub.subtext !== ""?<li className="Subnavlist" key={"subitem_"+subIdx}><Link to={items.path}>{sub.subtext}</Link></li>:"")
+                                            return  (sub.subtext !== ""?<li className="Subnavlist" key={"subitem_"+subIdx}><Link to={sub.path}>{sub.subtext}</Link></li>:"")
                                             })}
                                         </ul>
                                     </li>
@@ -35,7 +29,6 @@ const Header = (props) => {
                             }
                         </ul>
                     </HeaderNav>
-                    
                 </div>
             </Wrapper>
         </Head>

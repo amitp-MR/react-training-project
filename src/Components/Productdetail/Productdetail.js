@@ -1,4 +1,5 @@
 import React from 'react';
+import Hoc from '../../Container/Hoc/Hoc';
 import { 
     Productdetailwrapper, Productview, Descrptblock,
     Productimg, Productcaption, Producttitle, Shopheader,
@@ -60,4 +61,4 @@ const Productdetail = (props) => {
     )
 }
 
-export default Productdetail;
+export default Hoc(Productdetail);

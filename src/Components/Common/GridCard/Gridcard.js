@@ -3,16 +3,16 @@ import { GridimgContainer, GridContainer, GridContentContainer } from '../StyleC
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const Gridcard=(props)=> {
+const Gridcard = (props) => {
     const stars = [];
-    for(let i=0; i<props.griddata.stars; i++){
-        stars.push(<i key={i} className="contentstars fa fa-star" aria-hidden="true"></i>);  
+    for (let i = 0; i < props.griddata.stars; i++) {
+        stars.push(<i key={i} className="contentstars fa fa-star" aria-hidden="true"></i>);
     };
     console.log(props.griddata.stars);
     return (
-        <GridContainer  className="recipecontainer">
+        <GridContainer className="recipecontainer">
             <GridimgContainer>
-            <span to="/Viewrecipe" className="viewrecipe" ><Link to="/Viewrecipe">VIEW RECIPE</Link></span>
+                <span to="/Viewrecipe" className="viewrecipe" ><Link to="/Viewrecipe">VIEW RECIPE</Link></span>
                 <img alt="gridimg" src={props.griddata.img} />
             </GridimgContainer>
             <GridContentContainer>
@@ -28,12 +28,12 @@ const Gridcard=(props)=> {
     )
 }
 
-// Gridcard.propTypes = {
-//     title: PropTypes.string,
-//     recipeContent: PropTypes.string,
-//     time: PropTypes.string,
-//     image:PropTypes.string
+Gridcard.propTypes = {
+    title: PropTypes.string,
+    recipeContent: PropTypes.string,
+    time: PropTypes.string,
+    image:PropTypes.string
 
-// }
+}
 
 export default Gridcard;

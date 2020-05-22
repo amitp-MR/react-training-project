@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Ttlebar, Recipefrom, RecipeBlock } from '../../Components/Common/StyleComponent/style';
+import Hoc from '../../Container/Hoc/Hoc';
 
 class Submitrecipe extends Component {
     constructor(props) {
@@ -53,4 +54,4 @@ class Submitrecipe extends Component {
 }
 
 
-export default Submitrecipe;
+export default Hoc(Submitrecipe);

@@ -88,40 +88,40 @@ export const HeaderNav = styled.nav`
 `
 //footer styling
 export const FooterWrapper = styled.div`
-    clear: both;
-    width:100%;
-    background: #333;
-    color: #b8b8b8;
-    margin: 0;
-    .heading{
-        font-size: 16px;
-        font-weight: 700;
-        color: #fff;
-        background-color: #333;
-        text-transform: none;
-    }
-    ul{
-        padding:0px;
-        li{
-            list-style:none;
-            i{
-                color:#fff;
-                margin-right:5px;
+        clear: both;
+        width:100%;
+        background: #333;
+        color: #b8b8b8;
+        margin: 0;
+        .heading{
+            font-size: 16px;
+            font-weight: 700;
+            color: #fff;
+            background-color: #333;
+            text-transform: none;
+        }
+        ul{
+            padding:0px;
+            li{
+                list-style:none;
+                i{
+                    color:#fff;
+                    margin-right:5px;
+                }
             }
         }
-    }
-    .copyRight{
-        background: #2a2a2a;
-        color: #b0b0b0;
-        padding: 18px 0;
-        height:60px;
-        p{
-            font-size:14px;
-            width:70%;
-            margin:0 auto;
+        .copyRight{
+            background: #2a2a2a;
+            color: #b0b0b0;
+            padding: 18px 0;
+            height:60px;
+            p{
+                font-size:14px;
+                width:70%;
+                margin:0 auto;
+            }
         }
-    }
-`
+    `
 export const FooterContent = styled.div`
         display:flex;
         justify-content: space-between;
@@ -216,321 +216,321 @@ export const Inputblock = styled.div`
 
 
 export const Label = styled.label`
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    display: block;
-    font-size: 18px;
-    color: #999;
-    line-height: 1.2;
-    text-transform: capitalize;
-    margin-bottom: 5px;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        display: block;
+        font-size: 18px;
+        color: #999;
+        line-height: 1.2;
+        text-transform: capitalize;
+        margin-bottom: 5px;
 `
 export const Errorblock = styled.span`
-    position: absolute;
-    right: 5%;
-    color: #c80000;
-    font-size: 18px;
-    top: 50%;
-    font-size: 14px;
-    &:hover .errorMsg{
-        opacity:1;
-        transition:.3s;
-    }
-    .errorMsg{
-        opacity:0;
-        transition:.3s;
-        transition: .3s;
-        border: 1px solid;
-        padding: 0px 30px 0px 5px;
-        position: relative;
-        left: 22px;
-    }
+        position: absolute;
+        right: 5%;
+        color: #c80000;
+        font-size: 18px;
+        top: 50%;
+        font-size: 14px;
+        &:hover .errorMsg{
+            opacity:1;
+            transition:.3s;
+        }
+        .errorMsg{
+            opacity:0;
+            transition:.3s;
+            transition: .3s;
+            border: 1px solid;
+            padding: 0px 30px 0px 5px;
+            position: relative;
+            left: 22px;
+        }
 `
 
 
 
 
 export const Bann = styled.div`
-    height:490px;
-    background-color:fff;
+        height:490px;
+        background-color:fff;
 `
 
 export const BannInnerWrap = styled.div`
-    height:415px;
-    width:100%;
-    background-color:#404040;
-    background: url(${props => props.bgImage});
-    transition:.6s;
-    overflow:hidden;
+        height:415px;
+        width:100%;
+        background-color:#404040;
+        background: url(${props => props.bgImage});
+        transition:.6s;
+        overflow:hidden;
 `
 export const BackDrop = styled.div`
-    background-color:rgba(0,0,0,0.4);
-    width:100%;
-    height:100%;
-    overflow:hidden;
+        background-color:rgba(0,0,0,0.4);
+        width:100%;
+        height:100%;
+        overflow:hidden;
 `
 export const CaptionBann = styled.div`
-    padding:6% 0px;
-    width:75%;
-    margin:0 auto;
-    li{
-        display:inline;
-        color:#fff;
-        background:#8dc63f;
-        font-weight: 300;
-        text-transform: uppercase;
-        font-size: 13px;
-        margin: 0 1px 0 0;
-        padding: 5px 9px;
-        font-family: "open sans";
-    }
-    h1{
-        font-size: 48px;
-        line-height: 50px;
-        font-family: arvo;
-        font-weight:100;
-        width: 415px;
-        margin:10px 0px;
-        a{
-            text-decoration:none;
+        padding:6% 0px;
+        width:75%;
+        margin:0 auto;
+        li{
+            display:inline;
             color:#fff;
-        }
-    }
-    p{
-        span{
-            color:#fff;
-            font-weight: 700;
+            background:#8dc63f;
+            font-weight: 300;
             text-transform: uppercase;
             font-size: 13px;
-            margin: 0 15px 0 0;
-            border: none;
-            background-color:transparent;
-            display: inline;
+            margin: 0 1px 0 0;
+            padding: 5px 9px;
+            font-family: "open sans";
         }
-    }
-    span{
-        border: 3px solid #fff;
-        display: inline-block;
-        background-color: rgba(255,255,255,.2);
-        color: #fff;
-        font-size: 14px;
-        font-weight: 700;
-        text-transform: uppercase;
-        padding: 10px 0;
-        width: 130px;
-        text-align: center;
-        -webkit-transition: all .2s ease-in-out!important;
-        -moz-transition: all .2s ease-in-out!important;
-        -o-transition: all .2s ease-in-out!important;
-        -ms-transition: all .2s ease-in-out!important;
-        transition: all .2s ease-in-out!important;
-        margin-top: 18px;
-    }
+        h1{
+            font-size: 48px;
+            line-height: 50px;
+            font-family: arvo;
+            font-weight:100;
+            width: 415px;
+            margin:10px 0px;
+            a{
+                text-decoration:none;
+                color:#fff;
+            }
+        }
+        p{
+            span{
+                color:#fff;
+                font-weight: 700;
+                text-transform: uppercase;
+                font-size: 13px;
+                margin: 0 15px 0 0;
+                border: none;
+                background-color:transparent;
+                display: inline;
+            }
+        }
+        span{
+            border: 3px solid #fff;
+            display: inline-block;
+            background-color: rgba(255,255,255,.2);
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 10px 0;
+            width: 130px;
+            text-align: center;
+            -webkit-transition: all .2s ease-in-out!important;
+            -moz-transition: all .2s ease-in-out!important;
+            -o-transition: all .2s ease-in-out!important;
+            -ms-transition: all .2s ease-in-out!important;
+            transition: all .2s ease-in-out!important;
+            margin-top: 18px;
+        }
 
 `
 
 export const BannBtn = styled.div`
-    buttonTrue{
-        background-color:#8dc63f;
-    }
-    buttonFalse{
-        background-color:#f2f2f2;
-    }
-    nav{
-        margin:0 auto;
-        width:75%;
-        overflow:hidden;
-    ul{
-        margin:0;
-        padding:0;
-        display: inline-flex;
-        li{
-            border-right: .5px solid #c1c1c1;
-            border-bottom: .5px solid #c1c1c1;
-            cursor:pointer;
-            background: #f2f2f2;
-            height:75px;
-            text-align: center;
-            width:245px;
-            display:flex;
-            list-style-type: none;
-            justify-content: center;
-            align-items: center;
+        buttonTrue{
+            background-color:#8dc63f;
+        }
+        buttonFalse{
+            background-color:#f2f2f2;
+        }
+        nav{
+            margin:0 auto;
+            width:75%;
+            overflow:hidden;
+        ul{
+            margin:0;
+            padding:0;
+            display: inline-flex;
+            li{
+                border-right: .5px solid #c1c1c1;
+                border-bottom: .5px solid #c1c1c1;
+                cursor:pointer;
+                background: #f2f2f2;
+                height:75px;
+                text-align: center;
+                width:245px;
+                display:flex;
+                list-style-type: none;
+                justify-content: center;
+                align-items: center;
+                span{
+                    color:#808080;
+                    display:block;
+                }
+            }
+            // li:hover{
+            //     color:#fff;
+            //     background:#8dc63f;
+            //     span{
+            //         color:#fff;
+            //     }
+            }
+        }
+        .activeButton{
+            color:#fff;
+            background:#8dc63f;
             span{
-                color:#808080;
-                display:block;
-            }
+                color:#fff;
+                }
         }
-        // li:hover{
-        //     color:#fff;
-        //     background:#8dc63f;
-        //     span{
-        //         color:#fff;
-        //     }
+        
+        .deactiveButton{
+            background: #f2f2f2;
+            color: black;
         }
     }
-    .activeButton{
-        color:#fff;
-        background:#8dc63f;
-        span{
-               color:#fff;
-            }
-      }
-      
-      .deactiveButton{
-        background: #f2f2f2;
-        color: black;
-      }
-}
 `
 export const MainWrapper = styled.div`
 `
 
 export const CardWrapper = styled.div`
-    display:block;
-    width:75%;
-    margin:0 auto;
-    height:100%;
-    .Contentheading{
-        font-size: 22px;
-        background-color: #fff;
-        padding-right: 10px;
-        font-weight:lighter;
-        font-family: sans-serif;
-    }
-    .viewComponents{
-        margin-left:20%;
-    }
-    .Listview,.Gridview{
-        font-size:14px;
-        text-decoration: none;
-        padding: 10px 20px;
-        cursor: pointer;
-        font-weight: 700;
-        margin:10px;
-    }
-    .Listview{
-        color: #fff;
-        background-color: #8dc63f;
-    }
-    .Gridview{
-        color: #000;
-        background: #e1e1e1;
-    }
+        display:block;
+        width:75%;
+        margin:0 auto;
+        height:100%;
+        .Contentheading{
+            font-size: 22px;
+            background-color: #fff;
+            padding-right: 10px;
+            font-weight:lighter;
+            font-family: sans-serif;
+        }
+        .viewComponents{
+            margin-left:20%;
+        }
+        .Listview,.Gridview{
+            font-size:14px;
+            text-decoration: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: 700;
+            margin:10px;
+        }
+        .Listview{
+            color: #fff;
+            background-color: #8dc63f;
+        }
+        .Gridview{
+            color: #000;
+            background: #e1e1e1;
+        }
 `
 export const Sidecontent = styled.div`
-    float:right;
-    width:25%;
-    height:100%;
+        float:right;
+        width:25%;
+        height:100%;
 `
 export const Author = styled.div`
-    position:relative;
-    margin: 0;
-    border: 1px solid #e8e8e8;
-    padding: 28px 25px;
-    margin-top: 20%;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-    .title{
-        font-size: 13px;
-        font-weight: 600;
-        text-transform: uppercase;
-        color: #8dc63f;
-        display: block;
-    }
-    .name{
-        font-size: 20px;
-        font-weight: 700;
-        color: #606060;
-    }
-    .contact{
-      display:block;
-      a{
-        text-decoration: none;
-        outline: 0;
-        color: #a0a0a0;
-        margin: 5px 0 0;
-        display: inline-block;
-        font-size:14px;
-      }
-    }
-    .authorImg{
-        border-radius: 50%;
-        position: absolute;
-        top: 59px;
-        right: 33px;
-        height: 64px;
-        width: 64px;
-    }
-    .description{
-        font-size:14px;
-        line-height:24px;
-        color:#808080;
-        font-weight:0;
-    }
+        position:relative;
+        margin: 0;
+        border: 1px solid #e8e8e8;
+        padding: 28px 25px;
+        margin-top: 20%;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+        .title{
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #8dc63f;
+            display: block;
+        }
+        .name{
+            font-size: 20px;
+            font-weight: 700;
+            color: #606060;
+        }
+        .contact{
+        display:block;
+        a{
+            text-decoration: none;
+            outline: 0;
+            color: #a0a0a0;
+            margin: 5px 0 0;
+            display: inline-block;
+            font-size:14px;
+        }
+        }
+        .authorImg{
+            border-radius: 50%;
+            position: absolute;
+            top: 59px;
+            right: 33px;
+            height: 64px;
+            width: 64px;
+        }
+        .description{
+            font-size:14px;
+            line-height:24px;
+            color:#808080;
+            font-weight:0;
+        }
 `
 export const PopularRecipes = styled.div`
-        color: #606060;
-        font-weight: 500;
-        font-size:20px;
-        cursor:pointer;
-        .popularImg:hover .faicon{
-            right: 0px;
-            transition:.6s;
+            color: #606060;
+            font-weight: 500;
+            font-size:20px;
+            cursor:pointer;
+            .popularImg:hover .faicon{
+                right: 0px;
+                transition:.6s;
+            }
+            .faicon{
+                position: absolute;
+                top: 0;
+                right: -33px;
+                background: #8dc63f;
+                padding: 10px;
+                transition:.6s;
+            }
+        span{
+            display:inline-block;
+            width: 34%;
+            border: 1px solid #ebebeb;
+            vertical-align: middle;
         }
-        .faicon{
+        div{
+            overflow: hidden;
+            height:100px;
+            position:relative;
+            margin: 3px 0px;
+        img{
+            width:100%;
+            position:absolute;
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+        }
+        
+        h4{
+            color:#fff;
+            font-size: 14px;
+            font-weight: 700;
+            margin:0;
+            line-height: 24px;
             position: absolute;
-            top: 0;
-            right: -33px;
-            background: #8dc63f;
-            padding: 10px;
-            transition:.6s;
-        }
-    span{
-        display:inline-block;
-        width: 34%;
-        border: 1px solid #ebebeb;
-        vertical-align: middle;
-    }
-    div{
-        overflow: hidden;
-        height:100px;
-        position:relative;
-        margin: 3px 0px;
-    img{
-        width:100%;
-        position:absolute;
-        height: 100%;
-        background-position: center;
-        background-size: cover;
-    }
-    
-    h4{
-        color:#fff;
-        font-size: 14px;
-        font-weight: 700;
-        margin:0;
-        line-height: 24px;
-        position: absolute;
-        padding: 15px;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.3);
-        .star-rating::after {
-            content: "    ";
-            font-family: fontawesome;
-            color: rgb(255, 199, 65);
-            display: block;
-            position: absolute;
-            font-size: 16px;
-            z-index: 10;
-            letter-spacing: -0.5px;
-            font-style: normal;
+            padding: 15px;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
+            .star-rating::after {
+                content: "    ";
+                font-family: fontawesome;
+                color: rgb(255, 199, 65);
+                display: block;
+                position: absolute;
+                font-size: 16px;
+                z-index: 10;
+                letter-spacing: -0.5px;
+                font-style: normal;
+            }
         }
     }
-}
 `
 
 export const Social = styled.div`
@@ -701,62 +701,62 @@ export const Social = styled.div`
        
 `
 export const Searchbar = styled.div`
-margin-bottom:10px;
-.subs{
-    position:relative;
-    top: -26px;
-}
-.subBtn{
-    background-color: #8dc63f;
-    font-size: 13px;
-    text-transform: uppercase;
-    font-weight: 700;
-    cursor: pointer;
-    float: right;
-    position: relative;
-    padding: 12px 15px;
-    margin: 0;
-    height: 44px;
-    transition: all .2s ease-in-out;
-    border: none;
-    color: #fff;
-    box-shadow: none;
-}
-.subInp{
-    width:100%;
-    position:absolute;
-    color: gray;
-    font-weight: 600;
-    font-size: 13px;
-    padding: 11px 16px;
-    height: 44px;
-    background-color: #fff;
-    border: 1px solid #e8e8e8;
-    outline:none;
-}
+    margin-bottom:10px;
+    .subs{
+        position:relative;
+        top: -26px;
+    }
+    .subBtn{
+        background-color: #8dc63f;
+        font-size: 13px;
+        text-transform: uppercase;
+        font-weight: 700;
+        cursor: pointer;
+        float: right;
+        position: relative;
+        padding: 12px 15px;
+        margin: 0;
+        height: 44px;
+        transition: all .2s ease-in-out;
+        border: none;
+        color: #fff;
+        box-shadow: none;
+    }
+    .subInp{
+        width:100%;
+        position:absolute;
+        color: gray;
+        font-weight: 600;
+        font-size: 13px;
+        padding: 11px 16px;
+        height: 44px;
+        background-color: #fff;
+        border: 1px solid #e8e8e8;
+        outline:none;
+    }
 `
 export const Ttlebar = styled.div`
-    background-color: #f6f6f6;
-    min-height: 88px;
-    margin: 0 0 40px;
-    div{
-        width:75%;
-        margin:0 auto;
-        p{
-            font-size: 24px;
-            font-weight: 500;
-            float: left;
-            width: 100%;
-            margin: 29px 0 0;
-            color: #606060;
+        background-color: #f6f6f6;
+        min-height: 88px;
+        margin: 0 0 40px;
+        div{
+            width:75%;
+            margin:0 auto;
+            p{
+                font-size: 24px;
+                font-weight: 500;
+                float: left;
+                width: 100%;
+                margin: 29px 0 0;
+                color: #606060;
+            }
         }
-    }
    
 `
 
 export const Recipefrom = styled.form`
-    width:75%;
-    margin:0 auto;
+        width:75%;
+        margin:0 auto;
 
 `
 export const RecipeBlock = styled.div`
@@ -791,136 +791,136 @@ export const RecipeBlock = styled.div`
 `
 
 export const RecipeWrapper = styled.div`
-    height:100%;
-    position:relative;
+        height:100%;
+        position:relative;
 `
 export const Recipeheader = styled.div`
-    height:200px;
-    width:100%;
-    background: url(${props => props.bgIm});
+        height:200px;
+        width:100%;
+        background: url(${props => props.bgIm});
 
 `
 
 export const Recipecontainer = styled.div`
-    display:flex;
-    width:75%;
-    margin:0 auto;
-    height:100%;
-    padding:5% 0px;
+        display:flex;
+        width:75%;
+        margin:0 auto;
+        height:100%;
+        padding:5% 0px;
 `
 export const RightContainer = styled.div`
-    width:75%;
-    padding:20px;
-    position:relative;
+        width:75%;
+        padding:20px;
+        position:relative;
 `
 export const Recipecard = styled.div`
-    position:relative;
-    width:95%;
-    background-color:#f8f8f8;
-    top: -10%;
-    left: 0;
-    clip-path: polygon(91.9% 0%,100% 3.28%,100% 100%,0% 100%,0% 0);
-    &::after {
-        content: "";
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        background: #e0e0e0;
-        border: 1px solid #e0e0e0;
-        width: 50px;
-        height: 50px;
-    }
+        position:relative;
+        width:95%;
+        background-color:#f8f8f8;
+        top: -10%;
+        left: 0;
+        clip-path: polygon(91.9% 0%,100% 3.28%,100% 100%,0% 100%,0% 0);
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            background: #e0e0e0;
+            border: 1px solid #e0e0e0;
+            width: 50px;
+            height: 50px;
+        }
 
 `
 export const Recipeheading = styled.div`
-padding:35px;
-h4{
-    font-size: 30px;
-    font-family: arvo;
-    margin: 0 0 1px;
-    z-index: 20;
-    position: relative;
-    width: 90%;
-    line-height: 36px;
-    color: #606060;
-    font-weight: 500;
-}
+        padding:35px;
+        h4{
+            font-size: 30px;
+            font-family: arvo;
+            margin: 0 0 1px;
+            z-index: 20;
+            position: relative;
+            width: 90%;
+            line-height: 36px;
+            color: #606060;
+            font-weight: 500;
+        }
 `
 export const Carousel = styled.div`
-    height:320px;
-    background: url(${props => props.bgIm});
-    position:relative;
-    p{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.2);
-        top: 0;
-        left: 0;
-        box-sizing: border-box;
-        margin: 0;
-        span{
-            position: relative;
-            right: 0;
-            bottom: -80%;
-            display: inline-block;
-            float: right;
-            i{
-                font-size: 50px;
-                color: snow;
-                letter-spacing: 10px;
-                cursor:pointer;
+            height:320px;
+            background: url(${props => props.bgIm});
+            position:relative;
+            p{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.2);
+                top: 0;
+                left: 0;
+                box-sizing: border-box;
+                margin: 0;
+                span{
+                    position: relative;
+                    right: 0;
+                    bottom: -80%;
+                    display: inline-block;
+                    float: right;
+                    i{
+                        font-size: 50px;
+                        color: snow;
+                        letter-spacing: 10px;
+                        cursor:pointer;
+                    }
+                }
+                
             }
-        }
-        
-    }
 
 `
 export const Carouselcontent = styled.div`
-    display:flex;
-    padding:20px;
-    justify-content:space-between;
-    .printbtn{
-        background-color: #8dc63f;
-        color:#fff;
-        font-size: 12px;
-        font-weight: 700;
-        text-transform: uppercase;
-        padding: 5px 10px;
-        display: inline-block;
-        line-height: 24px;
-    }
-
-    div{
-        display:flex;
-        padding:0px;
-        span{
-            flex:1;
-            width:80px;
-            font-size:13px;
-            font-weight:100;
-            color: #707070;
-            border-right:0.6px solid #707070;
-            margin-right:15px;
-            p{
-                font-size:14px;
-                font-weight: 600;
-                color: #707070;
-                margin:0px;
+            display:flex;
+            padding:20px;
+            justify-content:space-between;
+            .printbtn{
+                background-color: #8dc63f;
+                color:#fff;
+                font-size: 12px;
+                font-weight: 700;
+                text-transform: uppercase;
+                padding: 5px 10px;
+                display: inline-block;
+                line-height: 24px;
             }
-        }
-       
-    }
+
+            div{
+                display:flex;
+                padding:0px;
+                span{
+                    flex:1;
+                    width:80px;
+                    font-size:13px;
+                    font-weight:100;
+                    color: #707070;
+                    border-right:0.6px solid #707070;
+                    margin-right:15px;
+                    p{
+                        font-size:14px;
+                        font-weight: 600;
+                        color: #707070;
+                        margin:0px;
+                    }
+                }
+            
+            }
 `
 export const Recipedescription = styled.div`
-    background:#fff;
-    padding: 15px 0;
-    margin-bottom: 0;
-    p{
-        font-size:14px;
-        font-weight:100;
-        color:grey;
-    }
+            background:#fff;
+            padding: 15px 0;
+            margin-bottom: 0;
+            p{
+                font-size:14px;
+                font-weight:100;
+                color:grey;
+            }
 `
 export const Recipeingredients = styled.ul`
     p{
@@ -1467,7 +1467,6 @@ export const LeftContent = styled.div`
         width:100%;
         height:100%;
         position:absolute;
-        background: -webkit-linear-gradient(bottom,rgba(232,81,158,.8),rgba(199,127,242,0.93));
     }
     img{
         width:100%;
@@ -1618,41 +1617,7 @@ display:inline-block;
         line-height: 37px;
         }
 `
-export const Addtocartbtn = styled.div`
-        background-color: #8dc63f;
-        display:inline-block;
-        margin: 0 0 0 25px;
-        padding: 8px 15px 8px 52px;
-        cursor: pointer;
-        text-transform: uppercase;
-        font-weight: 700;
-        font-size: 13px;
-        outline: none;
-        overflow: hidden;
-        position: relative;
-        z-index: 10;
-        color: #fff;
-        border: none;
-        -webkit-transition: all .2s ease-in-out;
-        -moz-transition: all .2s ease-in-out;
-        -ms-transition: all .2s ease-in-out;
-        -o-transition: all .2s ease-in-out;
-        transition: all .2s ease-in-out;
-        font: inherit;
-        vertical-align: top;
-        i{
-            position: absolute;
-    left: 0;
-    width: 40px;
-    background: rgba(0,0,0,.06);
-    height: 40px;
-    top: 0;
-    text-align: center;
-    line-height: 40px;
 
-        }
-
-`
 
 export const RelatedProducts = styled.div`
     display: flex;
@@ -1664,32 +1629,62 @@ export const Btnblock = styled.div`
 display: flex;
 `
 
-export const Ctabtnstyle = styled.div`
-    background-color: #f2f2f2;
-    margin:0px 2px;
-    border-bottom: 1px solid #fff;
-    color: #888;
-    font-weight: normal;
-    font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    text-transform:capitalize;
-    font-size:14px;
-    display: block;
-    letter-spacing: .8px;
-    outline: none;
-    padding: 0 20px;
-    text-decoration: none;
-    transition: all .2s ease-in-out;
-    line-height: 42px;
-    cursor:pointer;
-    &:hover {
-        transition: all .5s ease-in-out;
-        background-color: #e6e5e5;
-    }
-`
 export const Descrptblock = styled.div`
 margin: 0 0 15px 0;
 line-height: 24px;
 font-size:14px;
 color:#808080;
 `
+export const Browserecipestyle = styled.div`
+
+`
+export const BrowseGallery = styled.div`
+    width:75%;
+    margin:0 auto;
+    display: flex;
+    flex-wrap: wrap;
+`
+export const SearchBox = styled.div`
+    width:75%;
+    margin:0 auto;
+    display: flex;
+    flex-wrap: wrap;
+`
+export const Title = styled.div`
+font-size: 24px;
+font-weight: 500;
+float: left;
+width: 100%;
+color: #606060;
+`
+
+export const SpinnerWrapper = styled.div`
+
+`
+export const Spinner = styled.div`
+    border: 0.2em solid transparent;
+    border-top-color: currentcolor;
+    border-radius: 50%;
+    animation: 1s loader-05 linear infinite;
+    position: absolute;
+    
+    display: inline-block;
+    width: 7em;
+    height: 7em;
+    color: #8dc63f;
+    vertical-align: middle;
+    pointer-events: none;
+    top:50%;
+    left:45%;
+
+@keyframes loader-05 {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+`
+
 

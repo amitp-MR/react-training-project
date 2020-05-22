@@ -12,7 +12,7 @@ const Banner = (props) => {
         img: require('../../Assets/images/sliderA_01.jpg'),
     });
 
-    function switchContent(idx, e) {
+    function switchContent(idx) {
 
         for (var i = 0; i < captionData.length; i++) {
             if (captionData[i].id === idx) {

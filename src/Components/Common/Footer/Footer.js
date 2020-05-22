@@ -1,5 +1,5 @@
 import React from 'react';
-import { FooterWrapper,FooterContent } from '../../Common/StyleComponent/style';
+import { FooterWrapper, FooterContent } from '../../Common/StyleComponent/style';
 
 
 const Footer = () => {
@@ -33,17 +33,17 @@ const Footer = () => {
                 </div>
                 <div className="section4">
                     <p className="heading">Newsletter</p>
-                    <p> Sign up to receive email 
-                        updates on new product 
-                        announcements, gift ideas, 
+                    <p> Sign up to receive email
+                        updates on new product
+                        announcements, gift ideas,
                         sales and more.
                     </p>
-                <div className="subs"><input className="subInp" type="text" placeholder="mail@example.com"/><span className="subBtn">SUBSCRIBE</span></div>
+                    <div className="subs"><input className="subInp" type="text" placeholder="mail@example.com" /><span className="subBtn">SUBSCRIBE</span></div>
                 </div>
             </FooterContent>
             <div className="copyRight">
-                  <p className="copyRightText"> © Copyright 2014 by Chow. All Rights Reserved. </p>
-                </div>
+                <p className="copyRightText"> © Copyright 2014 by Chow. All Rights Reserved. </p>
+            </div>
         </FooterWrapper>
     );
 }
