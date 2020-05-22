@@ -14,7 +14,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={Form} />
-          <Route path="/home" component={Home} />
+          <Route path="/Home" component={Home} />
           <Route path="/Shop" component={Shop} />
           <Route path="/Viewrecipe" component={Viewrecipe} />
           <Route path="/Submitrecipe" component={Submitrecipe} />

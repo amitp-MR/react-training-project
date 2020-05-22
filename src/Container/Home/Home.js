@@ -31,7 +31,7 @@ class Home extends Component {
                                 className="Gridview" >Listview</span>
                         </span>
                     </p>
-                    
+
                     {this.state.vadlidState ? <RecipeCardGridContainer /> : <RecipeCardListContainer />}
                     <Sidebar />
                 </CardWrapper>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { SignupWrapper, SignupHeading, Checkbtn, Forminput, Signupbtnblock, Errorblock } from '../Common/StyleComponent/style';
 import Input from '../../Components/Common/Input/Input';
 import {LoginButton, Reg} from '../Common/Input/CtaButton';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 class Signin extends Component {
     constructor(props) {
@@ -20,7 +20,7 @@ class Signin extends Component {
                     value: "",
                     validation: {
                         required: "true",
-                        minLength: 6,
+                        minLength: 8,
                         maxLength: 6
                     },
                     valid: false,
@@ -81,7 +81,7 @@ class Signin extends Component {
             });
         }
         if (formData[inputIdentifier].label === "Username") {
-            if (formData[inputIdentifier].value.length !== 6) {
+            if (formData[inputIdentifier].value.length !== 8) {
                 this.setState(() => {
                     formData[inputIdentifier].checkStatus = false;
                     formData[inputIdentifier].errorStatus = true;
@@ -117,6 +117,7 @@ class Signin extends Component {
         const localdata = JSON.parse(localStorage.getItem("getFormData"));
         if(curruser === localdata.username && curpass === localdata.password){
             this.props.history.push('/home');
+
         }
     }
 

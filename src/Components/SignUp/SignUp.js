@@ -9,12 +9,12 @@ class Signup extends Component {
         this.state = {
             isValid: false,
             formData: {
-                name: {
+                fname: {
                     label: "Full Name",
                     elementType: "input",
                     ischeckbtn: "false",
                     elementConf: {
-                        type: "text",
+                        type: "fname",
                         placeholder: "Name..."
                     },
                     value: "",
@@ -30,6 +30,7 @@ class Signup extends Component {
                     label: "Email",
                     elementType: "input",
                     ischeckbtn: "false",
+                    regemail:/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
                     elementConf: {
                         type: "email",
                         placeholder: "Email..."
@@ -41,14 +42,15 @@ class Signup extends Component {
                     valid: false,
                     checkStatus: false,
                     errorStatus: false,
-                    error: "valid email is required: ex@xyz"
+                    error: "email is required"
                 },
                 username: {
                     label: "Username",
                     elementType: "input",
                     ischeckbtn: "false",
+                    reguser:/^(?=[a-zA-Z0-9._]{8,20}$)(?!.*[_.]{2})[^_.].*[^_.]$/,
                     elementConf: {
-                        type: "text",
+                        type: "uname",
                         placeholder: "Username..."
                     },
                     value: "",
@@ -72,7 +74,9 @@ class Signup extends Component {
                     },
                     value: "",
                     validation: {
-                        required: "true"
+                        required: "true",
+                        minLength: 6,
+                        maxLength: 8
                     },
                     valid: false,
                     checkStatus: false,
@@ -130,23 +134,36 @@ class Signup extends Component {
             this.setState(() => {
                 formData[inputIdentifier].checkStatus = false;
                 formData[inputIdentifier].errorStatus = true;
+                formData[inputIdentifier].error = formData[inputIdentifier]+" is required" ; 
             });
         }
-        if (formData[inputIdentifier].label === "Username") {
-            if (formData[inputIdentifier].value.length !== 6) {
-                this.setState(() => {
-                    formData[inputIdentifier].checkStatus = false;
-                    formData[inputIdentifier].errorStatus = true;
-                    (formData[inputIdentifier].value.length === 0 ? formData[inputIdentifier].error = "user name is required" : formData[inputIdentifier].error = "user name length should be 6")
-                });
-            }
-            else {
+        console.log(event.target.name);
+        switch(event.target.name){
+            case("email"):
+            if(this.state.formData.email.regemail.test(event.target.value)){
                 this.setState(() => {
                     formData[inputIdentifier].checkStatus = true;
                     formData[inputIdentifier].errorStatus = false;
+                    formData[inputIdentifier].error = "Enter Valid Email ex@xyz" ;
+                });
+            }else{
+                this.setState(() => {
+                    formData[inputIdentifier].checkStatus = false;
+                    formData[inputIdentifier].errorStatus = true;
+                    formData[inputIdentifier].error = "Email is required" ; 
                 });
             }
+            break;
+            case("username"):
+            console.log(this.state.formData.username.reguser.test(event.target.value));
+            // if () {
+            //     this.setState(() => {
+            //         (formData[inputIdentifier].value.length === 0 ? formData[inputIdentifier].error = "user name is required" : formData[inputIdentifier].error = "user name length should be 6")
+            //     });
+            // }
+            break;
         }
+        
         if (formData[inputIdentifier].label === "Repeat Password") {
             if (event.target.value !== formData['password'].value || event.target.value === "") {
                 this.setState(() => {
@@ -238,10 +255,9 @@ class Signup extends Component {
                             <Signupbtn disabled={this.state.isValid}>
                                 Submit
                             </Signupbtn>
-                            {!this.state.isValid ?
-                                <Link to="/">Login
+                                <Link to="/Signin">Login
                             <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
-                                </Link> : ""}
+                                </Link>
                         </Signupbtnblock>
 
 

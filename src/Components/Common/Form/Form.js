@@ -16,8 +16,8 @@ class Form extends Component {
                 <RightContent>
                     <Router>
                         <Switch>
-                            <Route exact path="/" component={SignIn} />
-                            <Route path="/Signup"><Signup {...this.props} /></Route>
+                            <Route exact path="/Signin" component={SignIn} {...this.props} />
+                            <Route path="/"><Signup {...this.props} /></Route>
                         </Switch>
                     </Router>
                 </RightContent>

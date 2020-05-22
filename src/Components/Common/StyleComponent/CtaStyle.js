@@ -61,7 +61,7 @@ export const Ctabtnstyle = styled.div`
 
 export const NotReg = styled.div`
     line-height: 47px;
-    padding: 0px 10px;
+    padding: 0px 20px;
     position: relative;
     transition: all .5s ease-in-out;
 .reg{
@@ -71,10 +71,15 @@ export const NotReg = styled.div`
 }
 a{
     text-decoration:none;
+    color: #888888;
 }
  &:hover {
     transition: all .5s ease-in-out;
     background-color: #e6e5e5;
+    border-radius:30px;
+    a{
+        
+    }
 }
 
 `

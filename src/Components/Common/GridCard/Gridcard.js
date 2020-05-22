@@ -8,7 +8,6 @@ const Gridcard = (props) => {
     for (let i = 0; i < props.griddata.stars; i++) {
         stars.push(<i key={i} className="contentstars fa fa-star" aria-hidden="true"></i>);
     };
-    console.log(props.griddata.stars);
     return (
         <GridContainer className="recipecontainer">
             <GridimgContainer>
