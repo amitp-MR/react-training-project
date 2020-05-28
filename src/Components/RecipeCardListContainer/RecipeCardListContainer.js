@@ -12,7 +12,9 @@ class RecipeCardListContainer extends Component {
             loading: false,
             errorstate:false
         }
+       
     }
+    
     componentDidMount() {
         this.setState({ loading: true }, () => {
             Axios.get(`http://www.mocky.io/v2/5ec78f702f00006e00427230`)

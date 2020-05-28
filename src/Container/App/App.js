@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState }  from 'react';
 import '../App/App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Form from '../../Components/Common/Form/Form';
@@ -8,7 +8,14 @@ import Viewrecipe from '../../Components/Viewrecipe/Viewrecipe';
 import Shop from '../../Components/Shop/Shop';
 import Productdetail from '../../Components/Productdetail/Productdetail';
 import BrowseRecipe from '../../Components/BrowseRecipe/BrowseRecipe';
+
 function App() {
+  const [iState, setiState] = useState({
+      data:""
+  });
+  const updateState=(data)=>{
+    setiState=data;
+  }
   return (
     <div className="App">
       <Router>

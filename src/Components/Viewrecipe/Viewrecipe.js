@@ -9,6 +9,7 @@ class Viewrecipe extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            title:"",
             img: require('../../Assets/images/sliderA_01.jpg'),
         }
     }

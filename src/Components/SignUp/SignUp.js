@@ -42,7 +42,7 @@ class Signup extends Component {
                     valid: false,
                     checkStatus: false,
                     errorStatus: false,
-                    error: "email is required"
+                    error: "email is required: ex@xyz"
                 },
                 username: {
                     label: "Username",
@@ -134,7 +134,6 @@ class Signup extends Component {
             this.setState(() => {
                 formData[inputIdentifier].checkStatus = false;
                 formData[inputIdentifier].errorStatus = true;
-                formData[inputIdentifier].error = formData[inputIdentifier]+" is required" ; 
             });
         }
         console.log(event.target.name);
@@ -144,13 +143,12 @@ class Signup extends Component {
                 this.setState(() => {
                     formData[inputIdentifier].checkStatus = true;
                     formData[inputIdentifier].errorStatus = false;
-                    formData[inputIdentifier].error = "Enter Valid Email ex@xyz" ;
                 });
             }else{
                 this.setState(() => {
                     formData[inputIdentifier].checkStatus = false;
                     formData[inputIdentifier].errorStatus = true;
-                    formData[inputIdentifier].error = "Email is required" ; 
+                    formData[inputIdentifier].error = "Repeat password is required" ;
                 });
             }
             break;

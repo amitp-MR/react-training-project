@@ -10,7 +10,7 @@ const Listcard = (props) => {
     return (
         <RecipeContainer  className="recipecontainer">
             <ImgContainer>
-                <span to="/Viewrecipe" className="viewrecipe" ><Link to="/Viewrecipe">VIEW RECIPE</Link></span>
+                <span to="/Viewrecipe" className="viewrecipe" ><div to="/Viewrecipe">VIEW RECIPE</div></span>
                 <img src={props.listdata.img} alt={"recipeImg_"} />
             </ImgContainer>
             <TextContainer>
